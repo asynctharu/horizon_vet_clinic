@@ -1,0 +1,225 @@
+import { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+
+const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Please fill in all required fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    console.log("Contact form data:", formData);
+    toast({
+      title: "Message Sent!",
+      description: "We'll get back to you within 24 hours.",
+    });
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+  };
+
+  return (
+    <main className="pt-20">
+      {/* Hero Section */}
+      <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center animate-fade-up">
+            <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider bg-secondary px-3 py-1 rounded-full mb-4">
+              Get in Touch
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+              Contact <span className="gradient-text">Us</span>
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Have questions or need assistance? We're here to help. 
+              Reach out to us through any of the channels below.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Info */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <div className="card-base">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
+                    <p className="text-muted-foreground text-sm">
+                      123 Medical Center Drive<br />
+                      Healthcare City, HC 12345
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-base">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
+                    <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
+                      Main: (123) 456-7890
+                    </a>
+                    <a href="tel:+1234567899" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
+                      Emergency: (123) 456-7899
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-base">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                    <Mail className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
+                    <a href="mailto:info@medicare.com" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
+                      info@medicare.com
+                    </a>
+                    <a href="mailto:appointments@medicare.com" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
+                      appointments@medicare.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="card-base">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                    <Clock className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-2">Office Hours</h3>
+                    <div className="space-y-1 text-sm text-muted-foreground">
+                      <p>Mon - Fri: 8:00 AM - 8:00 PM</p>
+                      <p>Saturday: 9:00 AM - 5:00 PM</p>
+                      <p>Sunday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <form onSubmit={handleSubmit} className="card-base space-y-6">
+                <h2 className="text-xl font-semibold text-foreground mb-4">Send Us a Message</h2>
+                
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input
+                      id="name"
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="(123) 456-7890"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">Subject</Label>
+                    <Input
+                      id="subject"
+                      placeholder="How can we help?"
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message *</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="Tell us more about your inquiry..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    rows={6}
+                    required
+                  />
+                </div>
+
+                <Button type="submit" className="btn-primary w-full sm:w-auto">
+                  <Send className="w-4 h-4 mr-2" />
+                  Send Message
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
+          <div className="card-base h-[400px] overflow-hidden p-0">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2167682314374!2d-73.98784492397562!3d40.75797837138381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1701864000000!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="MediCare Location"
+              className="rounded-2xl"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Contact;
