@@ -7,7 +7,7 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Doctors", path: "/doctors" },
-  { name: "Treatments", path: "/treatments" },
+  { name: "Services", path: "/treatments" },
   { name: "Location", path: "/location" },
   { name: "Blog", path: "/blogs" },
   { name: "Contact", path: "/contact" },
@@ -26,10 +26,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl hero-gradient-bg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">M</span>
+            <img 
+              src="/assests/icon.png" 
+              alt="Horizon Vet Clinic" 
+              className="w-10 h-10 rounded-xl object-contain"
+            />
+            <div className="flex flex-col">
+              <span className="font-semibold text-lg text-foreground leading-tight">Horizon Vet</span>
+              <span className="text-xs text-muted-foreground leading-tight">Clinic & Pet Shop</span>
             </div>
-            <span className="font-semibold text-xl text-foreground">MediCare</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,9 +56,9 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="tel:9869369273" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <Phone className="w-4 h-4" />
-              <span>(123) 456-7890</span>
+              <span>9869369273</span>
             </a>
             <Link to="/appointment">
               <Button className="btn-primary">Book Appointment</Button>
@@ -90,9 +95,9 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="pt-4 border-t border-border space-y-3">
-              <a href="tel:+1234567890" className="flex items-center gap-2 px-4 py-2 text-sm text-muted-foreground">
+              <a href="tel:9869369273" className="flex items-center gap-2 px-4 py-2 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4" />
-                <span>(123) 456-7890</span>
+                <span>9869369273</span>
               </a>
               <Link to="/appointment" onClick={() => setIsOpen(false)}>
                 <Button className="btn-primary w-full">Book Appointment</Button>
