@@ -1,128 +1,93 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Shield, Clock, Users, Stethoscope, Activity, Brain, Bone, Baby, Eye } from "lucide-react";
+import { ArrowRight, Heart, Shield, Clock, Users, Syringe, Stethoscope, Scissors, Bone, Dog, Cat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
 import CardDoctor from "@/components/CardDoctor";
 import CardTreatment from "@/components/CardTreatment";
-import CardBlog from "@/components/CardBlog";
 
 const stats = [
-  { number: "25+", label: "Years of Experience" },
-  { number: "50+", label: "Expert Doctors" },
-  { number: "100k+", label: "Happy Patients" },
-  { number: "24/7", label: "Emergency Care" },
+  { number: "2", label: "Expert Veterinarians" },
+  { number: "1000+", label: "Happy Pets" },
+  { number: "12hrs", label: "Daily Service" },
+  { number: "7 Days", label: "Open Weekly" },
 ];
 
 const highlights = [
   {
     icon: Heart,
-    title: "Patient-Centered Care",
-    description: "We put your health and comfort at the center of everything we do.",
+    title: "Compassionate Care",
+    description: "We treat every pet with love, kindness, and the utmost care.",
   },
   {
     icon: Shield,
-    title: "Advanced Technology",
-    description: "State-of-the-art equipment and modern treatment methods.",
+    title: "Qualified Veterinarians",
+    description: "NVC registered doctors with B.V.Sc. & A.H. and M.V.Sc. degrees.",
   },
   {
     icon: Clock,
-    title: "Quick Appointments",
-    description: "Easy online booking with minimal wait times.",
+    title: "Extended Hours",
+    description: "Open 8:00 AM - 8:00 PM, seven days a week for your convenience.",
   },
   {
     icon: Users,
-    title: "Expert Team",
-    description: "Board-certified specialists with years of experience.",
+    title: "Complete Pet Care",
+    description: "From vaccinations to surgeries, we offer comprehensive services.",
   },
 ];
 
 const featuredDoctors = [
   {
-    id: "dr-sarah-johnson",
-    name: "Dr. Sarah Johnson",
-    specialty: "Cardiology",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop",
-    intro: "Board-certified cardiologist with 15+ years of experience in cardiovascular care.",
+    id: "dr-ashish-tharu",
+    name: "Dr. Ashish Tharu",
+    specialty: "Veterinary Medicine",
+    image: "/assests/doctors photo/Dr. Ashish Tharu.jpg",
+    intro: "NVC Regd. No. 2025 | B.V.Sc. & A.H. | Experienced in treating domestic and pet animals.",
   },
   {
-    id: "dr-michael-chen",
-    name: "Dr. Michael Chen",
-    specialty: "Neurology",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop",
-    intro: "Specialist in neurological disorders with a focus on innovative treatments.",
-  },
-  {
-    id: "dr-emily-rodriguez",
-    name: "Dr. Emily Rodriguez",
-    specialty: "Pediatrics",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop",
-    intro: "Dedicated pediatrician providing compassionate care for children of all ages.",
+    id: "dr-shiva-prasad-bhusal",
+    name: "Dr. Shiva Prasad Bhusal",
+    specialty: "Veterinary Surgery",
+    image: "/assests/doctors photo/Dr. Shiva Prasad Bhusal.jpg",
+    intro: "NVC Regd. No. 1197 | B.V.Sc & A.H., M.V.Sc. | Specialist in orthopedic surgery and advanced treatments.",
   },
 ];
 
 const treatments = [
   {
-    title: "General Medicine",
-    description: "Comprehensive primary care for all your general health needs.",
+    title: "Pet Consultation",
+    description: "Complete health checkups and consultations for dogs, cats, and other pets.",
     icon: Stethoscope,
-    slug: "general-medicine",
+    slug: "pet-consultation",
   },
   {
-    title: "Cardiology",
-    description: "Expert heart care with advanced diagnostic and treatment options.",
-    icon: Activity,
-    slug: "cardiology",
+    title: "Vaccinations",
+    description: "All vaccines for dogs, cats, broilers, and layers to keep them healthy.",
+    icon: Syringe,
+    slug: "vaccinations",
   },
   {
-    title: "Neurology",
-    description: "Specialized care for brain and nervous system conditions.",
-    icon: Brain,
-    slug: "neurology",
+    title: "Surgery",
+    description: "Castration, spaying, and orthopedic surgeries performed by experts.",
+    icon: Scissors,
+    slug: "surgery",
   },
   {
-    title: "Orthopedics",
-    description: "Treatment for bone, joint, and muscle disorders.",
+    title: "Orthopedic Care",
+    description: "Specialized bone and joint treatments for your pets.",
     icon: Bone,
-    slug: "orthopedics",
+    slug: "orthopedic-care",
   },
   {
-    title: "Pediatrics",
-    description: "Specialized healthcare for infants, children, and adolescents.",
-    icon: Baby,
-    slug: "pediatrics",
+    title: "Dog Care",
+    description: "Complete healthcare services specifically designed for dogs.",
+    icon: Dog,
+    slug: "dog-care",
   },
   {
-    title: "Ophthalmology",
-    description: "Complete eye care from routine exams to complex surgeries.",
-    icon: Eye,
-    slug: "ophthalmology",
-  },
-];
-
-const blogs = [
-  {
-    slug: "heart-health-tips",
-    title: "10 Essential Tips for Maintaining Heart Health",
-    excerpt: "Learn simple lifestyle changes that can significantly improve your cardiovascular health.",
-    thumbnail: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=400&fit=crop",
-    date: "Dec 1, 2024",
-    category: "Health Tips",
-  },
-  {
-    slug: "flu-season-guide",
-    title: "Your Complete Guide to Flu Season Prevention",
-    excerpt: "Stay protected this flu season with our comprehensive prevention strategies.",
-    thumbnail: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&h=400&fit=crop",
-    date: "Nov 28, 2024",
-    category: "Prevention",
-  },
-  {
-    slug: "mental-health-awareness",
-    title: "Understanding Mental Health: Breaking the Stigma",
-    excerpt: "Mental health is just as important as physical health. Learn how to take care of both.",
-    thumbnail: "https://images.unsplash.com/photo-1493836512294-502baa1986e2?w=600&h=400&fit=crop",
-    date: "Nov 25, 2024",
-    category: "Wellness",
+    title: "Cat Care",
+    description: "Specialized veterinary services for cats of all breeds.",
+    icon: Cat,
+    slug: "cat-care",
   },
 ];
 
@@ -138,17 +103,17 @@ const Home = () => {
               <div className="inline-flex items-center gap-2 bg-secondary rounded-full px-4 py-2">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm font-medium text-secondary-foreground">
-                  Trusted Healthcare Provider
+                  Trusted Veterinary Care in Nepalgunj
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Your Health, Our{" "}
+                Your Pet's Health, Our{" "}
                 <span className="gradient-text">Priority</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                Experience world-class healthcare with compassionate doctors, 
-                advanced technology, and personalized treatment plans designed 
-                just for you.
+                Experience compassionate veterinary care with qualified doctors 
+                and comprehensive services for all your pets and livestock. 
+                We treat them like family.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/appointment">
@@ -179,9 +144,9 @@ const Home = () => {
             <div className="relative animate-fade-up delay-200">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&h=600&fit=crop"
-                  alt="Modern medical facility"
-                  className="w-full h-auto"
+                  src="/assests/clinic serviice photo/Clinic Service photo1.jpg"
+                  alt="Horizon Vet Clinic"
+                  className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
               </div>
@@ -192,8 +157,8 @@ const Home = () => {
                     <Shield className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground">Certified Care</div>
-                    <div className="text-sm text-muted-foreground">100% Verified Doctors</div>
+                    <div className="font-semibold text-foreground">NVC Registered</div>
+                    <div className="text-sm text-muted-foreground">Qualified Veterinarians</div>
                   </div>
                 </div>
               </div>
@@ -207,8 +172,8 @@ const Home = () => {
         <div className="container-custom">
           <SectionHeader
             badge="Why Choose Us"
-            title="Excellence in Healthcare"
-            description="We combine medical expertise with genuine care to provide you with the best possible healthcare experience."
+            title="Excellence in Veterinary Care"
+            description="We combine veterinary expertise with genuine love for animals to provide the best care for your pets."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((item, index) => (
@@ -233,8 +198,8 @@ const Home = () => {
         <div className="container-custom">
           <SectionHeader
             badge="Our Services"
-            title="Comprehensive Healthcare Solutions"
-            description="From preventive care to specialized treatments, we offer a wide range of medical services."
+            title="Comprehensive Veterinary Services"
+            description="From routine check-ups to specialized surgeries, we offer complete care for your pets and livestock."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {treatments.map((treatment, index) => (
@@ -257,10 +222,10 @@ const Home = () => {
         <div className="container-custom">
           <SectionHeader
             badge="Our Team"
-            title="Meet Our Expert Doctors"
-            description="Our team of board-certified physicians brings decades of combined experience."
+            title="Meet Our Veterinarians"
+            description="Our NVC-registered veterinarians bring years of experience and dedication to animal care."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {featuredDoctors.map((doctor, index) => (
               <CardDoctor key={index} {...doctor} />
             ))}
@@ -268,7 +233,7 @@ const Home = () => {
           <div className="text-center mt-10">
             <Link to="/doctors">
               <Button className="btn-secondary">
-                View All Doctors
+                Learn More About Our Doctors
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
@@ -281,42 +246,25 @@ const Home = () => {
         <div className="container-custom">
           <div className="hero-gradient-bg rounded-3xl p-8 sm:p-12 lg:p-16 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
-              Ready to Take Care of Your Health?
+              Ready to Care for Your Pet?
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Schedule an appointment with our expert doctors today and take the first step 
-              towards a healthier you.
+              Schedule an appointment with our expert veterinarians today. 
+              We're here to keep your furry friends healthy and happy.
             </p>
-            <Link to="/appointment">
-              <Button className="bg-background text-foreground hover:bg-background/90 px-8 py-6 text-base font-semibold rounded-xl shadow-lg">
-                Book Your Appointment
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <SectionHeader
-            badge="Latest News"
-            title="Health Insights & Updates"
-            description="Stay informed with the latest health tips, news, and events from our clinic."
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogs.map((blog, index) => (
-              <CardBlog key={index} {...blog} />
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link to="/blogs">
-              <Button className="btn-secondary">
-                View All Articles
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/appointment">
+                <Button className="bg-background text-foreground hover:bg-background/90 px-8 py-6 text-base font-semibold rounded-xl shadow-lg">
+                  Book Appointment
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <a href="tel:9869369273">
+                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base font-semibold rounded-xl">
+                  Call: 9869369273
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </section>

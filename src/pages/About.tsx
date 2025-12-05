@@ -5,42 +5,33 @@ const values = [
   {
     icon: Heart,
     title: "Compassion",
-    description: "We treat every patient with empathy, kindness, and respect.",
+    description: "We treat every animal with love, kindness, and gentle care.",
   },
   {
     icon: Target,
     title: "Excellence",
-    description: "We strive for the highest standards in medical care.",
+    description: "We strive for the highest standards in veterinary medicine.",
   },
   {
     icon: Eye,
     title: "Integrity",
-    description: "We uphold honesty and transparency in all we do.",
+    description: "We uphold honesty and transparency in all treatments.",
   },
   {
     icon: Users,
-    title: "Teamwork",
-    description: "We collaborate to deliver the best outcomes for patients.",
+    title: "Community",
+    description: "We serve pet owners and farmers throughout Nepalgunj.",
   },
   {
     icon: Award,
-    title: "Innovation",
-    description: "We embrace new technologies and treatment methods.",
+    title: "Expertise",
+    description: "NVC-registered doctors with advanced qualifications.",
   },
   {
     icon: Clock,
     title: "Accessibility",
-    description: "We make quality healthcare available to everyone.",
+    description: "Open 12 hours daily, 7 days a week for your convenience.",
   },
-];
-
-const milestones = [
-  { year: "1998", event: "MediCare Clinic founded by Dr. James Mitchell" },
-  { year: "2005", event: "Expanded to a full-service medical center" },
-  { year: "2010", event: "Introduced advanced diagnostic imaging" },
-  { year: "2015", event: "Launched our pediatric and women's health centers" },
-  { year: "2020", event: "Implemented telemedicine services" },
-  { year: "2024", event: "Celebrating 25+ years of community healthcare" },
 ];
 
 const About = () => {
@@ -55,20 +46,21 @@ const About = () => {
                 About Us
               </span>
               <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
-                Caring for Your Health Since{" "}
-                <span className="gradient-text">1998</span>
+                Caring for Animals in{" "}
+                <span className="gradient-text">Nepalgunj</span>
               </h1>
               <p className="text-lg text-muted-foreground">
-                For over 25 years, MediCare has been a trusted healthcare provider 
-                in our community. We combine cutting-edge medical technology with 
-                compassionate care to deliver exceptional health outcomes.
+                Horizon Vet Clinic & Pet Shop is a trusted veterinary care provider 
+                in Nepalgunj. Our NVC-registered veterinarians combine professional 
+                expertise with genuine love for animals to deliver exceptional care 
+                for your pets and livestock.
               </p>
             </div>
             <div className="relative animate-fade-up delay-200">
               <img
-                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop"
-                alt="Our medical facility"
-                className="rounded-3xl shadow-2xl"
+                src="/assests/clinic serviice photo/Clinic Service photo2.jpg"
+                alt="Horizon Vet Clinic"
+                className="rounded-3xl shadow-2xl w-full h-auto object-cover"
               />
             </div>
           </div>
@@ -85,10 +77,10 @@ const About = () => {
               </div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
               <p className="text-muted-foreground">
-                To provide accessible, high-quality healthcare services that improve 
-                the health and well-being of every individual in our community. We are 
-                committed to treating each patient with dignity, respect, and personalized 
-                attention.
+                To provide accessible, high-quality veterinary care that improves 
+                the health and well-being of every animal in our community. We are 
+                committed to treating each pet with dignity, expertise, and the 
+                compassion they deserve.
               </p>
             </div>
             <div className="card-base">
@@ -97,10 +89,10 @@ const About = () => {
               </div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Our Vision</h2>
               <p className="text-muted-foreground">
-                To be the leading healthcare provider in the region, recognized for 
-                clinical excellence, innovative treatments, and exceptional patient 
-                experience. We envision a healthier community where everyone has 
-                access to quality care.
+                To be the leading veterinary care provider in the region, recognized 
+                for clinical excellence, compassionate treatment, and comprehensive 
+                services. We envision a community where every pet receives the quality 
+                healthcare they need.
               </p>
             </div>
           </div>
@@ -113,7 +105,7 @@ const About = () => {
           <SectionHeader
             badge="Our Values"
             title="What We Stand For"
-            description="These core values guide everything we do at MediCare."
+            description="These core values guide everything we do at Horizon Vet Clinic."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((value, index) => (
@@ -129,56 +121,100 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Our Services Overview */}
       <section className="section-padding">
         <div className="container-custom">
           <SectionHeader
-            badge="Our Journey"
-            title="25+ Years of Excellence"
-            description="A timeline of our growth and commitment to healthcare."
+            badge="What We Offer"
+            title="Comprehensive Veterinary Services"
+            description="From routine check-ups to specialized surgeries, we provide complete care for your animals."
           />
-          <div className="max-w-3xl mx-auto">
-            <div className="relative">
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border" />
-              {milestones.map((milestone, index) => (
-                <div key={index} className="relative flex items-start gap-6 pb-10 last:pb-0">
-                  <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center shrink-0 z-10 border-4 border-background">
-                    <span className="font-bold text-primary">{milestone.year}</span>
-                  </div>
-                  <div className="card-base flex-1 mt-2">
-                    <p className="text-foreground">{milestone.event}</p>
-                  </div>
-                </div>
-              ))}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="card-base">
+              <h3 className="font-semibold text-foreground mb-3">Pet Care</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Treatment of all domestic and pet animals</li>
+                <li>• Castration/Spaying of dogs and cats</li>
+                <li>• All vaccines for dogs and cats</li>
+                <li>• Pet food and nutritional supplements</li>
+              </ul>
+            </div>
+            <div className="card-base">
+              <h3 className="font-semibold text-foreground mb-3">Livestock & Poultry</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Postmortem examination of poultry</li>
+                <li>• All vaccines for broilers and layers</li>
+                <li>• Expert consultation for commercial farms</li>
+                <li>• Comprehensive livestock healthcare</li>
+              </ul>
+            </div>
+            <div className="card-base">
+              <h3 className="font-semibold text-foreground mb-3">Surgery</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Orthopedic surgery</li>
+                <li>• Castration and spaying procedures</li>
+                <li>• Emergency surgical care</li>
+                <li>• Post-operative care and monitoring</li>
+              </ul>
+            </div>
+            <div className="card-base">
+              <h3 className="font-semibold text-foreground mb-3">Pet Shop</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Quality pet food</li>
+                <li>• Nutritional supplements</li>
+                <li>• Pet-friendly equipment</li>
+                <li>• Healthcare products</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Photo */}
+      {/* Facility Photos */}
       <section className="section-padding bg-muted/30">
         <div className="container-custom">
           <SectionHeader
             badge="Our Facility"
-            title="State-of-the-Art Medical Center"
-            description="Our modern facility is equipped with the latest technology to serve you better."
+            title="Visit Our Clinic"
+            description="Modern facilities equipped to provide the best care for your pets."
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             <img
-              src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&h=400&fit=crop"
-              alt="Reception area"
+              src="/assests/clinic serviice photo/Clinic Service photo1.jpg"
+              alt="Clinic facility"
               className="rounded-2xl shadow-card w-full h-64 object-cover"
             />
             <img
-              src="https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=600&h=400&fit=crop"
-              alt="Consultation room"
+              src="/assests/clinic serviice photo/Clinic Service photo2.jpg"
+              alt="Clinic services"
               className="rounded-2xl shadow-card w-full h-64 object-cover"
             />
             <img
-              src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop"
-              alt="Medical equipment"
+              src="/assests/clinic serviice photo/Clinic Service photo3.jpg"
+              alt="Clinic equipment"
               className="rounded-2xl shadow-card w-full h-64 object-cover"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="card-base max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Visit Us Today</h2>
+            <p className="text-muted-foreground mb-2">
+              <strong>Location:</strong> Surkhet Road, Nepalgunj-1, Khajura Road, Banke
+            </p>
+            <p className="text-muted-foreground mb-2">
+              <strong>Hours:</strong> 8:00 AM - 8:00 PM (Open Daily)
+            </p>
+            <p className="text-muted-foreground mb-2">
+              <strong>Phone:</strong> 9869369273 | 9866361184
+            </p>
+            <p className="text-muted-foreground">
+              <strong>Email:</strong> horizonvetclinic01@gmail.com
+            </p>
           </div>
         </div>
       </section>
