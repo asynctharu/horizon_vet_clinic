@@ -8,29 +8,29 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 
 const services = [
-  "General Checkup",
-  "Cardiology Consultation",
-  "Neurology Consultation",
-  "Pediatric Care",
-  "Orthopedic Assessment",
-  "Dermatology Visit",
-  "Eye Examination",
+  "Pet & Animal Treatment",
+  "Castration & Spaying",
+  "Orthopedic Surgery",
+  "Vaccination Services",
+  "Poultry Services",
+  "Farm Consultation",
+  "Pet Shop",
   "Other",
 ];
 
 const timeSlots = [
+  "8:00 AM",
   "9:00 AM",
-  "9:30 AM",
   "10:00 AM",
-  "10:30 AM",
   "11:00 AM",
-  "11:30 AM",
+  "12:00 PM",
+  "1:00 PM",
   "2:00 PM",
-  "2:30 PM",
   "3:00 PM",
-  "3:30 PM",
   "4:00 PM",
-  "4:30 PM",
+  "5:00 PM",
+  "6:00 PM",
+  "7:00 PM",
 ];
 
 const Appointment = () => {
@@ -80,7 +80,7 @@ const Appointment = () => {
                 Appointment Request Received!
               </h1>
               <p className="text-muted-foreground mb-6">
-                Thank you for booking with MediCare. Our team will contact you within 
+                Thank you for booking with Horizon Vet Clinic. Our team will contact you within 
                 24 hours to confirm your appointment.
               </p>
               <div className="bg-muted/50 rounded-xl p-4 text-left mb-6">
@@ -118,7 +118,7 @@ const Appointment = () => {
               Schedule Your <span className="gradient-text">Appointment</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Book a consultation with our expert doctors. We'll confirm your 
+              Book a consultation with our expert veterinarians. We'll confirm your 
               appointment within 24 hours.
             </p>
           </div>
