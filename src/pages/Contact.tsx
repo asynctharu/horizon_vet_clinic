@@ -83,9 +83,6 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                    <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
-                      Main: (+977) 9869369273
-                    </a>
                     <a href="tel:+1234567899" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
                       Emergency: (+977) 9869369273
                     </a>
@@ -100,9 +97,6 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
-                    <a href="mailto:info@medicare.com" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
-                      info@medicare.com
-                    </a>
                     <a href="mailto:appointments@medicare.com" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
                       horizonvetclinic01@gmail.com
                     </a>
@@ -118,9 +112,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Office Hours</h3>
                     <div className="space-y-1 text-sm text-muted-foreground">
-                      <p>Mon - Fri: 8:00 AM - 8:00 PM</p>
-                      <p>Saturday: 9:00 AM - 5:00 PM</p>
-                      <p>Sunday: 10:00 AM - 4:00 PM</p>
+                      <p>Sun - Sat: 8:00 AM - 8:00 PM</p>
                     </div>
                   </div>
                 </div>
