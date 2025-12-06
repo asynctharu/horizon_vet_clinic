@@ -1,138 +1,121 @@
 import { Link } from "react-router-dom";
-import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { 
   Stethoscope, 
-  Activity, 
-  Brain, 
+  Scissors, 
   Bone, 
-  Baby, 
-  Eye, 
-  Heart,
-  Pill,
+  Syringe, 
+  ShoppingBag,
+  Building2,
+  Bird,
   ArrowRight,
   Check
 } from "lucide-react";
 
 const treatments = [
   {
-    id: "general-medicine",
-    title: "General Medicine",
+    id: "pet-consultation",
+    title: "Pet & Animal Treatment",
     icon: Stethoscope,
-    shortDesc: "Comprehensive primary care for all your general health needs.",
-    fullDesc: "Our general medicine department provides comprehensive primary care services including routine check-ups, preventive screenings, chronic disease management, and treatment of common illnesses. Our experienced physicians take a holistic approach to your health.",
+    shortDesc: "Complete treatment for all domestic and pet animals.",
+    fullDesc: "We provide comprehensive treatment for all kinds of domestic and pet animals with proper consultation. Our experienced veterinarians ensure accurate diagnosis and effective treatment plans for your beloved companions.",
     services: [
-      "Annual physical examinations",
-      "Chronic disease management",
-      "Preventive health screenings",
-      "Vaccinations and immunizations",
-      "Minor injury treatment",
-      "Health counseling and education",
+      "General health check-ups",
+      "Disease diagnosis and treatment",
+      "Emergency veterinary care",
+      "Dental care for pets",
+      "Skin and coat treatment",
+      "Nutritional counseling",
     ],
   },
   {
-    id: "cardiology",
-    title: "Cardiology",
-    icon: Activity,
-    shortDesc: "Expert heart care with advanced diagnostic and treatment options.",
-    fullDesc: "Our cardiology team specializes in the prevention, diagnosis, and treatment of cardiovascular diseases. We use state-of-the-art technology and evidence-based treatments to ensure optimal heart health for our patients.",
+    id: "surgery",
+    title: "Castration & Spaying",
+    icon: Scissors,
+    shortDesc: "Safe surgical procedures for dogs and cats.",
+    fullDesc: "Our clinic offers professional castration and spaying services for dogs and cats. These procedures are performed by skilled veterinarians in a sterile, safe environment to ensure quick recovery and minimal discomfort for your pets.",
     services: [
-      "Heart disease diagnosis and treatment",
-      "ECG and stress testing",
-      "Echocardiography",
-      "Cardiac rehabilitation",
-      "Arrhythmia management",
-      "Preventive cardiology",
+      "Dog castration surgery",
+      "Cat castration surgery",
+      "Dog spaying surgery",
+      "Cat spaying surgery",
+      "Pre-surgical consultations",
+      "Post-operative care and follow-up",
     ],
   },
   {
-    id: "neurology",
-    title: "Neurology",
-    icon: Brain,
-    shortDesc: "Specialized care for brain and nervous system conditions.",
-    fullDesc: "Our neurology department offers expert diagnosis and treatment for disorders of the brain, spinal cord, and nervous system. From headaches to complex neurological conditions, we provide compassionate, comprehensive care.",
-    services: [
-      "Stroke prevention and treatment",
-      "Headache and migraine management",
-      "Epilepsy care",
-      "Movement disorders treatment",
-      "Memory and cognitive assessments",
-      "Nerve conduction studies",
-    ],
-  },
-  {
-    id: "orthopedics",
-    title: "Orthopedics",
+    id: "orthopedic-surgery",
+    title: "Orthopedic Surgery",
     icon: Bone,
-    shortDesc: "Treatment for bone, joint, and muscle disorders.",
-    fullDesc: "Our orthopedic specialists treat conditions affecting the musculoskeletal system. Whether you're dealing with a sports injury, arthritis, or need joint replacement surgery, we're here to help restore your mobility.",
+    shortDesc: "Expert bone and joint surgical care for animals.",
+    fullDesc: "Our orthopedic surgery services address bone fractures, joint problems, and musculoskeletal injuries in pets and animals. We use modern surgical techniques to restore mobility and improve quality of life.",
     services: [
-      "Joint replacement surgery",
-      "Sports medicine",
-      "Fracture care",
-      "Arthroscopic surgery",
-      "Physical therapy coordination",
-      "Spine disorders treatment",
+      "Fracture repair and fixation",
+      "Joint surgery",
+      "Ligament repair",
+      "Hip and elbow treatment",
+      "Bone plating procedures",
+      "Rehabilitation guidance",
     ],
   },
   {
-    id: "pediatrics",
-    title: "Pediatrics",
-    icon: Baby,
-    shortDesc: "Specialized healthcare for infants, children, and adolescents.",
-    fullDesc: "Our pediatric team provides comprehensive healthcare for children from birth through adolescence. We focus on preventive care, developmental monitoring, and treating childhood illnesses in a caring environment.",
+    id: "vaccination",
+    title: "Vaccination Services",
+    icon: Syringe,
+    shortDesc: "Complete vaccination for pets and poultry.",
+    fullDesc: "We offer all kinds of vaccines for broilers, layers, dogs, and cats. Our vaccination programs are designed to protect your animals from common and serious diseases, ensuring their long-term health and wellbeing.",
     services: [
-      "Well-child visits",
-      "Childhood immunizations",
-      "Growth and development monitoring",
-      "Treatment of childhood illnesses",
-      "Adolescent health services",
-      "Behavioral health support",
+      "Dog vaccinations (Rabies, Parvo, Distemper)",
+      "Cat vaccinations (Rabies, FVRCP)",
+      "Broiler vaccinations",
+      "Layer hen vaccinations",
+      "Puppy and kitten vaccination schedules",
+      "Vaccination record maintenance",
     ],
   },
   {
-    id: "ophthalmology",
-    title: "Ophthalmology",
-    icon: Eye,
-    shortDesc: "Complete eye care from routine exams to complex surgeries.",
-    fullDesc: "Our ophthalmology department provides comprehensive eye care services. From routine vision exams to advanced surgical procedures, our eye specialists are dedicated to preserving and improving your vision.",
+    id: "poultry-services",
+    title: "Poultry Services",
+    icon: Bird,
+    shortDesc: "Specialized care for poultry and farm birds.",
+    fullDesc: "Our poultry services include postmortem examination and comprehensive health management for your poultry. We help farmers identify disease causes and implement preventive measures to protect their flocks.",
     services: [
-      "Comprehensive eye exams",
-      "Cataract surgery",
-      "Glaucoma treatment",
-      "Diabetic eye care",
-      "LASIK consultations",
-      "Dry eye treatment",
+      "Postmortem examination of poultry",
+      "Disease diagnosis and treatment",
+      "Flock health management",
+      "Vaccination programs",
+      "Biosecurity consultation",
+      "Nutritional advice for poultry",
     ],
   },
   {
-    id: "dermatology",
-    title: "Dermatology",
-    icon: Heart,
-    shortDesc: "Expert skin care for medical and cosmetic concerns.",
-    fullDesc: "Our dermatology team treats a wide range of skin conditions from acne and eczema to skin cancer screenings. We also offer cosmetic dermatology services to help you look and feel your best.",
+    id: "farm-consultation",
+    title: "Farm Consultation",
+    icon: Building2,
+    shortDesc: "Expert consultation for commercial farms.",
+    fullDesc: "We provide expertise consultation for commercial farms including dairy, poultry, and livestock operations. Our team helps optimize animal health, productivity, and farm management practices.",
     services: [
-      "Skin cancer screenings",
-      "Acne treatment",
-      "Eczema and psoriasis care",
-      "Mole evaluation",
-      "Cosmetic procedures",
-      "Skin allergy testing",
+      "Dairy farm consultation",
+      "Poultry farm management",
+      "Livestock health programs",
+      "Feed and nutrition planning",
+      "Disease prevention strategies",
+      "Farm biosecurity assessment",
     ],
   },
   {
-    id: "pharmacy",
-    title: "Pharmacy Services",
-    icon: Pill,
-    shortDesc: "On-site pharmacy for convenient medication access.",
-    fullDesc: "Our on-site pharmacy offers convenient access to prescription medications and over-the-counter products. Our pharmacists provide medication counseling and work closely with your healthcare team.",
+    id: "pet-shop",
+    title: "Pet Shop",
+    icon: ShoppingBag,
+    shortDesc: "Quality pet food, supplements, and accessories.",
+    fullDesc: "Our pet shop offers pet food, nutritional supplements, and other pet-friendly equipment. We stock quality products to keep your pets healthy, happy, and well-cared for.",
     services: [
-      "Prescription filling",
-      "Medication counseling",
-      "Immunization services",
-      "Over-the-counter products",
-      "Medication therapy management",
-      "Refill reminders",
+      "Premium pet food brands",
+      "Nutritional supplements",
+      "Pet accessories and toys",
+      "Grooming supplies",
+      "Pet carriers and crates",
+      "Health and wellness products",
     ],
   },
 ];
@@ -148,11 +131,11 @@ const Treatments = () => {
               Our Services
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Comprehensive <span className="gradient-text">Healthcare Services</span>
+              Complete <span className="gradient-text">Veterinary Care</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              From preventive care to specialized treatments, we offer a wide range 
-              of medical services to meet all your healthcare needs.
+              From pet treatment to farm consultation, we offer comprehensive 
+              veterinary services for all your animal healthcare needs.
             </p>
           </div>
         </div>
@@ -212,7 +195,7 @@ const Treatments = () => {
               Need Help Choosing a Service?
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Our team is here to guide you to the right care. Contact us for a consultation.
+              Our veterinary team is here to guide you to the right care for your animals.
             </p>
             <Link to="/contact">
               <Button className="bg-background text-foreground hover:bg-background/90 px-8 py-6 font-semibold rounded-xl">
