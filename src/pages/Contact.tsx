@@ -69,8 +69,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
                     <p className="text-muted-foreground text-sm">
-                      123 Medical Center Drive<br />
-                      Healthcare City, HC 12345
+                      Horizon Vet Clinic and Pet Shop<br />
+                      Surkhet road, Nepalgunj 21900
                     </p>
                   </div>
                 </div>
@@ -84,10 +84,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
                     <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
-                      Main: (123) 456-7890
+                      Main: (+977) 9869369273
                     </a>
                     <a href="tel:+1234567899" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
-                      Emergency: (123) 456-7899
+                      Emergency: (+977) 9869369273
                     </a>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ const Contact = () => {
                       info@medicare.com
                     </a>
                     <a href="mailto:appointments@medicare.com" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
-                      appointments@medicare.com
+                      horizonvetclinic01@gmail.com
                     </a>
                   </div>
                 </div>
@@ -204,17 +204,16 @@ const Contact = () => {
       <section className="section-padding bg-muted/30">
         <div className="container-custom">
           <div className="card-base h-[400px] overflow-hidden p-0">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2167682314374!2d-73.98784492397562!3d40.75797837138381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1701864000000!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="MediCare Location"
-              className="rounded-2xl"
-            />
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.709084335404!2d81.6232509!3d28.063906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3998677b25c0c72d%3A0x8596256d8a3a25cf!2sHorizon%20Vet%20Clinic%20%26%20Pet%20Shop!5e0!3m2!1sen!2snp!4v1764936701774!5m2!1sen!2snp"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="rounded-2xl"
+/>          
           </div>
         </div>
       </section>
