@@ -5,73 +5,73 @@ import { Calendar, ArrowRight } from "lucide-react";
 
 const blogs = [
   {
-    slug: "heart-health-tips",
-    title: "10 Essential Tips for Maintaining Heart Health",
-    excerpt: "Learn simple lifestyle changes that can significantly improve your cardiovascular health and reduce the risk of heart disease.",
-    thumbnail: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=400&fit=crop",
+    slug: "pet-vaccination-guide",
+    title: "Complete Vaccination Guide for Dogs and Cats",
+    excerpt: "Learn about essential vaccines for your pets, vaccination schedules, and why regular immunization is crucial for their health.",
+    thumbnail: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=400&fit=crop",
+    date: "Dec 5, 2024",
+    category: "Pet Care",
+  },
+  {
+    slug: "spaying-neutering-benefits",
+    title: "Benefits of Spaying and Neutering Your Pets",
+    excerpt: "Discover the health and behavioral benefits of castration and spaying for dogs and cats, and what to expect during recovery.",
+    thumbnail: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&h=400&fit=crop",
     date: "Dec 1, 2024",
-    category: "Health Tips",
+    category: "Surgery",
   },
   {
-    slug: "flu-season-guide",
-    title: "Your Complete Guide to Flu Season Prevention",
-    excerpt: "Stay protected this flu season with our comprehensive prevention strategies and tips for staying healthy.",
-    thumbnail: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&h=400&fit=crop",
+    slug: "poultry-disease-prevention",
+    title: "Poultry Disease Prevention: A Farmer's Guide",
+    excerpt: "Essential tips for keeping your broilers and layers healthy through proper vaccination, biosecurity, and farm management.",
+    thumbnail: "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600&h=400&fit=crop",
     date: "Nov 28, 2024",
-    category: "Prevention",
+    category: "Poultry",
   },
   {
-    slug: "mental-health-awareness",
-    title: "Understanding Mental Health: Breaking the Stigma",
-    excerpt: "Mental health is just as important as physical health. Learn how to take care of both and recognize when to seek help.",
-    thumbnail: "https://images.unsplash.com/photo-1493836512294-502baa1986e2?w=600&h=400&fit=crop",
+    slug: "pet-nutrition-essentials",
+    title: "Pet Nutrition: Choosing the Right Food for Your Pet",
+    excerpt: "A comprehensive guide to understanding pet nutrition, reading food labels, and selecting the best diet for your furry friends.",
+    thumbnail: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop",
     date: "Nov 25, 2024",
-    category: "Wellness",
+    category: "Nutrition",
   },
   {
-    slug: "diabetes-management",
-    title: "Living Well with Diabetes: A Comprehensive Guide",
-    excerpt: "Expert advice on managing diabetes through diet, exercise, and medication for a healthier, more fulfilling life.",
-    thumbnail: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop",
+    slug: "orthopedic-care-pets",
+    title: "Understanding Orthopedic Issues in Pets",
+    excerpt: "Learn about common bone and joint problems in dogs and cats, signs to watch for, and available treatment options.",
+    thumbnail: "https://images.unsplash.com/photo-1587764379873-97837921fd44?w=600&h=400&fit=crop",
     date: "Nov 20, 2024",
-    category: "Chronic Care",
+    category: "Health",
   },
   {
-    slug: "pediatric-wellness",
-    title: "Keeping Your Kids Healthy: A Parent's Guide",
-    excerpt: "From nutrition to immunizations, everything you need to know about maintaining your child's health and development.",
-    thumbnail: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&h=400&fit=crop",
+    slug: "farm-animal-health",
+    title: "Managing Livestock Health on Commercial Farms",
+    excerpt: "Expert advice on maintaining animal health in dairy and livestock farms, including preventive care and disease management.",
+    thumbnail: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=600&h=400&fit=crop",
     date: "Nov 15, 2024",
-    category: "Pediatrics",
-  },
-  {
-    slug: "sleep-health",
-    title: "The Science of Better Sleep",
-    excerpt: "Discover how quality sleep impacts your overall health and learn practical tips for improving your sleep hygiene.",
-    thumbnail: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&h=400&fit=crop",
-    date: "Nov 10, 2024",
-    category: "Wellness",
+    category: "Farm",
   },
 ];
 
 const events = [
   {
-    title: "Free Health Screening Day",
+    title: "Free Pet Health Camp",
     date: "December 15, 2024",
     time: "9:00 AM - 4:00 PM",
-    description: "Join us for complimentary blood pressure, glucose, and cholesterol screenings.",
+    description: "Join us for free health check-ups for dogs and cats. Basic consultation and deworming available.",
   },
   {
-    title: "Nutrition Workshop",
+    title: "Poultry Vaccination Drive",
     date: "December 20, 2024",
-    time: "2:00 PM - 4:00 PM",
-    description: "Learn about healthy eating habits and meal planning with our registered dietitian.",
+    time: "8:00 AM - 5:00 PM",
+    description: "Special vaccination program for broilers and layers. Contact us to schedule your farm visit.",
   },
   {
-    title: "Stress Management Seminar",
+    title: "Pet Care Workshop",
     date: "January 8, 2025",
-    time: "6:00 PM - 7:30 PM",
-    description: "Discover effective techniques for managing stress and improving mental wellness.",
+    time: "2:00 PM - 4:00 PM",
+    description: "Learn about proper pet nutrition, grooming, and preventive healthcare from our expert veterinarians.",
   },
 ];
 
@@ -86,11 +86,11 @@ const Blogs = () => {
               News & Updates
             </span>
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Health <span className="gradient-text">Insights & Events</span>
+              Pet Care <span className="gradient-text">Tips & Events</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Stay informed with the latest health tips, medical news, and 
-              upcoming events at MediCare.
+              Stay informed with the latest pet care tips, veterinary news, and 
+              upcoming events at Horizon Vet Clinic.
             </p>
           </div>
         </div>
@@ -143,10 +143,10 @@ const Blogs = () => {
         <div className="container-custom">
           <div className="hero-gradient-bg rounded-3xl p-8 sm:p-12 text-center">
             <h2 className="text-3xl font-bold text-primary-foreground mb-4">
-              Stay Informed
+              Stay Updated
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Subscribe to our newsletter for the latest health tips, news, and event updates.
+              Subscribe for the latest pet care tips, veterinary news, and event updates.
             </p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
