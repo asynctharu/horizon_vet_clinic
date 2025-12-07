@@ -40,16 +40,16 @@ const About = () => {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-up">
-              <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider bg-secondary px-3 py-1 rounded-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[60vh]">
+            <div className="space-y-5 animate-fade-up">
+              <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider bg-secondary px-4 py-1.5 rounded-full mb-2">
                 About Us
               </span>
-              <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                 Caring for Animals in{" "}
                 <span className="gradient-text">Nepalgunj</span>
               </h1>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-lg">
                 Horizon Vet Clinic & Pet Shop is a trusted veterinary care provider 
                 in Nepalgunj. Our NVC-registered veterinarians combine professional 
                 expertise with genuine love for animals to deliver exceptional care 
@@ -59,8 +59,8 @@ const About = () => {
             <div className="relative animate-fade-up delay-200">
               <img
                 src="/assests/clinic serviice photo/Clinic Service photo2.jpg"
-                alt="Horizon Vet Clinic"
-                className="rounded-3xl shadow-2xl w-full h-auto object-cover"
+                alt="Horizon Vet Clinic veterinarians performing surgery"
+                className="rounded-3xl shadow-2xl w-full aspect-[4/3] max-h-[480px] object-cover"
               />
             </div>
           </div>
