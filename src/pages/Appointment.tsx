@@ -152,7 +152,7 @@ const Appointment = () => {
                     <Input
                       id="phone"
                       type="tel"
-                      placeholder="(123) 456-7890"
+                      placeholder="9XXXXXXXXX"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required

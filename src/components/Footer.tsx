@@ -23,10 +23,10 @@ const Footer = () => {
               Providing compassionate veterinary care for your beloved pets and livestock in Nepalgunj.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.facebook.com/share/1DHYHW3rJu/" className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.instagram.com/horizon_vet_clinic_petshop?igsh=eDF3bnRnOGJubnVy" className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
             </div>
@@ -92,8 +92,8 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <div className="text-background/70 text-sm">
-                  <a href="tel:9869369273" className="hover:text-primary transition-colors block">9869369273</a>
-                  <a href="tel:9866361184" className="hover:text-primary transition-colors block">9866361184</a>
+                  <a href="tel:9869369273" className="hover:text-primary transition-colors block">+9779869369273</a>
+                  <a href="tel:9866361184" className="hover:text-primary transition-colors block">+9779866361184</a>
                 </div>
               </li>
               <li className="flex items-center gap-3">
