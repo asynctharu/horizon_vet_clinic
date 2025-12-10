@@ -210,7 +210,7 @@ const About = () => {
               <strong>Hours:</strong> 8:00 AM - 8:00 PM (Open Daily)
             </p>
             <p className="text-muted-foreground mb-2">
-              <strong>Phone:</strong> 9869369273 | 9866361184
+              <strong>Phone:</strong> +9779869369273 | +9779866361184
             </p>
             <p className="text-muted-foreground">
               <strong>Email:</strong> horizonvetclinic01@gmail.com

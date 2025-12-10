@@ -14,7 +14,7 @@ const faqs = [
     questions: [
       {
         q: "What are your clinic hours?",
-        a: "Our clinic is open Monday through Friday from 8:00 AM to 8:00 PM, Saturday from 9:00 AM to 5:00 PM, and Sunday from 10:00 AM to 4:00 PM. Emergency services are available 24/7.",
+        a: "Our clinic is open from 8:00 AM to 8:00 PM, seven days a week, providing consistent access to care whenever you need it during regular hours. For situations that can’t wait, our emergency services remain available 24/7 to ensure you always have support, day or night.",
       },
       {
         q: "Do I need an appointment to visit?",
@@ -35,7 +35,7 @@ const faqs = [
     questions: [
       {
         q: "How do I schedule an appointment?",
-        a: "You can schedule an appointment through our website, by calling (123) 456-7890, or by visiting our clinic in person. Online booking is available 24/7 for your convenience.",
+        a: "You can schedule an appointment through our website, by calling (+977) 9869369273, or by visiting our clinic in person. Online booking is available 24/7 for your convenience.",
       },
       {
         q: "Can I reschedule or cancel my appointment?",
@@ -68,7 +68,7 @@ const faqs = [
       },
       {
         q: "How do I get an itemized bill?",
-        a: "You can request an itemized bill through our patient portal or by contacting our billing department directly at billing@medicare.com or (123) 456-7891.",
+        a: "You can request an itemized bill directly at our billing counter during regular clinic hours. Our staff will prepare and provide your detailed statement on the spot.",
       },
     ],
   },
@@ -81,7 +81,7 @@ const faqs = [
       },
       {
         q: "Do you provide emergency services?",
-        a: "We provide urgent care services during clinic hours. For life-threatening emergencies, please call 911 or visit your nearest emergency room. Our emergency line (123) 456-7899 is available 24/7 for guidance.",
+        a: "We provide urgent care services during clinic hours. For life-threatening emergencies, please call 911 or visit your nearest emergency room. Our emergency line (+977) 9869369273 is available 24/7 for guidance.",
       },
       {
         q: "Can I get lab work done at your facility?",
@@ -163,9 +163,10 @@ const FAQ = () => {
               <Link to="/contact">
                 <Button className="btn-primary">Contact Us</Button>
               </Link>
-              <a href="tel:+1234567890">
-                <Button className="btn-secondary">Call (123) 456-7890</Button>
+              <a href="tel:+9779869369273">
+  <Button className="btn-secondary">Call (+977) 9869369273</Button>
               </a>
+
             </div>
           </div>
         </div>
