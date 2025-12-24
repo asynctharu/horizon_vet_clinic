@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
+const GETFORM_ENDPOINT = "https://getform.io/f/bolqmdwa";
+
 const services = [
   "Pet & Animal Treatment",
   "Castration & Spaying",
@@ -36,6 +38,7 @@ const timeSlots = [
 const Appointment = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -46,7 +49,7 @@ const Appointment = () => {
     notes: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -58,13 +61,41 @@ const Appointment = () => {
       return;
     }
 
-    // Simulate form submission
-    console.log("Appointment data:", formData);
-    setIsSubmitted(true);
-    toast({
-      title: "Appointment Request Sent!",
-      description: "We'll contact you shortly to confirm your appointment.",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(GETFORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          form_type: "Appointment Booking",
+          submitted_at: new Date().toISOString(),
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast({
+          title: "Appointment Request Sent!",
+          description: "We'll contact you shortly to confirm your appointment.",
+        });
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -256,8 +287,8 @@ const Appointment = () => {
 
               {/* Submit */}
               <div className="pt-4">
-                <Button type="submit" className="btn-primary w-full py-6 text-base">
-                  Request Appointment
+                <Button type="submit" className="btn-primary w-full py-6 text-base" disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting..." : "Request Appointment"}
                 </Button>
                 <p className="text-sm text-muted-foreground text-center mt-4">
                   By submitting, you agree to our terms of service and privacy policy.
