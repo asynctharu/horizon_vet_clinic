@@ -65,7 +65,7 @@ const Doctors = () => {
                   <img
                     src={doctor.image}
                     alt={doctor.name}
-                    className="w-40 h-40 rounded-full object-cover object-top mb-6 ring-4 ring-secondary"
+                    className="w-40 h-40 rounded-full object-cover object-center mb-6 ring-4 ring-secondary"
                   />
                   <h2 className="text-2xl font-bold text-foreground mb-2">{doctor.name}</h2>
                   <p className="text-primary font-medium mb-4">{doctor.specialty}</p>
