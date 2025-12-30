@@ -5,6 +5,16 @@ import { Phone, Award, GraduationCap } from "lucide-react";
 
 const doctors = [
   {
+    id: "dr-shiva-prasad-bhusal",
+    name: "Dr. Shiva Prasad Bhusal",
+    specialty: "Veterinary Surgery",
+    image: "/assests/doctors photo/Dr. Shiva Prasad Bhusal.jpg",
+    intro: "Specialist in orthopedic surgery and advanced veterinary treatments. Expert in castration, spaying, and complex surgical procedures.",
+    phone: "+9779704589171",
+    registration: "NVC Regd. No. 1197",
+    qualification: "B.V.Sc & A.H., M.V.Sc.",
+  },
+   {
     id: "dr-ashish-tharu",
     name: "Dr. Ashish Tharu",
     specialty: "Veterinary Medicine",
@@ -14,15 +24,14 @@ const doctors = [
     registration: "NVC Regd. No. 2025",
     qualification: "B.V.Sc. & A.H.",
   },
-  {
-    id: "dr-shiva-prasad-bhusal",
-    name: "Dr. Shiva Prasad Bhusal",
-    specialty: "Veterinary Surgery",
-    image: "/assests/doctors photo/Dr. Shiva Prasad Bhusal.jpg",
-    intro: "Specialist in orthopedic surgery and advanced veterinary treatments. Expert in castration, spaying, and complex surgical procedures.",
-    phone: "+9779704589171",
-    registration: "NVC Regd. No. 1197",
-    qualification: "B.V.Sc & A.H., M.V.Sc.",
+    {
+    id: "ajay-pal",
+    name: "Ajay Pal",
+    specialty: "Veterinary Technician",
+    image: "/assests/doctors photo/Ajay Pal.jpg",
+    intro: "Ajay Pal is a dedicated Veterinary Technician who assists in animal care, vaccinations, basic treatments, and clinic operations. He ensures proper handling of animals and supports veterinarians during consultations and procedures.",
+    phone: "+9779704589172",
+
   },
 ];
 
