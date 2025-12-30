@@ -37,18 +37,18 @@ const highlights = [
 
 const featuredDoctors = [
   {
-    id: "dr-ashish-tharu",
-    name: "Dr. Ashish Tharu",
-    specialty: "Veterinary Medicine",
-    image: "/assests/doctors photo/Dr. Ashish Tharu.jpg",
-    intro: "NVC Regd. No. 2025 | B.V.Sc. & A.H. | Experienced in treating domestic and pet animals.",
-  },
-  {
     id: "dr-shiva-prasad-bhusal",
     name: "Dr. Shiva Prasad Bhusal",
     specialty: "Veterinary Surgery",
     image: "/assests/doctors photo/Dr. Shiva Prasad Bhusal.jpg",
     intro: "NVC Regd. No. 1197 | B.V.Sc & A.H., M.V.Sc. | Specialist in orthopedic surgery and advanced treatments.",
+  },
+   {
+    id: "dr-ashish-tharu",
+    name: "Dr. Ashish Tharu",
+    specialty: "Veterinary Medicine",
+    image: "/assests/doctors photo/Dr. Ashish Tharu.jpg",
+    intro: "NVC Regd. No. 2025 | B.V.Sc. & A.H. | Experienced in treating domestic and pet animals.",
   },
 ];
 
