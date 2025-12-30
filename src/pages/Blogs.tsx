@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import CardBlog from "@/components/CardBlog";
 import { Button } from "@/components/ui/button";
-import { Calendar, ArrowRight } from "lucide-react";
 
 const blogs = [
   {
@@ -54,26 +52,6 @@ const blogs = [
   },
 ];
 
-const events = [
-  {
-    title: "Free Pet Health Camp",
-    date: "December 15, 2024",
-    time: "9:00 AM - 4:00 PM",
-    description: "Join us for free health check-ups for dogs and cats. Basic consultation and deworming available.",
-  },
-  {
-    title: "Poultry Vaccination Drive",
-    date: "December 20, 2024",
-    time: "8:00 AM - 5:00 PM",
-    description: "Special vaccination program for broilers and layers. Contact us to schedule your farm visit.",
-  },
-  {
-    title: "Pet Care Workshop",
-    date: "January 8, 2025",
-    time: "2:00 PM - 4:00 PM",
-    description: "Learn about proper pet nutrition, grooming, and preventive healthcare from our expert veterinarians.",
-  },
-];
 
 const Blogs = () => {
   return (
@@ -110,33 +88,6 @@ const Blogs = () => {
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold text-foreground">Upcoming Events</h2>
-            <Link to="/contact">
-              <Button className="btn-secondary" size="sm">
-                Register for Events
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {events.map((event, index) => (
-              <div key={index} className="card-base">
-                <div className="flex items-center gap-2 text-primary text-sm font-medium mb-3">
-                  <Calendar className="w-4 h-4" />
-                  <span>{event.date}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{event.title}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{event.time}</p>
-                <p className="text-sm text-muted-foreground">{event.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Newsletter CTA */}
       <section className="section-padding">
