@@ -71,14 +71,18 @@ const Doctors = () => {
                   <p className="text-primary font-medium mb-4">{doctor.specialty}</p>
                   
                   <div className="space-y-3 w-full">
-                    <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                      <Award className="w-4 h-4 text-primary" />
-                      <span className="text-sm">{doctor.registration}</span>
-                    </div>
-                    <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                      <GraduationCap className="w-4 h-4 text-primary" />
-                      <span className="text-sm">{doctor.qualification}</span>
-                    </div>
+                    {doctor.registration && (
+                      <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                        <Award className="w-4 h-4 text-primary" />
+                        <span className="text-sm">{doctor.registration}</span>
+                      </div>
+                    )}
+                    {doctor.qualification && (
+                      <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                        <GraduationCap className="w-4 h-4 text-primary" />
+                        <span className="text-sm">{doctor.qualification}</span>
+                      </div>
+                    )}
                     <div className="flex items-center justify-center gap-2 text-muted-foreground">
                       <Phone className="w-4 h-4 text-primary" />
                       <a href={`tel:${doctor.phone}`} className="text-sm hover:text-primary transition-colors">
@@ -92,7 +96,7 @@ const Doctors = () => {
                   <a href={`tel:${doctor.phone}`}>
                     <Button className="btn-primary">
                       <Phone className="w-4 h-4 mr-2" />
-                      Call Doctor
+                      {doctor.specialty === "Veterinary Technician" ? "Call Technician" : "Call Doctor"}
                     </Button>
                   </a>
                 </div>
