@@ -58,14 +58,14 @@ const Doctors = () => {
       {/* Doctors Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {doctors.map((doctor, index) => (
               <div key={doctor.id} className="card-base animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="flex flex-col items-center text-center">
                   <img
                     src={doctor.image}
                     alt={doctor.name}
-                    className="w-48 h-48 rounded-full object-cover mb-6 ring-4 ring-secondary"
+                    className="w-40 h-40 rounded-full object-cover object-top mb-6 ring-4 ring-secondary"
                   />
                   <h2 className="text-2xl font-bold text-foreground mb-2">{doctor.name}</h2>
                   <p className="text-primary font-medium mb-4">{doctor.specialty}</p>
