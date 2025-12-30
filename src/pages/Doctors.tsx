@@ -24,15 +24,7 @@ const doctors = [
     registration: "NVC Regd. No. 2025",
     qualification: "B.V.Sc. & A.H.",
   },
-    {
-    id: "ajay-pal",
-    name: "Ajay Pal",
-    specialty: "Veterinary Technician",
-    image: "/assests/doctors photo/Ajay Pal.jpg",
-    intro: "Ajay Pal is a dedicated Veterinary Technician who assists in animal care, vaccinations, basic treatments, and clinic operations. He ensures proper handling of animals and supports veterinarians during consultations and procedures.",
-    phone: "+9779704589172",
-
-  },
+  
 ];
 
 const Doctors = () => {

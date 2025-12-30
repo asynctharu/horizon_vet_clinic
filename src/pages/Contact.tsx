@@ -102,7 +102,7 @@ const Contact = () => {
                     <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
                     <p className="text-muted-foreground text-sm">
                       Horizon Vet Clinic and Pet Shop<br />
-                      Surkhet road, Nepalgunj 21900
+                      Surkhet road, Nepalgunj-2, Banke
                     </p>
                   </div>
                 </div>
