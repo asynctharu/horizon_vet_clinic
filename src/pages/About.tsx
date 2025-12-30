@@ -213,7 +213,7 @@ const About = () => {
               <strong>Phone:</strong> +9779869369273 | +9779866361184
             </p>
             <p className="text-muted-foreground">
-              <strong>Email:</strong> horizonvetclinic01@gmail.com
+              <strong>Email:</strong> vetclinichorizon@gmail.com
             </p>
           </div>
         </div>

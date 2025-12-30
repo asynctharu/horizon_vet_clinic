@@ -130,7 +130,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
                     <a href="mailto:appointments@medicare.com" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
-                      horizonvetclinic01@gmail.com
+                      vetclinichorizon@gmail.com
                     </a>
                   </div>
                 </div>

@@ -85,8 +85,8 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-background/70 text-sm">
-                  Surkhet Road, Nepalgunj-1<br />
-                  Banke, Nepal 21900
+                  Surkhet Road, Nepalgunj-2<br />
+                  Banke, Nepal
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -99,7 +99,7 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
                 <a href="mailto:horizonvetclinic01@gmail.com" className="text-background/70 hover:text-primary text-sm transition-colors">
-                  horizonvetclinic01@gmail.com
+                  vetclinichorizon.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
