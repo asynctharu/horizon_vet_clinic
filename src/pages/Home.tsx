@@ -261,7 +261,7 @@ const Home = () => {
               </Link>
               <a href="tel:9869369273">
                 <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base font-semibold rounded-xl">
-                  Call: 9869369273
+                  Call: +9779869369273
                 </Button>
               </a>
             </div>
