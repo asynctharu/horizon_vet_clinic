@@ -210,7 +210,7 @@ const About = () => {
           <div className="card-base max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">Visit Us Today</h2>
             <p className="text-muted-foreground mb-2">
-              <strong>Location:</strong> Surkhet Road, Nepalgunj-1, Khajura Road, Banke
+              <strong>Location:</strong> Surkhet Road, Nepalgunj-2, Khajura Road, Banke
             </p>
             <p className="text-muted-foreground mb-2">
               <strong>Hours:</strong> 8:00 AM - 8:00 PM (Open Daily)
