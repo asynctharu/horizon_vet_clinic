@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const faqs = [
   {
@@ -98,6 +99,11 @@ const faqs = [
 const FAQ = () => {
   return (
     <main className="pt-20">
+      <SEO 
+        title="FAQ | Horizon Vet Clinic & Pet Shop Nepalganj"
+        description="Find answers to frequently asked questions about Horizon Vet Clinic services, appointments, pet care, and more. Get help with your veterinary care needs."
+        canonical="/faq"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
         <div className="container-custom">

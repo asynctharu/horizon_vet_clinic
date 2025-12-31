@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/SectionHeader";
 import CardDoctor from "@/components/CardDoctor";
 import CardTreatment from "@/components/CardTreatment";
+import SEO from "@/components/SEO";
 
 const stats = [
   { number: "2", label: "Expert Veterinarians" },
@@ -94,6 +95,36 @@ const treatments = [
 const Home = () => {
   return (
     <main>
+      <SEO 
+        title="Horizon Vet Clinic & Pet Shop | Nepalganj - Trusted Veterinary Care"
+        description="Horizon Vet Clinic & Pet Shop in Nepalganj provides compassionate veterinary care, advanced pet treatments, vaccinations, surgeries, and personalized services. Located at Surkhet Road, Nepalgunj-21900, Banke. Open 8 AM - 8 PM daily."
+        canonical="/"
+      />
+      
+      {/* Structured Data for Local Business */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "VeterinaryCare",
+          "name": "Horizon Vet Clinic & Pet Shop",
+          "description": "Compassionate veterinary care and pet shop services in Nepalganj, Nepal",
+          "url": "https://vetclinichorizon.com",
+          "telephone": "+977-9869369273",
+          "email": "horizonvetclinic01@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Surkhet Road",
+            "addressLocality": "Nepalgunj",
+            "postalCode": "21900",
+            "addressRegion": "Banke",
+            "addressCountry": "NP"
+          },
+          "openingHours": "Mo-Su 08:00-20:00",
+          "priceRange": "$$",
+          "image": "https://vetclinichorizon.com/assests/clinic%20serviice%20photo/Clinic%20Service%20photo1.jpg"
+        })
+      }} />
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-accent/30" />

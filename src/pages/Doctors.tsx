@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SectionHeader from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Phone, Award, GraduationCap } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const doctors = [
   {
@@ -37,6 +38,11 @@ const doctors = [
 const Doctors = () => {
   return (
     <main className="pt-20">
+      <SEO 
+        title="Our Veterinarians | Horizon Vet Clinic & Pet Shop Nepalganj"
+        description="Meet our NVC-registered veterinarians at Horizon Vet Clinic Nepalganj. Experienced doctors specializing in pet care, surgery, and animal health."
+        canonical="/doctors"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
         <div className="container-custom">

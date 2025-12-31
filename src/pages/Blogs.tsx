@@ -1,5 +1,6 @@
 import CardBlog from "@/components/CardBlog";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 
 const blogs = [
   {
@@ -56,6 +57,11 @@ const blogs = [
 const Blogs = () => {
   return (
     <main className="pt-20">
+      <SEO 
+        title="Pet Care Blog | Horizon Vet Clinic & Pet Shop Nepalganj"
+        description="Read expert pet care tips, veterinary advice, and animal health articles from Horizon Vet Clinic Nepalganj. Stay informed about your pet's health."
+        canonical="/blogs"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
         <div className="container-custom">

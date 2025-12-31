@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import SEO from "@/components/SEO";
 
 const GETFORM_ENDPOINT = "https://getform.io/f/bolqmdwa";
 
@@ -69,6 +70,11 @@ const Contact = () => {
 
   return (
     <main className="pt-20">
+      <SEO 
+        title="Contact Us | Horizon Vet Clinic & Pet Shop Nepalganj"
+        description="Contact Horizon Vet Clinic & Pet Shop in Nepalganj. Visit us at Surkhet Road, Nepalgunj-21900, Banke. Call +977-9869369273 or email horizonvetclinic01@gmail.com."
+        canonical="/contact"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
         <div className="container-custom">
