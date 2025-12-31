@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Check
 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const treatments = [
   {
@@ -123,6 +124,11 @@ const treatments = [
 const Treatments = () => {
   return (
     <main className="pt-20">
+      <SEO 
+        title="Veterinary Services | Horizon Vet Clinic & Pet Shop Nepalganj"
+        description="Comprehensive veterinary services in Nepalganj: pet treatment, vaccinations, surgeries, orthopedic care, poultry services, and pet shop. Quality care for all animals."
+        canonical="/treatments"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
         <div className="container-custom">

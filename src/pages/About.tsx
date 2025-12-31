@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/SectionHeader";
 import { Heart, Target, Eye, Users, Award, Clock } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const values = [
   {
@@ -37,6 +38,11 @@ const values = [
 const About = () => {
   return (
     <main className="pt-20">
+      <SEO 
+        title="About Us | Horizon Vet Clinic & Pet Shop Nepalganj"
+        description="Learn about Horizon Vet Clinic & Pet Shop - trusted veterinary care in Nepalganj with NVC-registered veterinarians, compassionate animal care, and comprehensive pet services."
+        canonical="/about"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
         <div className="container-custom">

@@ -1,14 +1,8 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# Horizon Vet Clinic & Pet Shop - Robots.txt
+# https://vetclinichorizon.com
 
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://vetclinichorizon.com/sitemap.xml

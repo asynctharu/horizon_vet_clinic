@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import SEO from "@/components/SEO";
 
 const GETFORM_ENDPOINT = "https://getform.io/f/bolqmdwa";
 
@@ -138,6 +139,11 @@ const Appointment = () => {
 
   return (
     <main className="pt-20">
+      <SEO 
+        title="Book Appointment | Horizon Vet Clinic & Pet Shop Nepalganj"
+        description="Schedule an appointment with our expert veterinarians at Horizon Vet Clinic Nepalganj. Easy online booking for pet consultations, vaccinations, and surgeries."
+        canonical="/appointment"
+      />
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
         <div className="container-custom">
