@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CardBlog from "@/components/CardBlog";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
@@ -95,26 +96,21 @@ const Blogs = () => {
       </section>
 
 
-      {/* Newsletter CTA */}
+      {/* Book Appointment CTA */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="hero-gradient-bg rounded-3xl p-8 sm:p-12 text-center">
             <h2 className="text-3xl font-bold text-primary-foreground mb-4">
-              Stay Updated
+              Book an Appointment
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Subscribe for the latest pet care tips, veterinary news, and event updates.
+              Schedule a visit with our trusted veterinarians for expert care and personalized treatment for your beloved pets.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-xl bg-background/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary-foreground/30"
-              />
-              <Button className="bg-background text-foreground hover:bg-background/90 px-6 py-3 font-semibold rounded-xl">
-                Subscribe
+            <Link to="/appointment">
+              <Button className="bg-background text-foreground hover:bg-background/90 px-8 py-3 font-semibold rounded-xl">
+                Book Appointment
               </Button>
-            </form>
+            </Link>
           </div>
         </div>
       </section>
