@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, User, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, User, Share2, Facebook, Twitter, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const blogs = [
@@ -267,6 +267,31 @@ const blogs = [
 const BlogDetail = () => {
   const { slug } = useParams();
   const blog = blogs.find((b) => b.slug === slug);
+  
+  const baseUrl = "https://vetclinichorizon.com";
+  const currentUrl = `${baseUrl}/blogs/${slug}`;
+  
+  const handleShare = (platform: string) => {
+    const encodedUrl = encodeURIComponent(currentUrl);
+    const encodedTitle = encodeURIComponent(blog?.title || "");
+    
+    let shareUrl = "";
+    
+    switch (platform) {
+      case "facebook":
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+        break;
+      case "twitter":
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
+        break;
+      case "instagram":
+        // Instagram doesn't support direct URL sharing, redirect to Instagram
+        shareUrl = `https://www.instagram.com/`;
+        break;
+    }
+    
+    window.open(shareUrl, "_blank", "noopener,noreferrer,width=600,height=400");
+  };
 
   if (!blog) {
     return (
@@ -344,14 +369,26 @@ const BlogDetail = () => {
                   Share this article:
                 </span>
                 <div className="flex gap-2">
-                  <button className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors">
+                  <button 
+                    onClick={() => handleShare("facebook")}
+                    className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
+                    aria-label="Share on Facebook"
+                  >
                     <Facebook className="w-4 h-4 text-foreground" />
                   </button>
-                  <button className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors">
+                  <button 
+                    onClick={() => handleShare("twitter")}
+                    className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
+                    aria-label="Share on Twitter"
+                  >
                     <Twitter className="w-4 h-4 text-foreground" />
                   </button>
-                  <button className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors">
-                    <Linkedin className="w-4 h-4 text-foreground" />
+                  <button 
+                    onClick={() => handleShare("instagram")}
+                    className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
+                    aria-label="Share on Instagram"
+                  >
+                    <Instagram className="w-4 h-4 text-foreground" />
                   </button>
                 </div>
               </div>
