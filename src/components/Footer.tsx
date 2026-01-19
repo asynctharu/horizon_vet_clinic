@@ -8,11 +8,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2 group transition-transform duration-200 hover:scale-[1.02]">
               <img 
                 src="/assests/icon.png" 
                 alt="Horizon Vet Clinic" 
-                className="w-10 h-10 rounded-xl object-contain bg-background"
+                className="w-10 h-10 rounded-xl object-contain bg-background transition-transform duration-300 group-hover:rotate-3"
               />
               <div className="flex flex-col">
                 <span className="font-semibold text-xl leading-tight">Horizon Vet</span>
@@ -23,10 +23,18 @@ const Footer = () => {
               Providing compassionate veterinary care for your beloved pets and livestock in Nepalgunj.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/share/1DHYHW3rJu/" className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://www.facebook.com/share/1DHYHW3rJu/" 
+                className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-200"
+                aria-label="Facebook"
+              >
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://www.instagram.com/horizon_vet_clinic_petshop?igsh=eDF3bnRnOGJubnVy" className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                href="https://www.instagram.com/horizon_vet_clinic_petshop?igsh=eDF3bnRnOGJubnVy" 
+                className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-200"
+                aria-label="Instagram"
+              >
                 <Instagram className="w-4 h-4" />
               </a>
             </div>
@@ -46,7 +54,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-background/70 hover:text-primary text-sm transition-colors"
+                    className="text-background/70 hover:text-primary text-sm transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -69,7 +77,7 @@ const Footer = () => {
                 <li key={service}>
                   <Link
                     to="/treatments"
-                    className="text-background/70 hover:text-primary text-sm transition-colors"
+                    className="text-background/70 hover:text-primary text-sm transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     {service}
                   </Link>
@@ -82,28 +90,28 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 group">
+                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110" />
                 <span className="text-background/70 text-sm">
                   Surkhet Road, Nepalgunj-2<br />
                   Banke, Nepal
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
+              <li className="flex items-center gap-3 group">
+                <Phone className="w-5 h-5 text-primary shrink-0 transition-transform duration-200 group-hover:scale-110" />
                 <div className="text-background/70 text-sm">
-                  <a href="tel:9869369273" className="hover:text-primary transition-colors block">+9779869369273</a>
-                  <a href="tel:9866361184" className="hover:text-primary transition-colors block">+9779866361184</a>
+                  <a href="tel:9869369273" className="hover:text-primary transition-colors duration-200 block">+9779869369273</a>
+                  <a href="tel:9866361184" className="hover:text-primary transition-colors duration-200 block">+9779866361184</a>
                 </div>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:vetclinichorizon@gmail.com" className="text-background/70 hover:text-primary text-sm transition-colors">
+              <li className="flex items-center gap-3 group">
+                <Mail className="w-5 h-5 text-primary shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                <a href="mailto:vetclinichorizon@gmail.com" className="text-background/70 hover:text-primary text-sm transition-colors duration-200">
                   vetclinichorizon@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 group">
+                <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110" />
                 <span className="text-background/70 text-sm">
                   Open Daily<br />
                   8:00 AM - 8:00 PM

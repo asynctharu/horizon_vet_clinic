@@ -126,31 +126,37 @@ const Home = () => {
       }} />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20">
+      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-accent/30" />
+        {/* Subtle animated background shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse delay-200" />
+        </div>
+        
         <div className="container-custom section-padding relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-up">
-              <div className="inline-flex items-center gap-2 bg-secondary rounded-full px-4 py-2">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 bg-secondary rounded-full px-4 py-2 animate-fade-up">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm font-medium text-secondary-foreground">
                   Trusted Veterinary Care in Nepalgunj
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight animate-fade-up delay-100">
                 Your Pet's Health, Our{" "}
                 <span className="gradient-text">Priority</span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg">
+              <p className="text-lg text-muted-foreground max-w-lg animate-fade-up delay-200">
                 Experience compassionate veterinary care with qualified doctors 
                 and comprehensive services for all your pets and livestock. 
                 We treat them like family.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
                 <Link to="/appointment">
-                  <Button className="btn-primary text-base px-8 py-6">
+                  <Button className="btn-primary text-base px-8 py-6 group">
                     Book Appointment
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
                   </Button>
                 </Link>
                 <Link to="/treatments">
@@ -161,10 +167,10 @@ const Home = () => {
               </div>
               
               {/* Stats */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-border">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-border animate-fade-up delay-400">
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center sm:text-left">
-                    <div className="text-2xl sm:text-3xl font-bold gradient-text">{stat.number}</div>
+                  <div key={index} className="text-center sm:text-left group">
+                    <div className="text-2xl sm:text-3xl font-bold gradient-text transition-transform duration-200 group-hover:scale-105">{stat.number}</div>
                     <div className="text-sm text-muted-foreground">{stat.label}</div>
                   </div>
                 ))}
@@ -173,16 +179,16 @@ const Home = () => {
             
             {/* Hero Image */}
             <div className="relative animate-fade-up delay-200">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
                 <img
                   src="/assests/clinic serviice photo/Clinic Service photo1.jpg"
                   alt="Horizon Vet Clinic"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
               </div>
               {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-4 shadow-card animate-float hidden sm:block">
+              <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-4 shadow-card animate-float hidden sm:block transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl hero-gradient-bg flex items-center justify-center">
                     <Shield className="w-6 h-6 text-primary-foreground" />
@@ -210,13 +216,13 @@ const Home = () => {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="card-base text-center animate-fade-up"
+                className="card-base text-center group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-secondary mx-auto flex items-center justify-center mb-4">
-                  <item.icon className="w-7 h-7 text-primary" />
+                <div className="w-14 h-14 rounded-2xl bg-secondary mx-auto flex items-center justify-center mb-4 transition-all duration-300 ease-out group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/20">
+                  <item.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
             ))}
@@ -239,9 +245,9 @@ const Home = () => {
           </div>
           <div className="text-center mt-10">
             <Link to="/treatments">
-              <Button className="btn-secondary">
+              <Button className="btn-secondary group">
                 View All Services
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
               </Button>
             </Link>
           </div>
@@ -263,9 +269,9 @@ const Home = () => {
           </div>
           <div className="text-center mt-10">
             <Link to="/doctors">
-              <Button className="btn-secondary">
+              <Button className="btn-secondary group">
                 Learn More About Our Doctors
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
               </Button>
             </Link>
           </div>
@@ -275,26 +281,32 @@ const Home = () => {
       {/* CTA Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="hero-gradient-bg rounded-3xl p-8 sm:p-12 lg:p-16 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
-              Ready to Care for Your Pet?
-            </h2>
-            <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Schedule an appointment with our expert veterinarians today. 
-              We're here to keep your furry friends healthy and happy.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/appointment">
-                <Button className="bg-background text-foreground hover:bg-background/90 px-8 py-6 text-base font-semibold rounded-xl shadow-lg">
-                  Book Appointment
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-              <a href="tel:9869369273">
-                <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base font-semibold rounded-xl">
-                  Call: +9779869369273
-                </Button>
-              </a>
+          <div className="hero-gradient-bg rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+            
+            <div className="relative z-10">
+              <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
+                Ready to Care for Your Pet?
+              </h2>
+              <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
+                Schedule an appointment with our expert veterinarians today. 
+                We're here to keep your furry friends healthy and happy.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/appointment">
+                  <Button className="bg-background text-foreground hover:bg-background/90 px-8 py-6 text-base font-semibold rounded-xl shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 group">
+                    Book Appointment
+                    <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
+                  </Button>
+                </Link>
+                <a href="tel:9869369273">
+                  <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-base font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0">
+                    Call: +9779869369273
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
