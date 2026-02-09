@@ -278,6 +278,40 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Clinic Gallery Section */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
+          <SectionHeader
+            badge="Our Clinic"
+            title="Inside Horizon Vet Clinic"
+            description="Take a look at our facilities, pet shop, and treatment areas where we care for your beloved pets."
+          />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { src: "/assests/clinic photos/pet-shop-counter.jpg", alt: "Horizon Vet Clinic pet shop counter with branded logo", span: "md:col-span-1 md:row-span-2" },
+              { src: "/assests/clinic photos/clinic-exterior.jpg", alt: "Horizon Vet Clinic exterior and signboard in Nepalgunj", span: "md:col-span-2" },
+              { src: "/assests/clinic photos/treatment-with-patient.jpg", alt: "Veterinary staff treating a dog patient at the clinic", span: "" },
+              { src: "/assests/clinic photos/xray-diagnosis.jpg", alt: "X-ray lightbox for veterinary diagnosis", span: "" },
+              { src: "/assests/clinic photos/staff-at-work.jpg", alt: "Clinic staff preparing treatment area", span: "" },
+              { src: "/assests/clinic photos/pet-supplies.jpg", alt: "Pet accessories and supplies at the pet shop", span: "" },
+            ].map((img, index) => (
+              <div
+                key={index}
+                className={`relative overflow-hidden rounded-2xl group ${img.span}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover min-h-[200px] md:min-h-[240px] transition-transform duration-500 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-padding">
         <div className="container-custom">
