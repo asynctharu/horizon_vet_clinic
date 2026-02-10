@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Shield, Clock, Users, Syringe, Stethoscope, Scissors, Bone, Dog, Cat } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import SectionHeader from "@/components/SectionHeader";
 import CardDoctor from "@/components/CardDoctor";
 import CardTreatment from "@/components/CardTreatment";
@@ -286,29 +287,32 @@ const Home = () => {
             title="Inside Horizon Vet Clinic"
             description="Take a look at our facilities, pet shop, and treatment areas where we care for your beloved pets."
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[
-              { src: "/assests/clinic photos/pet-shop-counter.jpg", alt: "Horizon Vet Clinic pet shop counter with branded logo", span: "md:col-span-1 md:row-span-2" },
-              { src: "/assests/clinic photos/clinic-exterior.jpg", alt: "Horizon Vet Clinic exterior and signboard in Nepalgunj", span: "md:col-span-2" },
-              { src: "/assests/clinic photos/treatment-with-patient.jpg", alt: "Veterinary staff treating a dog patient at the clinic", span: "" },
-              { src: "/assests/clinic photos/xray-diagnosis.jpg", alt: "X-ray lightbox for veterinary diagnosis", span: "" },
-              { src: "/assests/clinic photos/staff-at-work.jpg", alt: "Clinic staff preparing treatment area", span: "" },
-              { src: "/assests/clinic photos/pet-supplies.jpg", alt: "Pet accessories and supplies at the pet shop", span: "" },
-            ].map((img, index) => (
-              <div
-                key={index}
-                className={`relative overflow-hidden rounded-2xl group ${img.span}`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover min-h-[200px] md:min-h-[240px] transition-transform duration-500 ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            ))}
-          </div>
+          <Carousel opts={{ loop: true, align: "start" }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {[
+                { src: "/assests/clinic photos/pet-shop-counter.jpg", alt: "Horizon Vet Clinic pet shop counter with branded logo" },
+                { src: "/assests/clinic photos/clinic-exterior.jpg", alt: "Horizon Vet Clinic exterior and signboard in Nepalgunj" },
+                { src: "/assests/clinic photos/treatment-with-patient.jpg", alt: "Veterinary staff treating a dog patient at the clinic" },
+                { src: "/assests/clinic photos/xray-diagnosis.jpg", alt: "X-ray lightbox for veterinary diagnosis" },
+                { src: "/assests/clinic photos/staff-at-work.jpg", alt: "Clinic staff preparing treatment area" },
+                { src: "/assests/clinic photos/pet-supplies.jpg", alt: "Pet accessories and supplies at the pet shop" },
+              ].map((img, index) => (
+                <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div className="relative overflow-hidden rounded-2xl group aspect-[4/3]">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 sm:-left-5" />
+            <CarouselNext className="-right-4 sm:-right-5" />
+          </Carousel>
         </div>
       </section>
 
