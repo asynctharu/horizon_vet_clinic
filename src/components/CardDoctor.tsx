@@ -21,7 +21,7 @@ const CardDoctor = ({ id, name, specialty, image, intro }: CardDoctorProps) => {
               className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
           <span className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-semibold px-3 py-1.5 rounded-full">
             {specialty}
           </span>
