@@ -11,28 +11,30 @@ interface CardDoctorProps {
 
 const CardDoctor = ({ id, name, specialty, image, intro }: CardDoctorProps) => {
   return (
-    <div className="card-base group cursor-pointer">
+    <div className="card-base group cursor-pointer overflow-hidden">
       <Link to={`/doctors/${id}`} className="block">
-        <div className="relative overflow-hidden rounded-xl mb-4">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-64 object-cover object-center transition-all duration-500 ease-out group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
+        <div className="relative overflow-hidden rounded-xl mb-5 bg-muted/40">
+          <div className="aspect-[3/4] flex items-center justify-center p-6 pt-8">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-contain object-top drop-shadow-md transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+
           {/* Specialty badge */}
-          <span className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-medium px-3 py-1.5 rounded-full transform -translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out">
+          <span className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-semibold px-3 py-1.5 rounded-full">
             {specialty}
           </span>
         </div>
       </Link>
-      
-      <div className="space-y-2">
-        <span className="text-xs font-medium text-primary uppercase tracking-wider">
+
+      <div className="space-y-2 px-1">
+        <span className="text-xs font-semibold text-primary uppercase tracking-wider">
           {specialty}
         </span>
-        <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-200">
+        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-200">
           {name}
         </h3>
         <p className="text-muted-foreground text-sm line-clamp-2">{intro}</p>
