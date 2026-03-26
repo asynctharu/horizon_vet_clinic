@@ -18,7 +18,7 @@ const CardDoctor = ({ id, name, specialty, image, intro }: CardDoctorProps) => {
             <img
               src={image}
               alt={name}
-              className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+              className="w-full h-full object-cover object-center transition-transform duration-500 ease-out md:group-hover:scale-105"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
