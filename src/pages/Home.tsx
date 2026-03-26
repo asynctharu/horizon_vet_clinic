@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Shield, Clock, Users, Syringe, Stethoscope, Scissors, Bone, Dog, Cat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import SectionHeader from "@/components/SectionHeader";
 import CardDoctor from "@/components/CardDoctor";
 import CardTreatment from "@/components/CardTreatment";
