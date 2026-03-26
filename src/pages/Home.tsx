@@ -288,7 +288,7 @@ const Home = () => {
             title="Inside Horizon Vet Clinic"
             description="Take a look at our facilities, pet shop, and treatment areas where we care for your beloved pets."
           />
-          <Carousel opts={{ loop: true, align: "start" }} className="w-full">
+          <Carousel opts={{ loop: true, align: "start" }} plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]} className="w-full">
             <CarouselContent className="-ml-4">
               {[
                 { src: "/assests/clinic photos/pet-shop-counter.jpg", alt: "Horizon Vet Clinic pet shop counter with branded logo" },
