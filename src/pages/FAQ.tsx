@@ -82,7 +82,7 @@ const faqs = [
       },
       {
         q: "Do you provide emergency services?",
-        a: "We provide urgent care services during clinic hours. For life-threatening emergencies, please call 911 or visit your nearest emergency room. Our emergency line (+977) 9869369273 is available 24/7 for guidance.",
+        a: "We provide urgent care services during clinic hours. Our emergency line (+977) 9869369273 is available 24/7 for guidance.",
       },
       {
         q: "Can I get lab work done at your facility?",
