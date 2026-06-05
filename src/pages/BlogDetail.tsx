@@ -267,147 +267,89 @@ const blogs = [
 const BlogDetail = () => {
   const { slug } = useParams();
   const blog = blogs.find((b) => b.slug === slug);
-  
+
   const baseUrl = "https://vetclinichorizon.com";
   const currentUrl = `${baseUrl}/blogs/${slug}`;
-  
+
   const handleShare = (platform: string) => {
     const encodedUrl = encodeURIComponent(currentUrl);
     const encodedTitle = encodeURIComponent(blog?.title || "");
-    
     let shareUrl = "";
-    
     switch (platform) {
-      case "facebook":
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-        break;
-      case "twitter":
-        shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
-        break;
-      case "instagram":
-        // Instagram doesn't support direct URL sharing, redirect to Instagram
-        shareUrl = `https://www.instagram.com/`;
-        break;
+      case "facebook": shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`; break;
+      case "twitter": shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`; break;
+      case "instagram": shareUrl = `https://www.instagram.com/`; break;
     }
-    
     window.open(shareUrl, "_blank", "noopener,noreferrer,width=600,height=400");
   };
 
   if (!blog) {
     return (
-      <main className="pt-20 section-padding">
-        <div className="container-custom text-center">
-          <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
-          <Link to="/blogs">
-            <Button className="btn-primary">View All Articles</Button>
-          </Link>
-        </div>
+      <main className="bg-background pt-32 pb-24 px-6 text-center min-h-screen">
+        <h1 className="display-font text-4xl font-bold uppercase mb-8">Article Not Found</h1>
+        <Link to="/blogs" className="btn-primary">View All Articles</Link>
       </main>
     );
   }
 
   return (
-    <main className="pt-20">
+    <main className="bg-background">
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[400px]">
-        <img
-          src={blog.thumbnail}
-          alt={blog.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8">
-          <div className="container-custom">
-            <Link
-              to="/blogs"
-              className="inline-flex items-center gap-2 text-background/80 hover:text-background transition-colors mb-4"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Articles
-            </Link>
-            <span className="inline-block bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full mb-4">
-              {blog.category}
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-background max-w-4xl">
-              {blog.title}
-            </h1>
+      <section className="relative pt-32 pb-16 px-6 md:px-12 lg:px-20 section-border">
+        <div className="max-w-5xl mx-auto">
+          <Link to="/blogs" className="inline-flex items-center gap-2 mono-label mb-12 hover:line-through">
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to Journal
+          </Link>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="mono-label border border-foreground px-3 py-1.5">{blog.category}</span>
+            <span className="mono-label opacity-50">{blog.date}</span>
+            <span className="mono-label opacity-50">{blog.readTime}</span>
           </div>
+          <h1 className="display-font text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-10">
+            {blog.title}
+          </h1>
+          <p className="mono-label">By {blog.author}</p>
+        </div>
+      </section>
+
+      {/* Image */}
+      <section className="px-6 md:px-12 lg:px-20 py-12 section-border">
+        <div className="max-w-5xl mx-auto border-4 border-foreground p-3">
+          <img src={blog.thumbnail} alt={blog.title} className="w-full grayscale aspect-[16/9] object-cover" />
         </div>
       </section>
 
       {/* Content */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            {/* Meta */}
-            <div className="flex flex-wrap items-center gap-6 pb-8 border-b border-border mb-8">
-              <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                <User className="w-4 h-4" />
-                <span>{blog.author}</span>
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                <Calendar className="w-4 h-4" />
-                <span>{blog.date}</span>
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                <Clock className="w-4 h-4" />
-                <span>{blog.readTime}</span>
-              </div>
-            </div>
+      <section className="py-20 px-6 md:px-12 lg:px-20 section-border">
+        <div className="max-w-3xl mx-auto">
+          <article
+            className="prose prose-lg max-w-none text-foreground prose-headings:font-bold prose-headings:uppercase prose-headings:tracking-tight prose-h2:display-font prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-foreground/80 prose-p:leading-relaxed prose-p:mb-6 prose-ul:text-foreground/80 prose-li:mb-2 prose-strong:text-foreground"
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          />
 
-            {/* Article Content */}
-            <article
-              className="prose prose-lg max-w-none text-foreground prose-headings:text-foreground prose-headings:font-semibold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6 prose-ul:text-muted-foreground prose-li:mb-2"
-              dangerouslySetInnerHTML={{ __html: blog.content }}
-            />
-
-            {/* Share */}
-            <div className="mt-12 pt-8 border-t border-border">
-              <div className="flex items-center gap-4">
-                <span className="flex items-center gap-2 text-foreground font-medium">
-                  <Share2 className="w-4 h-4" />
-                  Share this article:
-                </span>
-                <div className="flex gap-2">
-                  <button 
-                    onClick={() => handleShare("facebook")}
-                    className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
-                    aria-label="Share on Facebook"
-                  >
-                    <Facebook className="w-4 h-4 text-foreground" />
-                  </button>
-                  <button 
-                    onClick={() => handleShare("twitter")}
-                    className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
-                    aria-label="Share on Twitter"
-                  >
-                    <Twitter className="w-4 h-4 text-foreground" />
-                  </button>
-                  <button 
-                    onClick={() => handleShare("instagram")}
-                    className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
-                    aria-label="Share on Instagram"
-                  >
-                    <Instagram className="w-4 h-4 text-foreground" />
-                  </button>
-                </div>
+          {/* Share */}
+          <div className="mt-16 pt-8 border-t-2 border-foreground">
+            <div className="flex flex-wrap items-center gap-6">
+              <span className="mono-label inline-flex items-center gap-2">
+                <Share2 className="w-3.5 h-3.5" /> Share
+              </span>
+              <div className="flex gap-3">
+                <button onClick={() => handleShare("facebook")} aria-label="Facebook" className="w-10 h-10 border border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Facebook className="w-4 h-4" /></button>
+                <button onClick={() => handleShare("twitter")} aria-label="Twitter" className="w-10 h-10 border border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Twitter className="w-4 h-4" /></button>
+                <button onClick={() => handleShare("instagram")} aria-label="Instagram" className="w-10 h-10 border border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Instagram className="w-4 h-4" /></button>
               </div>
-            </div>
-
-            {/* CTA */}
-            <div className="mt-12 card-base text-center">
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                Have Questions About Your Pet's Health?
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Schedule a consultation with our expert veterinarians today.
-              </p>
-              <Link to="/appointment">
-                <Button className="btn-primary">Book Appointment</Button>
-              </Link>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-foreground text-background py-24 text-center px-6">
+        <h3 className="display-font text-3xl md:text-5xl font-bold uppercase mb-6">Questions About Your Pet?</h3>
+        <p className="text-lg opacity-70 mb-10 italic max-w-xl mx-auto">Schedule a consultation with our expert veterinarians today.</p>
+        <Link to="/appointment" className="bg-background text-foreground border-2 border-background px-10 py-5 mono-font text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-foreground hover:text-background transition-colors inline-block">
+          Book Appointment →
+        </Link>
       </section>
     </main>
   );
