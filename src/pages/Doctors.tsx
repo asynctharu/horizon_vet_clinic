@@ -1,140 +1,125 @@
 import { Link } from "react-router-dom";
-import SectionHeader from "@/components/SectionHeader";
-import { Button } from "@/components/ui/button";
-import { Phone, Award, GraduationCap } from "lucide-react";
 import SEO from "@/components/SEO";
+import { Phone, Award, GraduationCap } from "lucide-react";
 
 const doctors = [
   {
     id: "dr-shiva-prasad-bhusal",
     name: "Dr. Shiva Prasad Bhusal",
-    specialty: "Veterinary Surgery",
+    specialty: "Veterinary Surgery Specialist",
     image: "/assests/doctors photo/Dr. Shiva Prasad Bhusal.jpg",
-    intro: "Specialist in orthopedic surgery and advanced veterinary treatments. Expert in castration, spaying, and complex surgical procedures.",
+    intro: "A highly qualified Veterinary Surgery Specialist with advanced surgical expertise. Performs hundreds of successful surgeries on pets and livestock across Nepal.",
     phone: "+9779704589171",
     registration: "NVC Regd. No. 1197",
-    qualification: "B.V.Sc & A.H., M.V.Sc.",
+    qualification: "B.V.Sc & A.H., M.V.Sc. (Veterinary Surgery)",
+    languages: "Nepali, Hindi, English",
+    specializations: ["Small animal surgery", "Orthopedic surgery", "Soft tissue surgery", "Emergency interventions"],
   },
-   {
+  {
     id: "dr-ashish-tharu",
     name: "Dr. Ashish Tharu",
-    specialty: "Veterinary Medicine",
+    specialty: "Veterinary Medicine Specialist",
     image: "/assests/doctors photo/Dr. Ashish Tharu.jpg",
-    intro: "Experienced in treating domestic and pet animals with proper consultation. Specializes in general veterinary medicine, vaccinations, and preventive care.",
+    intro: "A dedicated veterinary professional with a strong foundation in medicine, diagnostics, and preventive care. Known for his calm, approachable manner.",
     phone: "+9779704589172",
     registration: "NVC Regd. No. 2025",
     qualification: "B.V.Sc. & A.H.",
+    languages: "Nepali, Hindi, Tharu, English",
+    specializations: ["Internal medicine", "Vaccination programs", "Poultry health", "Preventive & primary care"],
   },
   {
     id: "ajay-pal",
     name: "Ajay Pal",
     specialty: "Veterinary Technician",
     image: "/assests/doctors photo/Ajay Pal.jpeg",
-    intro: "Ajay Pal is a dedicated Veterinary Technician who assists in animal care, vaccinations, basic treatments, and clinic operations. He ensures proper handling of animals and supports veterinarians during consultations and procedures.",
+    intro: "A dedicated Veterinary Technician who assists in animal care, vaccinations, basic treatments, and clinic operations.",
     phone: "+9779704589173",
+    registration: "",
+    qualification: "Veterinary Technician",
+    languages: "Nepali, Hindi",
+    specializations: ["Animal handling", "Vaccination support", "Basic treatments", "Clinic operations"],
   },
 ];
 
 const Doctors = () => {
   return (
-    <main className="pt-20">
-      <SEO 
+    <main className="bg-background">
+      <SEO
         title="Our Veterinarians | Horizon Vet Clinic & Pet Shop Nepalganj"
-        description="Meet our NVC-registered veterinarians at Horizon Vet Clinic Nepalganj. Experienced doctors specializing in pet care, surgery, and animal health."
+        description="Meet our NVC-registered veterinarians at Horizon Vet Clinic Nepalganj."
         canonical="/doctors"
       />
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center animate-fade-up">
-            <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider bg-secondary px-3 py-1 rounded-full mb-4">
-              Our Team
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Meet Our <span className="gradient-text">Veterinarians</span>
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Our NVC-registered veterinarians are dedicated to providing the best 
-              care for your pets and livestock with years of professional experience.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Doctors Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {doctors.map((doctor, index) => (
-              <div key={doctor.id} className="card-base animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
-                <div className="flex flex-col items-center text-center">
+      {/* Hero */}
+      <header className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 section-border">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="mb-10 flex items-center gap-6">
+            <div className="w-10 h-10 border-2 border-foreground" />
+            <span className="mono-label">Expert Medical Team</span>
+          </div>
+          <h1 className="display-font text-6xl md:text-8xl lg:text-[10rem] font-black leading-[0.8] tracking-tighter uppercase">
+            The<br />Specialists
+          </h1>
+        </div>
+      </header>
+
+      {/* Profiles */}
+      <section className="section-border">
+        <div className="max-w-7xl mx-auto border-x border-foreground">
+          {doctors.map((doc, i) => (
+            <article
+              key={doc.id}
+              className={`grid md:grid-cols-2 ${i !== doctors.length - 1 ? "border-b-2 border-foreground" : ""}`}
+            >
+              <div className={`p-3 ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                <div className="border border-foreground overflow-hidden h-full">
                   <img
-                    src={doctor.image}
-                    alt={doctor.name}
-                    className="w-40 h-40 rounded-full object-cover object-center mb-6 ring-4 ring-secondary"
+                    src={doc.image}
+                    alt={doc.name}
+                    className="w-full h-full aspect-[4/5] object-cover object-center grayscale"
                   />
-                  <h2 className="text-2xl font-bold text-foreground mb-2">{doctor.name}</h2>
-                  <p className="text-primary font-medium mb-4">{doctor.specialty}</p>
-                  
-                  <div className="space-y-3 w-full">
-                    {doctor.registration && (
-                      <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                        <Award className="w-4 h-4 text-primary" />
-                        <span className="text-sm">{doctor.registration}</span>
-                      </div>
-                    )}
-                    {doctor.qualification && (
-                      <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                        <GraduationCap className="w-4 h-4 text-primary" />
-                        <span className="text-sm">{doctor.qualification}</span>
-                      </div>
-                    )}
-                    <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                      <Phone className="w-4 h-4 text-primary" />
-                      <a href={`tel:${doctor.phone}`} className="text-sm hover:text-primary transition-colors">
-                        {doctor.phone}
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <p className="text-muted-foreground text-sm mt-4 mb-6">{doctor.intro}</p>
-                  
-                  <a href={`tel:${doctor.phone}`}>
-                    <Button className="btn-primary">
-                      <Phone className="w-4 h-4 mr-2" />
-                      {doctor.specialty === "Veterinary Technician" ? "Call Technician" : "Call Doctor"}
-                    </Button>
-                  </a>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="p-8 md:p-12 flex flex-col">
+                {doc.registration && (
+                  <span className="mono-label opacity-60 mb-3">{doc.registration}</span>
+                )}
+                <h2 className="display-font text-3xl md:text-4xl font-black uppercase tracking-tight mb-3">{doc.name}</h2>
+                <p className="mono-label mb-2">{doc.specialty}</p>
+                <p className="mono-label opacity-60 italic mb-8">{doc.qualification}</p>
+
+                <div className="h-px bg-foreground w-full mb-8" />
+
+                <p className="text-base leading-relaxed mb-10 opacity-80">{doc.intro}</p>
+
+                <div className="mb-8">
+                  <span className="mono-label block mb-4 underline">Specializations</span>
+                  <ul className="mono-font text-[11px] uppercase tracking-wide opacity-70 space-y-1.5">
+                    {doc.specializations.map((s) => <li key={s}>• {s}</li>)}
+                  </ul>
+                </div>
+
+                <div className="mb-8">
+                  <span className="mono-label block mb-2 underline">Languages</span>
+                  <p className="mono-font text-[11px] uppercase opacity-70">{doc.languages}</p>
+                </div>
+
+                <div className="mt-auto flex flex-wrap gap-4">
+                  <a href={`tel:${doc.phone}`} className="btn-secondary">
+                    <Phone className="w-3.5 h-3.5" /> Call
+                  </a>
+                  <Link to={`/doctors/${doc.id}`} className="btn-primary">View Profile →</Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <div className="card-base text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              Need an Appointment?
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Book a consultation with our experienced veterinarians for your pet's health needs.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/appointment">
-                <Button className="btn-primary">Book Appointment</Button>
-              </Link>
-              <a href="tel:9869369273">
-                <Button variant="outline" className="btn-secondary">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call Clinic
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
+      {/* CTA */}
+      <section className="py-24 px-6 text-center section-border">
+        <h2 className="display-font text-4xl md:text-6xl font-black uppercase mb-10">Schedule A Visit</h2>
+        <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
       </section>
     </main>
   );

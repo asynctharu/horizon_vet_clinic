@@ -1,133 +1,74 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2 group transition-transform duration-200 hover:scale-[1.02]">
-              <img 
-                src="/assests/icon.png" 
-                alt="Horizon Vet Clinic" 
-                className="w-10 h-10 rounded-xl object-contain bg-background transition-transform duration-300 group-hover:rotate-3"
-              />
-              <div className="flex flex-col">
-                <span className="font-semibold text-xl leading-tight">Horizon Vet</span>
-                <span className="text-xs text-background/70 leading-tight">Clinic & Pet Shop</span>
-              </div>
-            </Link>
-            <p className="text-background/70 text-sm leading-relaxed">
-              Providing compassionate veterinary care for your beloved pets and livestock in Nepalgunj.
+    <footer className="bg-foreground text-background relative overflow-hidden">
+      <div className="absolute inset-0 pattern-stats pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-24 lg:py-32 relative z-10">
+        <div className="grid lg:grid-cols-4 gap-12 lg:gap-8">
+          <div className="lg:border-r border-background/20 lg:pr-12 pb-12 lg:pb-0 border-b lg:border-b-0 border-background/20">
+            <span className="display-font text-3xl font-bold uppercase mb-6 block">Horizon</span>
+            <p className="text-background/60 text-sm leading-relaxed mb-10">
+              Trusted veterinary healthcare in Nepalgunj. Caring for pets, poultry, and farm animals since our inception.
             </p>
-            <div className="flex gap-3">
-              <a 
-                href="https://www.facebook.com/share/1DHYHW3rJu/" 
-                className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-200"
+            <div className="flex gap-4">
+              <a
+                href="https://www.facebook.com/share/1DHYHW3rJu/"
                 aria-label="Facebook"
+                className="w-10 h-10 border border-background/40 flex items-center justify-center hover:bg-background hover:text-foreground transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </a>
-              <a 
-                href="https://www.instagram.com/horizon_vet_clinic_petshop?igsh=eDF3bnRnOGJubnVy" 
-                className="w-9 h-9 rounded-lg bg-background/10 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-200"
+              <a
+                href="https://www.instagram.com/horizon_vet_clinic_petshop?igsh=eDF3bnRnOGJubnVy"
                 aria-label="Instagram"
+                className="w-10 h-10 border border-background/40 flex items-center justify-center hover:bg-background hover:text-foreground transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-3">
-              {[
-                { name: "About Us", path: "/about" },
-                { name: "Our Doctors", path: "/doctors" },
-                { name: "Services", path: "/treatments" },
-                { name: "Book Appointment", path: "/appointment" },
-                { name: "Contact Us", path: "/contact" },
-              ].map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-background/70 hover:text-primary text-sm transition-all duration-200 hover:translate-x-1 inline-block"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+          <div className="lg:border-r border-background/20 lg:px-12 pb-12 lg:pb-0 border-b lg:border-b-0 border-background/20">
+            <h4 className="mono-label text-background/40 mb-8">Quick Links</h4>
+            <ul className="space-y-4 mono-label">
+              <li><Link to="/" className="hover:line-through">Home</Link></li>
+              <li><Link to="/about" className="hover:line-through">About</Link></li>
+              <li><Link to="/treatments" className="hover:line-through">Services</Link></li>
+              <li><Link to="/doctors" className="hover:line-through">Doctors</Link></li>
+              <li><Link to="/appointment" className="hover:line-through">Book Now</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Our Services</h4>
-            <ul className="space-y-3">
-              {[
-                "Pet Consultation",
-                "Vaccinations",
-                "Surgery & Spaying",
-                "Orthopedic Care",
-                "Pet Food & Supplies",
-              ].map((service) => (
-                <li key={service}>
-                  <Link
-                    to="/treatments"
-                    className="text-background/70 hover:text-primary text-sm transition-all duration-200 hover:translate-x-1 inline-block"
-                  >
-                    {service}
-                  </Link>
-                </li>
-              ))}
+          <div className="lg:border-r border-background/20 lg:px-12 pb-12 lg:pb-0 border-b lg:border-b-0 border-background/20">
+            <h4 className="mono-label text-background/40 mb-8">Services</h4>
+            <ul className="space-y-4 mono-label text-background/60">
+              <li>Consultation</li>
+              <li>Surgery</li>
+              <li>Orthopedic</li>
+              <li>Poultry Health</li>
+              <li>Farm Visits</li>
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 group">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110" />
-                <span className="text-background/70 text-sm">
-                  Surkhet Road, Nepalgunj-2<br />
-                  Banke, Nepal
-                </span>
-              </li>
-              <li className="flex items-center gap-3 group">
-                <Phone className="w-5 h-5 text-primary shrink-0 transition-transform duration-200 group-hover:scale-110" />
-                <div className="text-background/70 text-sm">
-                  <a href="tel:9869369273" className="hover:text-primary transition-colors duration-200 block">+9779869369273</a>
-                  <a href="tel:9866361184" className="hover:text-primary transition-colors duration-200 block">+9779866361184</a>
-                </div>
-              </li>
-              <li className="flex items-center gap-3 group">
-                <Mail className="w-5 h-5 text-primary shrink-0 transition-transform duration-200 group-hover:scale-110" />
-                <a href="mailto:vetclinichorizon@gmail.com" className="text-background/70 hover:text-primary text-sm transition-colors duration-200">
-                  vetclinichorizon@gmail.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3 group">
-                <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110" />
-                <span className="text-background/70 text-sm">
-                  Open Daily<br />
-                  8:00 AM - 8:00 PM
-                </span>
-              </li>
-            </ul>
+          <div className="lg:pl-12">
+            <h4 className="mono-label text-background/40 mb-8">Location</h4>
+            <p className="mono-label text-background/60 leading-loose">
+              Surkhet Road, Nepalgunj-2<br />
+              Banke, Nepal<br />
+              <a href="tel:+9779869369273" className="hover:text-background">+977-9869369273</a><br />
+              8:00 AM – 8:00 PM | 7 Days
+            </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-background/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-background/50 text-sm">
+        <div className="mt-24 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="mono-font text-[9px] font-bold tracking-[0.2em] uppercase text-background/40">
             © {new Date().getFullYear()} Horizon Vet Clinic & Pet Shop. All rights reserved.
           </p>
-          <p className="text-background/50 text-sm">
-            PAN: 116045162
+          <p className="mono-font text-[9px] font-bold tracking-[0.2em] uppercase text-background/40 italic">
+            Reduction to essence.
           </p>
         </div>
       </div>

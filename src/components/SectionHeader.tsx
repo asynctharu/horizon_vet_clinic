@@ -5,19 +5,20 @@ interface SectionHeaderProps {
   centered?: boolean;
 }
 
-const SectionHeader = ({ badge, title, description, centered = true }: SectionHeaderProps) => {
+const SectionHeader = ({ badge, title, description, centered = false }: SectionHeaderProps) => {
   return (
-    <div className={`max-w-2xl ${centered ? "mx-auto text-center" : ""} mb-12`}>
+    <div className={`mb-16 lg:mb-20 ${centered ? "mx-auto text-center max-w-3xl" : "max-w-4xl"}`}>
       {badge && (
-        <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider mb-3 bg-secondary px-4 py-1.5 rounded-full animate-fade-in">
-          {badge}
-        </span>
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-8 h-8 border-2 border-foreground" />
+          <span className="mono-label">{badge}</span>
+        </div>
       )}
-      <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 animate-fade-up">
+      <h2 className="display-font text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tighter leading-[0.9] mb-6">
         {title}
       </h2>
       {description && (
-        <p className="text-muted-foreground text-lg animate-fade-up delay-100">
+        <p className="text-lg md:text-xl font-light leading-relaxed text-foreground/70 max-w-2xl">
           {description}
         </p>
       )}

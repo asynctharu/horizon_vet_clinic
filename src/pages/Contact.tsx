@@ -1,9 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { MapPin, Phone, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
 
@@ -13,237 +9,128 @@ const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
+    name: "", email: "", phone: "", subject: "", message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Please fill in all required fields",
-        variant: "destructive",
-      });
+      toast({ title: "Please fill in all required fields", variant: "destructive" });
       return;
     }
-
     setIsSubmitting(true);
-
     try {
       const response = await fetch(GETFORM_ENDPOINT, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          form_type: "Contact Form",
-          submitted_at: new Date().toISOString(),
-        }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...formData, form_type: "Contact Form", submitted_at: new Date().toISOString() }),
       });
-
       if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "We'll get back to you within 24 hours.",
-        });
+        toast({ title: "Message Sent!", description: "We'll get back to you within 24 hours." });
         setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-      } else {
-        throw new Error("Failed to submit form");
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      toast({
-        title: "Submission Failed",
-        description: "Please try again or contact us directly.",
-        variant: "destructive",
-      });
+      } else throw new Error();
+    } catch {
+      toast({ title: "Submission Failed", description: "Please try again or contact us directly.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const inputCls = "w-full bg-transparent border-b-2 border-foreground py-4 mono-font text-base focus:outline-none focus:border-b-[3px] placeholder:italic placeholder:text-foreground/40";
+
   return (
-    <main className="pt-20">
-      <SEO 
+    <main className="bg-background">
+      <SEO
         title="Contact Us | Horizon Vet Clinic & Pet Shop Nepalganj"
-        description="Contact Horizon Vet Clinic & Pet Shop in Nepalganj. Visit us at Surkhet Road, Nepalgunj-21900, Banke. Call +977-9869369273 or email horizonvetclinic01@gmail.com."
+        description="Contact Horizon Vet Clinic & Pet Shop in Nepalganj. Surkhet Road, Nepalgunj-2, Banke. Call +977-9869369273."
         canonical="/contact"
       />
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center animate-fade-up">
-            <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider bg-secondary px-3 py-1 rounded-full mb-4">
-              Get in Touch
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Contact <span className="gradient-text">Us</span>
+
+      {/* Hero */}
+      <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 section-border min-h-[60vh] flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="mb-10 flex items-center gap-6">
+            <div className="w-10 h-10 border-2 border-foreground" />
+            <span className="mono-label">Nepalgunj, Banke</span>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-10 items-end">
+            <h1 className="display-font text-6xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase">
+              Get In<br />Touch
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Have questions or need assistance? We're here to help. 
-              Reach out to us through any of the channels below.
+            <p className="text-xl md:text-2xl font-light leading-relaxed max-w-lg italic">
+              Have a question or need to schedule a priority consultation? Our specialists are available 7 days a week.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="card-base">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Horizon Vet Clinic and Pet Shop<br />
-                      Surkhet road, Nepalgunj-2, Banke
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card-base">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
-                    <a href="tel:+1234567899" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
-                      Emergency: (+977) 9869369273
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card-base">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
-                    <a href="mailto:appointments@medicare.com" className="text-muted-foreground hover:text-primary text-sm transition-colors block">
-                      vetclinichorizon@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card-base">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Office Hours</h3>
-                    <div className="space-y-1 text-sm text-muted-foreground">
-                      <p>Sun - Sat: 8:00 AM - 8:00 PM</p>
-                    </div>
-                  </div>
-                </div>
+      {/* Contact Tiles */}
+      <section className="py-16 px-6 md:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 border border-foreground">
+          {[
+            { icon: MapPin, label: "Location", value: "Surkhet Road\nNepalgunj-2, Banke" },
+            { icon: Phone, label: "Phone", value: "+977-9869369273" },
+            { icon: Clock, label: "Hours", value: "08:00 — 20:00\n7 Days a Week" },
+          ].map((c, i) => (
+            <div key={c.label} className={`p-10 flex flex-col gap-6 ${i < 2 ? "border-b md:border-b-0 md:border-r border-foreground" : ""}`}>
+              <c.icon className="w-12 h-12 stroke-[1.5]" />
+              <div>
+                <span className="mono-label opacity-40 mb-3 block">{c.label}</span>
+                <p className="display-font text-xl md:text-2xl font-bold uppercase whitespace-pre-line">{c.value}</p>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="card-base space-y-6">
-                <h2 className="text-xl font-semibold text-foreground mb-4">Send Us a Message</h2>
-                
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="9XXXXXXXXX"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input
-                      id="subject"
-                      placeholder="How can we help?"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us more about your inquiry..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={6}
-                    required
-                  />
-                </div>
-
-                <Button type="submit" className="btn-primary w-full sm:w-auto" disabled={isSubmitting}>
-                  <Send className="w-4 h-4 mr-2" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
+      {/* Form */}
+      <section className="py-24 px-6 md:px-12 lg:px-20 section-border bg-secondary">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="display-font text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-16">Send Us A Message</h2>
+          <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-x-12 gap-y-12">
+            <div>
+              <label className="mono-label opacity-40 block mb-2">Full Name *</label>
+              <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Enter your name" className={inputCls} />
             </div>
-          </div>
+            <div>
+              <label className="mono-label opacity-40 block mb-2">Phone Number *</label>
+              <input type="tel" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="Enter your number" className={inputCls} />
+            </div>
+            <div>
+              <label className="mono-label opacity-40 block mb-2">Email Address *</label>
+              <input type="email" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="Enter your email" className={inputCls} />
+            </div>
+            <div>
+              <label className="mono-label opacity-40 block mb-2">Subject</label>
+              <input type="text" value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })} placeholder="Inquiry type" className={inputCls} />
+            </div>
+            <div className="md:col-span-2">
+              <label className="mono-label opacity-40 block mb-2">Message *</label>
+              <textarea required rows={5} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="How can we help?" className={`${inputCls} resize-none`} />
+            </div>
+            <div className="md:col-span-2">
+              <button type="submit" disabled={isSubmitting} className="btn-primary disabled:opacity-60">
+                {isSubmitting ? "Sending..." : "Send Message →"}
+              </button>
+            </div>
+          </form>
         </div>
       </section>
 
       {/* Map */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <div className="card-base h-[400px] overflow-hidden p-0">
-<iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.709084335404!2d81.6232509!3d28.063906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3998677b25c0c72d%3A0x8596256d8a3a25cf!2sHorizon%20Vet%20Clinic%20%26%20Pet%20Shop!5e0!3m2!1sen!2snp!4v1764936701774!5m2!1sen!2snp"
-  width="100%"
-  height="100%"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  className="rounded-2xl"
-/>          
+      <section className="py-24 px-6 md:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="display-font text-5xl md:text-7xl font-black uppercase tracking-tighter mb-12">Visit Us</h2>
+          <div className="border-2 border-foreground w-full h-[500px]">
+            <iframe
+              title="Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.709084335404!2d81.6232509!3d28.063906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3998677b25c0c72d%3A0x8596256d8a3a25cf!2sHorizon%20Vet%20Clinic%20%26%20Pet%20Shop!5e0!3m2!1sen!2snp!4v1764936701774!5m2!1sen!2snp"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: "grayscale(1) brightness(0.95)" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>

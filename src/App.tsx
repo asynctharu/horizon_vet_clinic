@@ -1,9 +1,9 @@
-import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -12,9 +12,9 @@ import About from "./pages/About";
 import Doctors from "./pages/Doctors";
 import DoctorDetail from "./pages/DoctorDetail";
 import Treatments from "./pages/Treatments";
-import Appointment from "./pages/Appointment";
 import Blogs from "./pages/Blogs";
 import BlogDetail from "./pages/BlogDetail";
+import Appointment from "./pages/Appointment";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
@@ -29,6 +29,9 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          {/* Editorial texture overlays */}
+          <div className="fixed inset-0 pointer-events-none pattern-noise z-[99]" />
+          <div className="fixed inset-0 pointer-events-none pattern-lines z-[1]" />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -36,9 +39,9 @@ const App = () => (
             <Route path="/doctors" element={<Doctors />} />
             <Route path="/doctors/:id" element={<DoctorDetail />} />
             <Route path="/treatments" element={<Treatments />} />
-            <Route path="/appointment" element={<Appointment />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:slug" element={<BlogDetail />} />
+            <Route path="/appointment" element={<Appointment />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="*" element={<NotFound />} />
