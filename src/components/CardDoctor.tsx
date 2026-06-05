@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 interface CardDoctorProps {
   id: string;
@@ -11,40 +10,30 @@ interface CardDoctorProps {
 
 const CardDoctor = ({ id, name, specialty, image, intro }: CardDoctorProps) => {
   return (
-    <div className="card-base group cursor-pointer">
-      <Link to={`/doctors/${id}`} className="block">
-        <div className="relative overflow-hidden rounded-xl mb-4 bg-muted/30">
-          <div className="aspect-square">
-            <img
-              src={image}
-              alt={name}
-              className="w-full h-full object-cover object-center transition-transform duration-500 ease-out md:group-hover:scale-105"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
-          <span className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-semibold px-3 py-1.5 rounded-full">
-            {specialty}
-          </span>
-        </div>
-      </Link>
-
-      <div className="space-y-2">
-        <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-          {specialty}
-        </span>
-        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-200">
+    <Link
+      to={`/doctors/${id}`}
+      className="group block bg-card border-2 border-foreground p-2 transition-colors"
+    >
+      <div className="border border-foreground overflow-hidden bg-muted">
+        <img
+          src={image}
+          alt={name}
+          className="w-full aspect-square object-cover object-center grayscale transition-transform duration-500 md:group-hover:scale-[1.03]"
+          loading="lazy"
+        />
+      </div>
+      <div className="p-6 md:p-8">
+        <span className="mono-label opacity-60 block mb-3">{specialty}</span>
+        <h3 className="display-font text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4 group-hover:underline underline-offset-4">
           {name}
         </h3>
-        <p className="text-muted-foreground text-sm line-clamp-2">{intro}</p>
-        <Link
-          to={`/doctors/${id}`}
-          className="inline-flex items-center gap-2 text-primary font-medium text-sm pt-2 group/link"
-        >
-          View Profile
-          <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-1" />
-        </Link>
+        <div className="h-px bg-foreground w-12 mb-4" />
+        <p className="text-sm leading-relaxed opacity-80">{intro}</p>
+        <div className="mt-6 mono-label flex items-center gap-2">
+          View Profile <span aria-hidden>→</span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
