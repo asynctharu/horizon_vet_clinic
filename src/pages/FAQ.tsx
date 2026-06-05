@@ -1,180 +1,99 @@
 import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
 import SEO from "@/components/SEO";
 
 const faqs = [
   {
     category: "General",
     questions: [
-      {
-        q: "What are your clinic hours?",
-        a: "Our clinic is open from 8:00 AM to 8:00 PM, seven days a week, providing consistent access to care whenever you need it during regular hours. For situations that can’t wait, our emergency services remain available 24/7 to ensure you always have support, day or night.",
-      },
-      {
-        q: "Do I need an appointment to visit?",
-        a: "While we accept walk-ins for urgent care, we recommend scheduling an appointment to ensure minimal wait times and dedicated time with your physician. You can book online or call us.",
-      },
-      {
-        q: "How do I access my medical records?",
-        a: "You can request your medical records by contacting our patient services department. We also offer a secure online patient portal where you can view your records, test results, and appointment history.",
-      },
-      {
-        q: "What should I bring to my first appointment?",
-        a: "Please bring a valid ID, your insurance card, a list of current medications, and any relevant medical records or test results from previous providers.",
-      },
+      { q: "What are your clinic hours?", a: "Open 8:00 AM to 8:00 PM, seven days a week, including public holidays. Emergency line available 24/7." },
+      { q: "Do I need an appointment to visit?", a: "Walk-ins are welcome for urgent care; appointments are recommended to minimize wait." },
+      { q: "How do I access my pet's medical records?", a: "Contact our reception or request copies in person. Records are kept on file for follow-up consultations." },
+      { q: "What should I bring to my first appointment?", a: "Bring any previous vaccination cards, a brief medical history, and a current medication list." },
     ],
   },
   {
     category: "Appointments",
     questions: [
-      {
-        q: "How do I schedule an appointment?",
-        a: "You can schedule an appointment through our website, by calling (+977) 9869369273, or by visiting our clinic in person. Online booking is available 24/7 for your convenience.",
-      },
-      {
-        q: "Can I reschedule or cancel my appointment?",
-        a: "Yes, you can reschedule or cancel your appointment up to 24 hours before your scheduled time without any fee. Please call us or use our online portal to make changes.",
-      },
-      {
-        q: "How long are appointments typically?",
-        a: "Initial consultations usually last 30-45 minutes, while follow-up appointments are typically 15-20 minutes. Specialized consultations may take longer depending on your needs.",
-      },
-      {
-        q: "Do you offer telemedicine appointments?",
-        a: "Yes, we offer telemedicine consultations for many non-emergency conditions. This service allows you to consult with our doctors from the comfort of your home via secure video call.",
-      },
-    ],
-  },
-  {
-    category: "Insurance & Billing",
-    questions: [
-      {
-        q: "What insurance plans do you accept?",
-        a: "We accept most major insurance plans including Medicare, Medicaid, Blue Cross Blue Shield, Aetna, United Healthcare, Cigna, and many others. Please contact us to verify your specific coverage.",
-      },
-      {
-        q: "Do you offer payment plans?",
-        a: "Yes, we offer flexible payment plans for patients who need financial assistance. Our billing department can work with you to create a plan that fits your budget.",
-      },
-      {
-        q: "What if I don't have insurance?",
-        a: "We welcome patients without insurance. We offer competitive self-pay rates and can provide cost estimates before your visit. Ask about our discount programs for uninsured patients.",
-      },
-      {
-        q: "How do I get an itemized bill?",
-        a: "You can request an itemized bill directly at our billing counter during regular clinic hours. Our staff will prepare and provide your detailed statement on the spot.",
-      },
+      { q: "How do I schedule an appointment?", a: "Use the online form, call +977-9869369273, or visit us in person during clinic hours." },
+      { q: "Can I reschedule or cancel?", a: "Yes — please notify us at least 24 hours in advance whenever possible." },
+      { q: "How long are appointments?", a: "Initial consultations 30–45 minutes; follow-ups 15–20 minutes." },
+      { q: "Do you offer remote consultations?", a: "Yes, we offer phone-based consultations for non-emergency follow-ups." },
     ],
   },
   {
     category: "Services",
     questions: [
-      {
-        q: "What medical services do you offer?",
-        a: "We offer comprehensive healthcare services including general medicine, cardiology, neurology, pediatrics, orthopedics, dermatology, ophthalmology, and preventive care. Visit our Treatments page for a complete list.",
-      },
-      {
-        q: "Do you provide emergency services?",
-        a: "We provide urgent care services during clinic hours. Our emergency line (+977) 9869369273 is available 24/7 for guidance.",
-      },
-      {
-        q: "Can I get lab work done at your facility?",
-        a: "Yes, we have an on-site laboratory for routine blood work, urinalysis, and other common tests. Results are typically available within 24-48 hours and can be accessed through our patient portal.",
-      },
-      {
-        q: "Do you offer vaccinations?",
-        a: "Yes, we provide a full range of vaccinations for children and adults, including flu shots, COVID-19 vaccines, travel immunizations, and routine childhood vaccines.",
-      },
+      { q: "What services do you offer?", a: "Consultation, surgery, vaccinations, orthopedics, poultry services, farm consultation, and a full pet shop." },
+      { q: "Do you provide emergency services?", a: "Yes — urgent care during clinic hours; the emergency line is reachable 24/7." },
+      { q: "Can I get lab work done?", a: "Yes, basic diagnostics are available on-site, with results typically the same day." },
+      { q: "Do you sell pet food and supplies?", a: "Yes — our in-house pet shop stocks premium food, supplements, and accessories." },
     ],
   },
 ];
 
+const FAQItem = ({ q, a }: { q: string; a: string }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b-2 border-foreground">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-6 py-8 text-left"
+      >
+        <span className="display-font text-xl md:text-2xl font-bold uppercase tracking-tight">{q}</span>
+        {open ? <Minus className="w-6 h-6 shrink-0" /> : <Plus className="w-6 h-6 shrink-0" />}
+      </button>
+      {open && (
+        <div className="pb-8 pr-12 text-base leading-relaxed opacity-80 animate-fade-in">{a}</div>
+      )}
+    </div>
+  );
+};
+
 const FAQ = () => {
   return (
-    <main className="pt-20">
-      <SEO 
+    <main className="bg-background">
+      <SEO
         title="FAQ | Horizon Vet Clinic & Pet Shop Nepalganj"
-        description="Find answers to frequently asked questions about Horizon Vet Clinic services, appointments, pet care, and more. Get help with your veterinary care needs."
+        description="Frequently asked questions about Horizon Vet Clinic services, appointments, and pet care."
         canonical="/faq"
       />
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary via-background to-accent/30">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center animate-fade-up">
-            <span className="inline-block text-xs font-semibold text-primary uppercase tracking-wider bg-secondary px-3 py-1 rounded-full mb-4">
-              Help Center
-            </span>
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Frequently Asked <span className="gradient-text">Questions</span>
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Find answers to common questions about our services, appointments, 
-              insurance, and more.
-            </p>
+
+      <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 section-border">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-10 flex items-center gap-6">
+            <div className="w-10 h-10 border-2 border-foreground" />
+            <span className="mono-label">Help Center</span>
           </div>
+          <h1 className="display-font text-6xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase">
+            Frequently<br />Asked
+          </h1>
         </div>
       </section>
 
-      {/* FAQ Sections */}
-      <section className="section-padding">
-        <div className="container-custom max-w-4xl">
-          <div className="space-y-12">
-            {faqs.map((section, sectionIndex) => (
-              <div key={sectionIndex}>
-                <h2 className="text-2xl font-bold text-foreground mb-6">{section.category}</h2>
-                <Accordion type="single" collapsible className="space-y-4">
-                  {section.questions.map((faq, index) => (
-                    <AccordionItem
-                      key={index}
-                      value={`${sectionIndex}-${index}`}
-                      className="card-base border-none"
-                    >
-                      <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-0">
-                        {faq.q}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground pt-4">
-                        {faq.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
+      <section className="py-24 px-6 md:px-12 lg:px-20 section-border">
+        <div className="max-w-4xl mx-auto space-y-20">
+          {faqs.map((section) => (
+            <div key={section.category}>
+              <div className="flex items-center justify-between mb-10 border-b-4 border-foreground pb-4">
+                <h2 className="display-font text-3xl md:text-4xl font-bold uppercase tracking-tight">{section.category}</h2>
+                <span className="mono-label opacity-40">{String(section.questions.length).padStart(2, "0")} Items</span>
               </div>
-            ))}
-          </div>
+              <div>
+                {section.questions.map((f) => <FAQItem key={f.q} {...f} />)}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Still Have Questions */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <div className="card-base text-center max-w-2xl mx-auto">
-            <div className="w-16 h-16 rounded-2xl bg-secondary mx-auto flex items-center justify-center mb-6">
-              <MessageCircle className="w-8 h-8 text-primary" />
-            </div>
-            <h2 className="text-2xl font-bold text-foreground mb-4">
-              Still Have Questions?
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Can't find what you're looking for? Our patient services team is 
-              here to help with any questions or concerns.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contact">
-                <Button className="btn-primary">Contact Us</Button>
-              </Link>
-              <a href="tel:+9779869369273">
-  <Button className="btn-secondary">Call (+977) 9869369273</Button>
-              </a>
-
-            </div>
-          </div>
+      <section className="py-24 px-6 text-center section-border bg-secondary">
+        <h2 className="display-font text-4xl md:text-6xl font-black uppercase mb-6">Still Have Questions?</h2>
+        <p className="text-lg opacity-70 mb-10 max-w-xl mx-auto italic">Our team is here to help with any concern about your pet or livestock.</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link to="/contact" className="btn-primary">Contact Us</Link>
+          <a href="tel:+9779869369273" className="btn-secondary">Call (+977) 9869369273</a>
         </div>
       </section>
     </main>
