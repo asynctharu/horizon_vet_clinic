@@ -52,6 +52,13 @@ const testimonials = [
 ];
 
 const Home = () => {
+  const [imgIdx, setImgIdx] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setImgIdx((i) => (i + 1) % clinicImages.length), 4000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <main className="bg-background">
       <SEO
