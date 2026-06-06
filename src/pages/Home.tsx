@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Stethoscope, Scissors, Syringe, Bone, Bird, Tractor, ShoppingBag } from "lucide-react";
 import SEO from "@/components/SEO";
 import CardDoctor from "@/components/CardDoctor";
+
+const clinicImages = [
+  "/assests/clinic serviice photo/Clinic Service photo1.jpg",
+  "/assests/clinic serviice photo/Clinic Service photo2.jpg",
+  "/assests/clinic serviice photo/Clinic Service photo3.jpg",
+];
 
 const stats = [
   { number: "02", label: "Expert Vets" },
