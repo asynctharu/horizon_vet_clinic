@@ -107,11 +107,16 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="border-4 border-foreground p-3">
-              <img
-                src="/assests/clinic serviice photo/Clinic Service photo1.jpg"
-                alt="Horizon Vet Clinic interior"
-                className="w-full grayscale aspect-[4/3] object-cover"
-              />
+              <div className="relative w-full aspect-[4/3] overflow-hidden">
+                {clinicImages.map((src, i) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt="Horizon Vet Clinic interior"
+                    className={`absolute inset-0 w-full h-full grayscale object-cover transition-opacity duration-1000 ${i === imgIdx ? "opacity-100" : "opacity-0"}`}
+                  />
+                ))}
+              </div>
             </div>
             <div>
               <span className="mono-label block mb-8">Trusted Since Foundation</span>
