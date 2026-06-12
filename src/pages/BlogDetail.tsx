@@ -293,50 +293,51 @@ const BlogDetail = () => {
   }
 
   return (
-    <main className="bg-background">
+    <main className="bg-background relative overflow-x-hidden">
       {/* Hero */}
-      <section className="relative pt-32 pb-16 px-6 md:px-12 lg:px-20 section-border">
-        <div className="max-w-5xl mx-auto">
-          <Link to="/blogs" className="inline-flex items-center gap-2 mono-label mb-12 hover:line-through">
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Journal
+      <section className="relative pt-40 pb-12 px-6 md:px-12 lg:px-20">
+        <div className="blob w-[400px] h-[400px] bg-[#FFE4E1] -top-20 -left-10" />
+        <div className="max-w-4xl mx-auto relative z-10">
+          <Link to="/blogs" className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-[#FFB7B2] mb-10 transition-colors">
+            <ArrowLeft className="w-4 h-4" /> Back to Journal
           </Link>
-          <div className="flex items-center gap-4 mb-8">
-            <span className="mono-label border border-foreground px-3 py-1.5">{blog.category}</span>
-            <span className="mono-label opacity-50">{blog.date}</span>
-            <span className="mono-label opacity-50">{blog.readTime}</span>
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#FFB7B2] bg-[#FFE4E1] px-3 py-1.5 pill-rounded">{blog.category}</span>
+            <span className="text-xs text-muted-foreground">{blog.date}</span>
+            <span className="text-xs text-muted-foreground">• {blog.readTime}</span>
           </div>
-          <h1 className="display-font text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-10">
+          <h1 className="display-font text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-foreground">
             {blog.title}
           </h1>
-          <p className="mono-label">By {blog.author}</p>
+          <p className="text-sm text-muted-foreground">By <span className="font-semibold text-foreground">{blog.author}</span></p>
         </div>
       </section>
 
       {/* Image */}
-      <section className="px-6 md:px-12 lg:px-20 py-12 section-border">
-        <div className="max-w-5xl mx-auto border-4 border-foreground p-3">
-          <img src={blog.thumbnail} alt={blog.title} className="w-full grayscale aspect-[16/9] object-cover" />
+      <section className="px-6 md:px-12 lg:px-20 py-8">
+        <div className="max-w-5xl mx-auto card-rounded overflow-hidden soft-shadow">
+          <img src={blog.thumbnail} alt={blog.title} className="w-full aspect-[16/9] object-cover" />
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 section-border">
+      <section className="py-16 px-6 md:px-12 lg:px-20">
         <div className="max-w-3xl mx-auto">
           <article
-            className="prose prose-lg max-w-none text-foreground prose-headings:font-bold prose-headings:uppercase prose-headings:tracking-tight prose-h2:display-font prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-p:text-foreground/80 prose-p:leading-relaxed prose-p:mb-6 prose-ul:text-foreground/80 prose-li:mb-2 prose-strong:text-foreground"
+            className="prose prose-lg max-w-none text-foreground prose-headings:font-bold prose-headings:tracking-tight prose-h2:display-font prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-10 prose-h2:mb-5 prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-5 prose-ul:text-muted-foreground prose-li:mb-2 prose-strong:text-foreground prose-a:text-[#FFB7B2]"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
 
           {/* Share */}
-          <div className="mt-16 pt-8 border-t-2 border-foreground">
-            <div className="flex flex-wrap items-center gap-6">
-              <span className="mono-label inline-flex items-center gap-2">
-                <Share2 className="w-3.5 h-3.5" /> Share
+          <div className="mt-14 pt-8 border-t border-stone-200">
+            <div className="flex flex-wrap items-center gap-5">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground inline-flex items-center gap-2">
+                <Share2 className="w-4 h-4" /> Share
               </span>
               <div className="flex gap-3">
-                <button onClick={() => handleShare("facebook")} aria-label="Facebook" className="w-10 h-10 border border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Facebook className="w-4 h-4" /></button>
-                <button onClick={() => handleShare("twitter")} aria-label="Twitter" className="w-10 h-10 border border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Twitter className="w-4 h-4" /></button>
-                <button onClick={() => handleShare("instagram")} aria-label="Instagram" className="w-10 h-10 border border-foreground flex items-center justify-center hover:bg-foreground hover:text-background transition-colors"><Instagram className="w-4 h-4" /></button>
+                <button onClick={() => handleShare("facebook")} aria-label="Facebook" className="w-10 h-10 pill-rounded bg-[#FDFCF8] border border-stone-200 flex items-center justify-center hover:bg-[#FFB7B2] hover:text-white hover:border-[#FFB7B2] transition-colors"><Facebook className="w-4 h-4" /></button>
+                <button onClick={() => handleShare("twitter")} aria-label="Twitter" className="w-10 h-10 pill-rounded bg-[#FDFCF8] border border-stone-200 flex items-center justify-center hover:bg-[#FFB7B2] hover:text-white hover:border-[#FFB7B2] transition-colors"><Twitter className="w-4 h-4" /></button>
+                <button onClick={() => handleShare("instagram")} aria-label="Instagram" className="w-10 h-10 pill-rounded bg-[#FDFCF8] border border-stone-200 flex items-center justify-center hover:bg-[#FFB7B2] hover:text-white hover:border-[#FFB7B2] transition-colors"><Instagram className="w-4 h-4" /></button>
               </div>
             </div>
           </div>
@@ -344,12 +345,17 @@ const BlogDetail = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-foreground text-background py-24 text-center px-6">
-        <h3 className="display-font text-3xl md:text-5xl font-bold uppercase mb-6">Questions About Your Pet?</h3>
-        <p className="text-lg opacity-70 mb-10 italic max-w-xl mx-auto">Schedule a consultation with our expert veterinarians today.</p>
-        <Link to="/appointment" className="bg-background text-foreground border-2 border-background px-10 py-5 mono-font text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-foreground hover:text-background transition-colors inline-block">
-          Book Appointment →
-        </Link>
+      <section className="px-4 md:px-6 mb-12">
+        <div className="max-w-7xl mx-auto bg-[#292524] text-white card-rounded py-20 px-6 text-center soft-shadow-lg relative overflow-hidden">
+          <div className="blob w-[400px] h-[400px] bg-[#FFB7B2]/25 -top-40 -left-20" />
+          <div className="relative z-10 max-w-2xl mx-auto">
+            <h3 className="display-font text-3xl md:text-5xl font-bold tracking-tight mb-5">
+              Questions about your <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">pet</span>?
+            </h3>
+            <p className="text-base md:text-lg opacity-70 mb-8 max-w-xl mx-auto">Schedule a consultation with our expert veterinarians today.</p>
+            <Link to="/appointment" className="btn-primary inline-block">Book Appointment →</Link>
+          </div>
+        </div>
       </section>
     </main>
   );
