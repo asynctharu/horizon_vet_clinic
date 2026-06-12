@@ -29,9 +29,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          {/* Editorial texture overlays */}
-          <div className="fixed inset-0 pointer-events-none pattern-noise z-[99]" />
-          <div className="fixed inset-0 pointer-events-none pattern-lines z-[1]" />
+          {/* Soft grain overlay across the whole app */}
+          <div className="grain-overlay fixed inset-0 pointer-events-none z-[60]" />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

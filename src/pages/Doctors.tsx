@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
-import { Phone, Award, GraduationCap } from "lucide-react";
+import { Phone } from "lucide-react";
 
 const doctors = [
   {
@@ -14,6 +14,7 @@ const doctors = [
     qualification: "B.V.Sc & A.H., M.V.Sc. (Veterinary Surgery)",
     languages: "Nepali, Hindi, English",
     specializations: ["Small animal surgery", "Orthopedic surgery", "Soft tissue surgery", "Emergency interventions"],
+    bgTint: "bg-[#FFE4E1]",
   },
   {
     id: "dr-ashish-tharu",
@@ -26,6 +27,7 @@ const doctors = [
     qualification: "B.V.Sc. & A.H.",
     languages: "Nepali, Hindi, Tharu, English",
     specializations: ["Internal medicine", "Vaccination programs", "Poultry health", "Preventive & primary care"],
+    bgTint: "bg-[#E8EFE8]",
   },
   {
     id: "ajay-pal",
@@ -38,12 +40,13 @@ const doctors = [
     qualification: "Veterinary Technician",
     languages: "Nepali, Hindi",
     specializations: ["Animal handling", "Vaccination support", "Basic treatments", "Clinic operations"],
+    bgTint: "bg-[#EFEDF4]",
   },
 ];
 
 const Doctors = () => {
   return (
-    <main className="bg-background">
+    <main className="bg-background relative overflow-x-hidden">
       <SEO
         title="Our Veterinarians | Horizon Vet Clinic & Pet Shop Nepalganj"
         description="Meet our NVC-registered veterinarians at Horizon Vet Clinic Nepalganj."
@@ -51,62 +54,63 @@ const Doctors = () => {
       />
 
       {/* Hero */}
-      <header className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 section-border">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="mb-10 flex items-center gap-6">
-            <div className="w-10 h-10 border-2 border-foreground" />
-            <span className="mono-label">Expert Medical Team</span>
-          </div>
-          <h1 className="display-font text-6xl md:text-8xl lg:text-[10rem] font-black leading-[0.8] tracking-tighter uppercase">
-            The<br />Specialists
+      <header className="relative pt-40 pb-16 px-6 md:px-12 lg:px-20 text-center">
+        <div className="blob w-[400px] h-[400px] bg-[#FFE4E1] -top-20 -left-10" />
+        <div className="blob w-[300px] h-[300px] bg-[#E6E6FA] top-20 -right-10" style={{ animationDelay: "-3s" }} />
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-5">Expert Medical Team</span>
+          <h1 className="display-font text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.02] tracking-tight text-foreground">
+            The <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">specialists</span>
           </h1>
         </div>
       </header>
 
       {/* Profiles */}
-      <section className="section-border">
-        <div className="max-w-7xl mx-auto border-x border-foreground">
+      <section className="py-12 px-6 md:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto space-y-10">
           {doctors.map((doc, i) => (
             <article
               key={doc.id}
-              className={`grid md:grid-cols-2 ${i !== doctors.length - 1 ? "border-b-2 border-foreground" : ""}`}
+              className={`soft-card p-0 overflow-hidden grid md:grid-cols-2`}
             >
-              <div className={`p-3 ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                <div className="border border-foreground overflow-hidden h-full">
+              <div className={`${doc.bgTint} p-8 md:p-10 flex items-center justify-center ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                <div className="w-full max-w-md overflow-hidden card-rounded">
                   <img
                     src={doc.image}
                     alt={doc.name}
-                    className="w-full h-full aspect-[4/5] object-cover object-center grayscale"
+                    className="w-full aspect-[4/5] object-cover object-center"
                   />
                 </div>
               </div>
-              <div className="p-8 md:p-12 flex flex-col">
+              <div className="p-8 md:p-12 flex flex-col bg-white">
                 {doc.registration && (
-                  <span className="mono-label opacity-60 mb-3">{doc.registration}</span>
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground mb-3">{doc.registration}</span>
                 )}
-                <h2 className="display-font text-3xl md:text-4xl font-black uppercase tracking-tight mb-3">{doc.name}</h2>
-                <p className="mono-label mb-2">{doc.specialty}</p>
-                <p className="mono-label opacity-60 italic mb-8">{doc.qualification}</p>
+                <h2 className="display-font text-3xl md:text-4xl font-bold tracking-tight mb-2 text-foreground">{doc.name}</h2>
+                <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#FFB7B2] mb-2">{doc.specialty}</p>
+                <p className="text-sm italic text-muted-foreground mb-6">{doc.qualification}</p>
 
-                <div className="h-px bg-foreground w-full mb-8" />
+                <div className="h-px bg-stone-200 w-full mb-6" />
 
-                <p className="text-base leading-relaxed mb-10 opacity-80">{doc.intro}</p>
+                <p className="text-base leading-relaxed text-muted-foreground mb-8">{doc.intro}</p>
 
-                <div className="mb-8">
-                  <span className="mono-label block mb-4 underline">Specializations</span>
-                  <ul className="mono-font text-[11px] uppercase tracking-wide opacity-70 space-y-1.5">
-                    {doc.specializations.map((s) => <li key={s}>• {s}</li>)}
-                  </ul>
+                <div className="mb-6">
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-foreground block mb-3">Specializations</span>
+                  <div className="flex flex-wrap gap-2">
+                    {doc.specializations.map((s) => (
+                      <span key={s} className="text-xs font-medium px-3 py-1.5 bg-[#FDFCF8] border border-stone-200 pill-rounded">{s}</span>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="mb-8">
-                  <span className="mono-label block mb-2 underline">Languages</span>
-                  <p className="mono-font text-[11px] uppercase opacity-70">{doc.languages}</p>
+                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-foreground block mb-2">Languages</span>
+                  <p className="text-sm text-muted-foreground">{doc.languages}</p>
                 </div>
 
-                <div className="mt-auto flex flex-wrap gap-4">
+                <div className="mt-auto flex flex-wrap gap-3">
                   <a href={`tel:${doc.phone}`} className="btn-secondary">
-                    <Phone className="w-3.5 h-3.5" /> Call
+                    <Phone className="w-4 h-4" /> Call
                   </a>
                   <Link to={`/doctors/${doc.id}`} className="btn-primary">View Profile →</Link>
                 </div>
@@ -117,9 +121,13 @@ const Doctors = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 text-center section-border">
-        <h2 className="display-font text-4xl md:text-6xl font-black uppercase mb-10">Schedule A Visit</h2>
-        <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
+      <section className="px-4 md:px-6 mb-12 mt-10">
+        <div className="max-w-7xl mx-auto bg-[#EFEDF4] card-rounded py-20 px-6 text-center soft-shadow">
+          <h2 className="display-font text-4xl md:text-5xl font-bold tracking-tight mb-8 text-foreground">
+            Schedule a <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">visit</span>
+          </h2>
+          <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
+        </div>
       </section>
     </main>
   );

@@ -13,30 +13,29 @@ const blogs = [
 
 const Blogs = () => {
   return (
-    <main className="bg-background">
+    <main className="bg-background relative overflow-x-hidden">
       <SEO
         title="Pet Care Blog | Horizon Vet Clinic & Pet Shop Nepalganj"
         description="Expert pet care tips, veterinary advice, and animal health articles."
         canonical="/blogs"
       />
 
-      <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 section-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-10 flex items-center gap-6">
-            <div className="w-10 h-10 border-2 border-foreground" />
-            <span className="mono-label">News & Updates</span>
-          </div>
-          <h1 className="display-font text-6xl md:text-8xl lg:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase">
-            The<br />Journal
+      <section className="relative pt-40 pb-16 px-6 md:px-12 lg:px-20 text-center">
+        <div className="blob w-[400px] h-[400px] bg-[#FFE4E1] -top-20 -left-10" />
+        <div className="blob w-[300px] h-[300px] bg-[#E6E6FA] top-20 -right-10" style={{ animationDelay: "-3s" }} />
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-5">News & Updates</span>
+          <h1 className="display-font text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.02] tracking-tight text-foreground">
+            The <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">journal</span>
           </h1>
         </div>
       </section>
 
-      <section className="py-24 px-6 md:px-12 lg:px-20 section-border">
+      <section className="py-16 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-12 border-b-4 border-foreground pb-4">
-            <h2 className="display-font text-3xl md:text-4xl font-bold uppercase tracking-tight">Latest Articles</h2>
-            <span className="mono-label opacity-40">{String(blogs.length).padStart(2, "0")} Items</span>
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="display-font text-2xl md:text-3xl font-bold tracking-tight text-foreground">Latest Articles</h2>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground">{String(blogs.length).padStart(2, "0")} Items</span>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.map((b) => <CardBlog key={b.slug} {...b} />)}
@@ -44,15 +43,15 @@ const Blogs = () => {
         </div>
       </section>
 
-      <section className="bg-foreground text-background py-32 text-center px-6 relative overflow-hidden">
-        <div className="absolute inset-0 pattern-stats pointer-events-none" />
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="display-font text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] mb-10">
-            Schedule<br />A Visit
-          </h2>
-          <Link to="/appointment" className="bg-background text-foreground border-2 border-background px-10 py-5 mono-font text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-foreground hover:text-background transition-colors inline-block">
-            Book Appointment →
-          </Link>
+      <section className="px-4 md:px-6 mb-12">
+        <div className="max-w-7xl mx-auto bg-[#292524] text-white card-rounded py-24 px-6 text-center soft-shadow-lg relative overflow-hidden">
+          <div className="blob w-[500px] h-[500px] bg-[#FFB7B2]/25 -top-60 -left-32" />
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="display-font text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-10">
+              Schedule a <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">visit</span>
+            </h2>
+            <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
+          </div>
         </div>
       </section>
     </main>
