@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Stethoscope, Scissors, Syringe, Bone, Bird, Tractor, ShoppingBag } from "lucide-react";
+import { Stethoscope, Scissors, Syringe, Bone, Bird, Tractor, ShoppingBag, Quote } from "lucide-react";
 import SEO from "@/components/SEO";
 import CardDoctor from "@/components/CardDoctor";
 
@@ -18,14 +18,14 @@ const stats = [
 ];
 
 const services = [
-  { icon: Stethoscope, title: "Consultation", desc: "Full health checkups for small animals & poultry." },
-  { icon: Scissors, title: "Surgery", desc: "Specialized surgical repair & sterilization." },
-  { icon: Syringe, title: "Vaccination", desc: "Protecting your animals against local diseases." },
-  { icon: Bone, title: "Orthopedics", desc: "Bone & joint specialist treatments for pets." },
-  { icon: Bird, title: "Poultry", desc: "Dedicated care for backyard and commercial flocks." },
-  { icon: Tractor, title: "Farm Visits", desc: "On-site consultation for livestock & dairy." },
-  { icon: ShoppingBag, title: "Pet Shop", desc: "Premium food, supplements and accessories." },
-  { icon: Stethoscope, title: "Diagnostics", desc: "Lab work and imaging for accurate treatment." },
+  { icon: Stethoscope, title: "Consultation", desc: "Full health checkups for small animals & poultry.", tint: "bg-[#E8EFE8]" },
+  { icon: Scissors, title: "Surgery", desc: "Specialized surgical repair & sterilization.", tint: "bg-[#EFEDF4]" },
+  { icon: Syringe, title: "Vaccination", desc: "Protecting your animals against local diseases.", tint: "bg-[#FFE4E1]" },
+  { icon: Bone, title: "Orthopedics", desc: "Bone & joint specialist treatments for pets.", tint: "bg-[#FDFCF8] border border-stone-100" },
+  { icon: Bird, title: "Poultry", desc: "Dedicated care for backyard and commercial flocks.", tint: "bg-[#EFEDF4]" },
+  { icon: Tractor, title: "Farm Visits", desc: "On-site consultation for livestock & dairy.", tint: "bg-[#E8EFE8]" },
+  { icon: ShoppingBag, title: "Pet Shop", desc: "Premium food, supplements and accessories.", tint: "bg-[#FFE4E1]" },
+  { icon: Stethoscope, title: "Diagnostics", desc: "Lab work and imaging for accurate treatment.", tint: "bg-[#FDFCF8] border border-stone-100" },
 ];
 
 const featuredDoctors = [
@@ -46,9 +46,9 @@ const featuredDoctors = [
 ];
 
 const testimonials = [
-  { initials: "RK", quote: "My dog had an emergency and the team at Horizon was calm, quick, and so kind. Dr. Bhusal operated within hours.", name: "Ramesh K., Nepalgunj" },
-  { initials: "BT", quote: "Finally a proper vet clinic in Nepalgunj! The pet shop has great products too. Clean, professional, and friendly staff.", name: "Bikram T., Nepalgunj" },
-  { initials: "SM", quote: "I bring all my poultry health concerns here. Dr. Ashish is very knowledgeable and explains everything clearly.", name: "Sunita M., Banke" },
+  { initials: "RK", quote: "My dog had an emergency and the team at Horizon was calm, quick, and so kind. Dr. Bhusal operated within hours.", name: "Ramesh K., Nepalgunj", rotate: "-rotate-1" },
+  { initials: "BT", quote: "Finally a proper vet clinic in Nepalgunj! The pet shop has great products too. Clean, professional, and friendly staff.", name: "Bikram T., Nepalgunj", rotate: "rotate-1" },
+  { initials: "SM", quote: "I bring all my poultry health concerns here. Dr. Ashish is very knowledgeable and explains everything clearly.", name: "Sunita M., Banke", rotate: "-rotate-1" },
 ];
 
 const Home = () => {
@@ -60,7 +60,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="bg-background">
+    <main className="bg-background relative overflow-x-hidden">
       <SEO
         title="Horizon Vet Clinic & Pet Shop | Nepalganj - Trusted Veterinary Care"
         description="Horizon Vet Clinic & Pet Shop in Nepalganj provides compassionate veterinary care, advanced pet treatments, vaccinations, surgeries, and personalized services."
@@ -68,65 +68,73 @@ const Home = () => {
       />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 section-border min-h-[90vh] flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="mb-10 flex items-center gap-6 animate-fade-up">
-            <div className="w-10 h-10 border-2 border-foreground" />
-            <span className="mono-label">Nepalgunj, Banke</span>
+      <section className="relative pt-40 pb-24 px-6 flex flex-col items-center text-center min-h-[90vh] justify-center">
+        <div className="blob w-[420px] h-[420px] bg-[#FFE4E1] -top-20 -left-20" />
+        <div className="blob w-[420px] h-[420px] bg-[#E6E6FA] -bottom-20 -right-20" style={{ animationDelay: "-3s" }} />
+
+        <div className="max-w-5xl mx-auto relative z-10 animate-fade-up">
+          <div className="mb-8 flex flex-col items-center gap-3">
+            <div className="w-2 h-2 bg-[#FFB7B2] pill-rounded" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground">Nepalgunj, Banke</span>
           </div>
-          <h1 className="display-font text-5xl sm:text-7xl lg:text-[9rem] font-black leading-[0.85] tracking-tighter uppercase mb-12 animate-fade-up delay-100">
-            Your Pet<br />Deserves The<br />Best Care
+
+          <h1 className="display-font text-5xl md:text-7xl lg:text-[7rem] font-bold tracking-tight leading-[1.02] mb-10 text-foreground">
+            Your Pet <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em] lowercase">deserves</span><br />
+            the Best Care
           </h1>
-          <div className="grid lg:grid-cols-2 gap-10 items-end animate-fade-up delay-200">
-            <p className="text-xl md:text-2xl font-light leading-relaxed max-w-2xl">
-              Compassionate. Expert. Always there for you. Horizon Vet Clinic is Nepalgunj's premier healthcare provider for pets, poultry, and livestock.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
-              <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
-              <Link to="/treatments" className="btn-secondary">Explore Services</Link>
-            </div>
+
+          <p className="text-lg md:text-2xl font-medium text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+            Compassionate. Expert. Always there for you. Horizon Vet Clinic is Nepalgunj's premier healthcare provider for pets, poultry, and livestock.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
+            <Link to="/treatments" className="btn-secondary">Explore Services</Link>
           </div>
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="bg-foreground text-background relative py-20 section-border overflow-hidden">
-        <div className="absolute inset-0 pattern-stats pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-12">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <span className="display-font text-6xl md:text-7xl font-bold block mb-2">{s.number}</span>
-              <span className="mono-label opacity-60">{s.label}</span>
-            </div>
-          ))}
+      {/* Stats */}
+      <section className="px-4 md:px-6 mb-20">
+        <div className="max-w-7xl mx-auto bg-[#292524] text-white card-rounded py-16 md:py-20 px-6 soft-shadow-lg relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,183,178,0.25) 41px)" }} />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <span className="display-font text-5xl md:text-6xl lg:text-7xl font-bold block mb-2">{s.number}</span>
+                <span className="text-[10px] tracking-[0.2em] uppercase opacity-60 font-semibold">{s.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* About snippet */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 section-border">
-        <div className="max-w-7xl mx-auto">
+      {/* About snippet on sage card */}
+      <section className="px-4 md:px-6 mb-20">
+        <div className="max-w-7xl mx-auto bg-[#E8EFE8] card-rounded py-20 md:py-28 px-8 md:px-14 lg:px-20 soft-shadow">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="border-4 border-foreground p-3">
-              <div className="relative w-full aspect-[4/3] overflow-hidden">
+            <div className="relative">
+              <div className="absolute -top-5 -left-5 w-full h-full bg-white card-rounded -z-10 transform -rotate-2" />
+              <div className="relative w-full aspect-[4/3] overflow-hidden card-rounded soft-shadow">
                 {clinicImages.map((src, i) => (
                   <img
                     key={src}
                     src={src}
                     alt="Horizon Vet Clinic interior"
-                    className={`absolute inset-0 w-full h-full grayscale object-cover transition-opacity duration-1000 ${i === imgIdx ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === imgIdx ? "opacity-100" : "opacity-0"}`}
                   />
                 ))}
               </div>
             </div>
             <div>
-              <span className="mono-label block mb-8">Trusted Since Foundation</span>
-              <h2 className="display-font text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-10 leading-none">
-                Nepalgunj's Premier Veterinary Care
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-6">Trusted Since Foundation</span>
+              <h2 className="display-font text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 leading-[1.05] text-foreground">
+                Nepalgunj's Premier <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">care</span> center
               </h2>
-              <p className="text-lg leading-relaxed mb-10 opacity-80">
+              <p className="text-lg leading-relaxed text-muted-foreground mb-10">
                 At Horizon Vet Clinic & Pet Shop, we believe every animal—from backyard poultry to beloved family dogs—deserves professional care. Our facility is run by qualified specialists Dr. Shiva Prasad Bhusal and Dr. Ashish Tharu, bringing surgical and medicinal excellence to the Banke district.
               </p>
-              <Link to="/about" className="display-font text-2xl italic hover:line-through">
+              <Link to="/about" className="text-lg font-semibold text-[#FFB7B2] hover:underline inline-flex items-center gap-2">
                 Learn More About Us →
               </Link>
             </div>
@@ -134,20 +142,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 section-border">
+      {/* Services */}
+      <section className="py-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <h2 className="display-font text-6xl lg:text-8xl font-bold uppercase tracking-tighter leading-none">Services</h2>
-            <p className="mono-label md:max-w-xs opacity-60">Complete diagnostics, surgical procedures, and livestock consultation.</p>
+          <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h2 className="display-font text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">Our Services</h2>
+            <p className="text-base font-medium text-muted-foreground md:max-w-xs">Complete diagnostics, surgical procedures, and livestock consultation.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 border-l border-t border-foreground">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s, i) => (
-              <div key={i} className="inversion-hover group border-r border-b border-foreground p-10 h-72 flex flex-col justify-between">
-                <s.icon className="w-12 h-12 stroke-[1.5]" />
+              <div key={i} className="soft-card group h-72 flex flex-col justify-between">
+                <div className={`w-14 h-14 pill-rounded flex items-center justify-center ${s.tint}`}>
+                  <s.icon className="w-7 h-7 stroke-[1.5] text-foreground" />
+                </div>
                 <div>
-                  <h3 className="display-font text-xl font-bold uppercase mb-3">{s.title}</h3>
-                  <p className="text-sm opacity-70">{s.desc}</p>
+                  <h3 className="display-font text-xl font-bold mb-2 text-foreground">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -158,11 +168,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Doctors */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 section-border bg-secondary">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="display-font text-6xl lg:text-8xl font-bold uppercase tracking-tighter leading-none mb-16 text-center">
-            The Specialists
+      {/* Doctors on lavender card */}
+      <section className="px-4 md:px-6 mb-20">
+        <div className="max-w-7xl mx-auto bg-[#EFEDF4] card-rounded py-20 md:py-28 px-8 md:px-14 lg:px-20 soft-shadow">
+          <h2 className="display-font text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-16 text-center text-foreground">
+            The <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">specialists</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {featuredDoctors.map((d) => <CardDoctor key={d.id} {...d} />)}
@@ -171,41 +181,39 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 section-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-3 border border-foreground">
-            {testimonials.map((t, i) => (
-              <div key={i} className={`inversion-hover group p-12 ${i < 2 ? "border-b lg:border-b-0 lg:border-r border-foreground" : ""}`}>
-                <span className="display-font text-8xl font-black opacity-10 leading-none block mb-[-1rem]">"</span>
-                <p className="display-font text-xl italic font-medium leading-relaxed mb-10">{t.quote}</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 border border-foreground flex items-center justify-center mono-font text-[10px] font-bold">{t.initials}</div>
-                  <span className="mono-label">{t.name}</span>
-                </div>
+      <section className="py-24 px-6 md:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
+            <div key={i} className={`soft-card transform ${t.rotate} p-10`}>
+              <Quote className="w-9 h-9 text-[#FFB7B2] mb-5" />
+              <p className="text-lg font-medium leading-relaxed mb-8 text-foreground">{t.quote}</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-0.5 bg-stone-200" />
+                <span className="cursive-font text-2xl text-muted-foreground">{t.name}</span>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="bg-foreground text-background relative py-32 lg:py-40 overflow-hidden text-center">
-        <div className="absolute inset-0 cta-glow pointer-events-none" />
-        <div className="absolute inset-0 pattern-stats pointer-events-none" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h2 className="display-font text-5xl md:text-7xl lg:text-[8rem] font-black uppercase tracking-tighter leading-[0.85] mb-10">
-            Act Now For<br />Their Care
-          </h2>
-          <p className="text-lg md:text-xl font-light opacity-60 mb-12 max-w-2xl mx-auto italic">
-            Don't wait—your pet's health is our priority. Expert veterinary specialists are available 7 days a week.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/appointment" className="bg-background text-foreground border-2 border-background px-10 py-5 mono-font text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-foreground hover:text-background transition-colors">
-              Confirm Appointment →
-            </Link>
-            <a href="tel:+9779869369273" className="bg-transparent text-background border-2 border-background px-10 py-5 mono-font text-[11px] font-bold tracking-[0.18em] uppercase hover:bg-background hover:text-foreground transition-colors">
-              Call +977-9869369273
-            </a>
+      <section className="px-4 md:px-6 mb-12">
+        <div className="max-w-7xl mx-auto bg-[#292524] text-white card-rounded py-28 md:py-36 px-6 text-center soft-shadow-lg relative overflow-hidden">
+          <div className="blob w-[500px] h-[500px] bg-[#FFB7B2]/30 -top-60 -left-32" />
+          <div className="blob w-[500px] h-[500px] bg-[#E8EFE8]/30 -bottom-60 -right-32" />
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="display-font text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
+              Act Now For <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">their</span> Care
+            </h2>
+            <p className="text-lg md:text-xl font-medium opacity-70 mb-10 max-w-2xl mx-auto">
+              Don't wait—your pet's health is our priority. Expert veterinary specialists are available 7 days a week.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/appointment" className="btn-primary">Confirm Appointment →</Link>
+              <a href="tel:+9779869369273" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white border border-white/30 pill-rounded transition-colors hover:bg-white hover:text-foreground">
+                Call +977-9869369273
+              </a>
+            </div>
           </div>
         </div>
       </section>

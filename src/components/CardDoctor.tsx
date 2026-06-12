@@ -12,27 +12,27 @@ const CardDoctor = ({ id, name, specialty, image, intro }: CardDoctorProps) => {
   return (
     <Link
       to={`/doctors/${id}`}
-      className="group block bg-card border-2 border-foreground p-2 transition-colors"
+      className="soft-card group block"
     >
-      <div className="border border-foreground overflow-hidden bg-muted">
+      <div className="overflow-hidden mb-8" style={{ borderRadius: "2rem" }}>
         <img
           src={image}
           alt={name}
-          className="w-full aspect-square object-cover object-center grayscale transition-transform duration-500 md:group-hover:scale-[1.03]"
+          className="w-full aspect-[4/5] object-cover object-center transition-transform duration-700 md:group-hover:scale-105"
           loading="lazy"
         />
       </div>
-      <div className="p-6 md:p-8">
-        <span className="mono-label opacity-60 block mb-3">{specialty}</span>
-        <h3 className="display-font text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4 group-hover:underline underline-offset-4">
-          {name}
-        </h3>
-        <div className="h-px bg-foreground w-12 mb-4" />
-        <p className="text-sm leading-relaxed opacity-80">{intro}</p>
-        <div className="mt-6 mono-label flex items-center gap-2">
-          View Profile <span aria-hidden>→</span>
-        </div>
-      </div>
+      <h3 className="display-font text-2xl md:text-3xl font-bold tracking-tight mb-2 text-foreground">
+        {name}
+      </h3>
+      <p className="text-xs font-semibold tracking-[0.18em] uppercase text-[#FFB7B2] mb-5">
+        {specialty}
+      </p>
+      <div className="h-px bg-stone-200 w-full mb-5" />
+      <p className="text-base leading-relaxed text-muted-foreground mb-6">{intro}</p>
+      <span className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-[#FFB7B2] transition-colors">
+        View Profile <span aria-hidden>→</span>
+      </span>
     </Link>
   );
 };

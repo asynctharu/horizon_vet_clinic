@@ -11,27 +11,29 @@ interface CardBlogProps {
 
 const CardBlog = ({ slug, title, excerpt, thumbnail, date, category }: CardBlogProps) => {
   return (
-    <Link to={`/blogs/${slug}`} className="group block bg-card border-2 border-foreground">
-      <div className="border-b-2 border-foreground overflow-hidden">
+    <Link to={`/blogs/${slug}`} className="soft-card group block p-0 overflow-hidden">
+      <div className="overflow-hidden">
         <img
           src={thumbnail}
           alt={title}
-          className="w-full h-56 object-cover grayscale transition-transform duration-500 md:group-hover:scale-[1.04]"
+          className="w-full h-56 object-cover transition-transform duration-700 md:group-hover:scale-105"
           loading="lazy"
         />
       </div>
-      <div className="p-8">
-        <div className="flex items-center justify-between mb-6">
-          <span className="mono-label">{category}</span>
-          <span className="mono-label opacity-50">{date}</span>
+      <div className="p-7">
+        <div className="flex items-center justify-between mb-5">
+          <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#FFB7B2] bg-[#FFE4E1] px-3 py-1 pill-rounded">
+            {category}
+          </span>
+          <span className="text-xs text-muted-foreground">{date}</span>
         </div>
-        <h3 className="display-font text-2xl font-bold uppercase tracking-tight mb-4 leading-tight group-hover:underline underline-offset-4">
+        <h3 className="display-font text-xl md:text-2xl font-bold tracking-tight mb-3 leading-snug text-foreground group-hover:text-[#FFB7B2] transition-colors">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed opacity-70 mb-6">{excerpt}</p>
-        <div className="mono-label inline-flex items-center gap-2">
+        <p className="text-sm leading-relaxed text-muted-foreground mb-5">{excerpt}</p>
+        <span className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
           Read Article <span aria-hidden>→</span>
-        </div>
+        </span>
       </div>
     </Link>
   );

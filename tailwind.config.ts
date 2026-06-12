@@ -12,9 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Source Serif 4", "Georgia", "serif"],
-        serif: ["Source Serif 4", "Georgia", "serif"],
-        display: ["Playfair Display", "Georgia", "serif"],
+        sans: ["Outfit", "system-ui", "sans-serif"],
+        serif: ["Outfit", "system-ui", "sans-serif"],
+        display: ["Outfit", "system-ui", "sans-serif"],
+        cursive: ["Reenie Beanie", "cursive"],
         mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
       colors: {
@@ -23,6 +24,11 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        peach: "hsl(var(--peach))",
+        sage: "hsl(var(--sage))",
+        lavender: "hsl(var(--lavender))",
+        blush: "hsl(var(--blush))",
+        charcoal: "hsl(var(--charcoal))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -63,9 +69,9 @@ export default {
         },
       },
       borderRadius: {
-        lg: "0",
-        md: "0",
-        sm: "0",
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 0.5rem)",
+        sm: "calc(var(--radius) - 1rem)",
       },
       keyframes: {
         "accordion-down": {
@@ -88,7 +94,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-up": "fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-up": "fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
       },
     },
