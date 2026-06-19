@@ -32,6 +32,15 @@ const Footer = () => {
               >
                 <Instagram className="w-4 h-4" />
               </a>
+              <a
+                href="https://wa.me/9779765289399"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-10 h-10 pill-rounded bg-white/10 hover:bg-[#25D366] flex items-center justify-center transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
