@@ -86,6 +86,20 @@ const Footer = () => {
           </p>
           <p className="cursive-font text-lg text-[#FFB7B2]">made with care</p>
         </div>
+
+        <div className="relative z-10 px-8 md:px-14 lg:px-20 py-3 flex justify-center items-center border-t border-white/5 bg-white/5">
+          <p className="text-[11px] text-white/40 flex items-center gap-1.5">
+            Website Developed by
+            <a
+              href="https://wa.me/9779765289399"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-[#25D366] transition-colors inline-flex items-center gap-1"
+            >
+              <MessageCircle className="w-3 h-3" /> Tharu Coders
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
