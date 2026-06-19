@@ -68,28 +68,74 @@ const Home = () => {
       />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 px-6 flex flex-col items-center text-center min-h-[90vh] justify-center">
+      <section className="relative pt-32 md:pt-36 pb-20 px-6">
         <div className="blob w-[420px] h-[420px] bg-[#FFE4E1] -top-20 -left-20" />
         <div className="blob w-[420px] h-[420px] bg-[#E6E6FA] -bottom-20 -right-20" style={{ animationDelay: "-3s" }} />
 
-        <div className="max-w-5xl mx-auto relative z-10 animate-fade-up">
-          <div className="mb-8 flex flex-col items-center gap-3">
-            <div className="w-2 h-2 bg-[#FFB7B2] pill-rounded" />
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground">Nepalgunj, Banke</span>
+        <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-7 animate-fade-up text-center lg:text-left">
+            <div className="mb-6 inline-flex items-center gap-2 bg-white pill-rounded px-4 py-2 soft-shadow">
+              <span className="w-2 h-2 bg-[#25D366] pill-rounded animate-pulse" />
+              <span className="text-xs font-bold tracking-[0.15em] uppercase text-muted-foreground">Open Today · Nepalgunj, Banke</span>
+            </div>
+
+            <h1 className="display-font text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tight leading-[1.02] mb-8 text-foreground">
+              Your Pet <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em] lowercase">deserves</span><br />
+              the Best Care
+            </h1>
+
+            <p className="text-lg md:text-xl font-medium text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+              Compassionate. Expert. Always there for you. Horizon Vet Clinic is Nepalgunj's premier healthcare provider for pets, poultry, and livestock.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
+              <a href="https://wa.me/9779765289399" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white pill-rounded transition-transform hover:scale-105" style={{ backgroundColor: "#25D366", boxShadow: "0 8px 24px -8px rgba(37,211,102,0.5)" }}>
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.89c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.86 11.86 0 0 0 5.71 1.45c6.57 0 11.9-5.33 11.9-11.89 0-3.18-1.24-6.17-3.43-8.42z"/></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+
+            {/* Trust strip */}
+            <div className="mt-12 grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0">
+              {[
+                { k: "7 Days", v: "Open Weekly" },
+                { k: "Licensed", v: "NVC Specialists" },
+                { k: "All Animals", v: "Pets · Poultry · Farm" },
+              ].map((t) => (
+                <div key={t.k} className="bg-white/70 backdrop-blur card-rounded p-4 text-center soft-shadow">
+                  <div className="display-font text-base md:text-lg font-bold text-foreground leading-tight">{t.k}</div>
+                  <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground mt-1">{t.v}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <h1 className="display-font text-5xl md:text-7xl lg:text-[7rem] font-bold tracking-tight leading-[1.02] mb-10 text-foreground">
-            Your Pet <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em] lowercase">deserves</span><br />
-            the Best Care
-          </h1>
-
-          <p className="text-lg md:text-2xl font-medium text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            Compassionate. Expert. Always there for you. Horizon Vet Clinic is Nepalgunj's premier healthcare provider for pets, poultry, and livestock.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
-            <Link to="/treatments" className="btn-secondary">Explore Services</Link>
+          {/* Right collage */}
+          <div className="lg:col-span-5 relative animate-fade-up delay-200 hidden lg:block">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-[#FFE4E1] card-rounded -z-10 rotate-3" />
+              <img
+                src={clinicImages[imgIdx]}
+                alt="Veterinary care at Horizon Vet Clinic"
+                className="w-full aspect-[4/5] object-cover card-rounded soft-shadow-lg transition-all duration-1000"
+              />
+              <div className="absolute -bottom-6 -left-6 w-40 h-40 card-rounded overflow-hidden soft-shadow-lg border-4 border-background">
+                <img src="/assests/clinic photos/treatment-with-patient.jpg" alt="Doctor treating a patient" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -top-6 -right-6 w-36 h-36 card-rounded overflow-hidden soft-shadow-lg border-4 border-background">
+                <img src="/assests/doctors photo/Dr. Shiva Prasad Bhusal.jpg" alt="Lead veterinarian" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute bottom-6 right-2 bg-white card-rounded px-5 py-3 soft-shadow flex items-center gap-3">
+                <div className="w-9 h-9 pill-rounded bg-[#E8EFE8] flex items-center justify-center">
+                  <Stethoscope className="w-4 h-4 text-foreground" />
+                </div>
+                <div className="text-left">
+                  <div className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground">Trusted by</div>
+                  <div className="display-font text-sm font-bold text-foreground">1000+ Owners</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -241,8 +287,12 @@ const Home = () => {
             <p className="text-lg md:text-xl font-medium opacity-70 mb-10 max-w-2xl mx-auto">
               Don't wait—your pet's health is our priority. Expert veterinary specialists are available 7 days a week.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
               <Link to="/appointment" className="btn-primary">Confirm Appointment →</Link>
+              <a href="https://wa.me/9779765289399" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white pill-rounded transition-transform hover:scale-105" style={{ backgroundColor: "#25D366" }}>
+                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.89c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.86 11.86 0 0 0 5.71 1.45c6.57 0 11.9-5.33 11.9-11.89 0-3.18-1.24-6.17-3.43-8.42z"/></svg>
+                Book via WhatsApp
+              </a>
               <a href="tel:+9779869369273" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white border border-white/30 pill-rounded transition-colors hover:bg-white hover:text-foreground">
                 Call +977-9869369273
               </a>
