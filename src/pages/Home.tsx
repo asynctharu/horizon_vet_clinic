@@ -90,10 +90,6 @@ const Home = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
-              <a href="https://wa.me/9779765289399" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white pill-rounded transition-transform hover:scale-105" style={{ backgroundColor: "#25D366", boxShadow: "0 8px 24px -8px rgba(37,211,102,0.5)" }}>
-                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.89c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.86 11.86 0 0 0 5.71 1.45c6.57 0 11.9-5.33 11.9-11.89 0-3.18-1.24-6.17-3.43-8.42z"/></svg>
-                Chat on WhatsApp
-              </a>
             </div>
 
             {/* Trust strip */}
@@ -289,10 +285,6 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
               <Link to="/appointment" className="btn-primary">Confirm Appointment →</Link>
-              <a href="https://wa.me/9779765289399" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white pill-rounded transition-transform hover:scale-105" style={{ backgroundColor: "#25D366" }}>
-                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.84 11.84 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.89c0 2.09.55 4.13 1.6 5.93L0 24l6.34-1.66a11.86 11.86 0 0 0 5.71 1.45c6.57 0 11.9-5.33 11.9-11.89 0-3.18-1.24-6.17-3.43-8.42z"/></svg>
-                Book via WhatsApp
-              </a>
               <a href="tel:+9779869369273" className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold text-white border border-white/30 pill-rounded transition-colors hover:bg-white hover:text-foreground">
                 Call +977-9869369273
               </a>
