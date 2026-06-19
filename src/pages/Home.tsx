@@ -168,6 +168,39 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Clinic gallery — show real images of the clinic */}
+      <section className="px-4 md:px-6 mb-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <h2 className="display-font text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+              Inside our <span className="cursive-font text-[#FFB7B2] font-normal text-[1.15em]">clinic</span>
+            </h2>
+            <p className="text-base font-medium text-muted-foreground md:max-w-xs">
+              A clean, modern facility built for the comfort of every animal and owner.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { src: "/assests/clinic photos/clinic-exterior.jpg", alt: "Horizon Vet Clinic exterior", span: "col-span-2 row-span-2 aspect-square md:aspect-auto md:h-full" },
+              { src: "/assests/clinic photos/treatment-with-patient.jpg", alt: "Veterinarian treating a patient", span: "aspect-square" },
+              { src: "/assests/clinic photos/xray-diagnosis.jpg", alt: "X-ray diagnostic equipment", span: "aspect-square" },
+              { src: "/assests/clinic photos/staff-at-work.jpg", alt: "Clinic staff at work", span: "aspect-square" },
+              { src: "/assests/clinic photos/pet-shop-counter.jpg", alt: "Pet shop counter", span: "aspect-square" },
+              { src: "/assests/clinic photos/pet-supplies.jpg", alt: "Pet supplies and accessories", span: "col-span-2 aspect-[2/1]" },
+            ].map((img) => (
+              <div key={img.src} className={`overflow-hidden card-rounded soft-shadow ${img.span}`}>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 md:hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Doctors on lavender card */}
       <section className="px-4 md:px-6 mb-20">
         <div className="max-w-7xl mx-auto bg-[#EFEDF4] card-rounded py-20 md:py-28 px-8 md:px-14 lg:px-20 soft-shadow">
