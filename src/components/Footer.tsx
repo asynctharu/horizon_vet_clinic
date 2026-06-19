@@ -72,6 +72,9 @@ const Footer = () => {
               Surkhet Road, Nepalgunj-2<br />
               Banke, Nepal<br />
               <a href="tel:+9779869369273" className="hover:text-[#FFB7B2] transition-colors">+977-9869369273</a><br />
+              <a href="https://wa.me/9779765289399" target="_blank" rel="noopener noreferrer" className="hover:text-[#25D366] transition-colors inline-flex items-center gap-1.5">
+                <MessageCircle className="w-3.5 h-3.5" /> Chat on WhatsApp
+              </a><br />
               8:00 AM – 8:00 PM | 7 Days
             </p>
           </div>
