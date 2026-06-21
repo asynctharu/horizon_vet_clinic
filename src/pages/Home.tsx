@@ -30,7 +30,7 @@ const Home = () => {
           </h1>
           <p className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed">
             From surgical expertise to professional grooming, we treat your furry and feathered friends like our own
-            family. 30 years of compassionate care.
+            family. 10+ years of compassionate care.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link

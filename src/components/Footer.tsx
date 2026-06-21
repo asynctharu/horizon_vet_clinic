@@ -14,7 +14,7 @@ const Footer = () => {
             </span>
           </div>
           <p className="text-gray-500 mb-8 leading-relaxed">
-            Providing expert veterinary care and pet supplies since 1994. Your partner in professional animal health.
+            Providing expert veterinary care and pet supplies since 10+ years. Your partner in professional animal health.
           </p>
           <div className="flex gap-4">
             <a
@@ -30,13 +30,6 @@ const Footer = () => {
               className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#192a43] hover:bg-[#FF8C42] hover:text-white smooth-hover shadow-sm"
             >
               <Instagram className="w-4 h-4" />
-            </a>
-            <a
-              href="#"
-              aria-label="Twitter"
-              className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#192a43] hover:bg-[#FF8C42] hover:text-white smooth-hover shadow-sm"
-            >
-              <Twitter className="w-4 h-4" />
             </a>
           </div>
         </div>
