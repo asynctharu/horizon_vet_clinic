@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Reenie+Beanie&family=JetBrains+Mono:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Outfit:wght@100..900&family=Reenie+Beanie&family=JetBrains+Mono:wght@100..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -42,6 +42,10 @@
     --lavender: 255 24% 94%;
     --blush: 12 100% 94%;              /* #FFE4E1 */
     --charcoal: 20 14% 15%;
+    --ink: 215 45% 18%;                /* deep navy editorial */
+    --gold: 36 55% 52%;                /* refined gold accent */
+    --cream: 39 50% 96%;
+    --bone: 36 25% 92%;
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 20 14% 15%;
@@ -88,15 +92,19 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', system-ui, sans-serif;
+    font-family: 'Fraunces', 'Outfit', Georgia, serif;
+    font-weight: 400;
     @apply tracking-tight;
   }
 }
 
 @layer components {
-  .display-font { font-family: 'Outfit', system-ui, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+  .display-font { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; font-variation-settings: "opsz" 144, "SOFT" 30; }
+  .display-italic { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.02em; }
+  .editorial-eyebrow { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 400; color: hsl(var(--gold)); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.7rem; }
   .cursive-font { font-family: 'Reenie Beanie', cursive; font-weight: 400; letter-spacing: 0; }
   .mono-font { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .body-sans { font-family: 'Outfit', system-ui, sans-serif; }
 
   .grain-overlay {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
