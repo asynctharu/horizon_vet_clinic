@@ -13,7 +13,7 @@ const blogs = [
 
 const Blogs = () => {
   return (
-    <main className="bg-background relative overflow-x-hidden">
+    <main className="bg-[#FCF7F0] relative overflow-x-hidden">
       <SEO
         title="Pet Care Blog | Horizon Vet Clinic & Pet Shop Nepalganj"
         description="Expert pet care tips, veterinary advice, and animal health articles."
@@ -21,21 +21,21 @@ const Blogs = () => {
       />
 
       <section className="relative pt-40 pb-16 px-6 md:px-12 lg:px-20 text-center">
-        <div className="blob w-[400px] h-[400px] bg-[#FFE4E1] -top-20 -left-10" />
-        <div className="blob w-[300px] h-[300px] bg-[#E6E6FA] top-20 -right-10" style={{ animationDelay: "-3s" }} />
+        <div className="blob w-[400px] h-[400px] bg-orange-100 -top-20 -left-10" />
+        <div className="blob w-[300px] h-[300px] bg-teal-100 top-20 -right-10" style={{ animationDelay: "-3s" }} />
         <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-5">News & Updates</span>
-          <h1 className="display-font text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.02] tracking-tight text-foreground">
-            The <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">journal</span>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500 block mb-5">News & Updates</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.02] tracking-tight" style={{ color: "#192a43" }}>
+            The <span style={{ color: "#FF8C42" }}>journal</span>
           </h1>
         </div>
       </section>
 
       <section className="py-16 px-6 md:px-12 lg:px-20">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-fade-up">
           <div className="flex items-center justify-between mb-10">
-            <h2 className="display-font text-2xl md:text-3xl font-bold tracking-tight text-foreground">Latest Articles</h2>
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground">{String(blogs.length).padStart(2, "0")} Items</span>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight" style={{ color: "#192a43" }}>Latest Articles</h2>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500">{String(blogs.length).padStart(2, "0")} Items</span>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.map((b) => <CardBlog key={b.slug} {...b} />)}
@@ -43,14 +43,16 @@ const Blogs = () => {
         </div>
       </section>
 
-      <section className="px-4 md:px-6 mb-12">
-        <div className="max-w-7xl mx-auto bg-[#292524] text-white card-rounded py-24 px-6 text-center soft-shadow-lg relative overflow-hidden">
-          <div className="blob w-[500px] h-[500px] bg-[#FFB7B2]/25 -top-60 -left-32" />
+      <section className="px-4 md:px-6 mb-12 animate-fade-up">
+        <div className="max-w-7xl mx-auto bg-[#192a43] text-white card-rounded py-24 px-6 text-center soft-shadow-lg relative overflow-hidden">
+          <div className="blob w-[500px] h-[500px] bg-[#FF8C42]/25 -top-60 -left-32" />
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="display-font text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-10">
-              Schedule a <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">visit</span>
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-10">
+              Schedule a <span style={{ color: "#FF8C42" }}>visit</span>
             </h2>
-            <Link to="/appointment" className="btn-primary">Book Appointment →</Link>
+            <Link to="/appointment" className="bg-[#FF8C42] text-white px-8 py-4 rounded-2xl font-bold text-lg inline-flex items-center gap-2 hover:shadow-xl smooth-hover">
+              Book Appointment
+            </Link>
           </div>
         </div>
       </section>

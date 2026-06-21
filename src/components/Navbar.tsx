@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, PhoneCall } from "lucide-react";
 
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Services", path: "/treatments" },
-  { name: "Doctors", path: "/doctors" },
-  { name: "Blog", path: "/blogs" },
+  { name: "Blogs", path: "/blogs" },
   { name: "FAQ", path: "/faq" },
   { name: "Contact", path: "/contact" },
 ];
@@ -18,33 +17,42 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl">
-      <div className="bg-white/75 backdrop-blur-xl border border-white/60 soft-shadow pill-rounded px-5 md:px-7 py-3 flex justify-between items-center">
-        <Link to="/" className="flex items-baseline gap-1.5 pr-2">
-          <span className="display-font text-2xl md:text-[1.6rem] tracking-tight text-[hsl(var(--ink))]">Horizon</span>
-          <span className="display-italic text-lg md:text-xl text-[hsl(var(--gold))] leading-none">vet</span>
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-orange-100 px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/assests/icon.png" alt="Horizon Vet" className="w-10 h-10 rounded-full object-cover" />
+          <span className="text-2xl font-bold tracking-tight" style={{ color: "#192a43" }}>
+            Horizon <span style={{ color: "#FF8C42" }}>Vet</span>
+          </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-8 text-[11px] font-semibold tracking-[0.18em] uppercase text-foreground/70">
+        <div className="hidden lg:flex items-center gap-8 font-medium text-sm uppercase tracking-wider">
           {navLinks.map((l) => (
             <Link
               key={l.path}
               to={l.path}
-              className={`transition-colors hover:text-[hsl(var(--ink))] ${
-                isActive(l.path) ? "text-[hsl(var(--ink))]" : ""
-              }`}
+              className={`smooth-hover ${isActive(l.path) ? "text-[#FF8C42]" : "text-gray-600 hover:text-[#FF8C42]"}`}
             >
               {l.name}
             </Link>
           ))}
         </div>
 
-        <Link
-          to="/appointment"
-          className="hidden lg:inline-flex items-center gap-2 bg-[#FFB7B2] text-white pill-rounded px-5 py-2 text-sm font-semibold transition-transform hover:scale-105"
-        >
-          Book Now
-        </Link>
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href="tel:+9779869369273"
+            className="hidden lg:flex items-center gap-2 text-red-600 font-bold animate-pulse"
+          >
+            <PhoneCall className="w-4 h-4" />
+            Emergency
+          </a>
+          <Link
+            to="/appointment"
+            className="bg-[#FF8C42] text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-orange-200 hover:scale-105 smooth-hover"
+          >
+            Book Appointment
+          </Link>
+        </div>
 
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -58,17 +66,17 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-[600px] mt-3" : "max-h-0"
+          isOpen ? "max-h-[600px] mt-4" : "max-h-0"
         }`}
       >
-        <div className="bg-white/90 backdrop-blur-xl border border-white/60 soft-shadow card-rounded p-6 space-y-1">
+        <div className="bg-white/95 backdrop-blur-xl border border-orange-100 rounded-3xl p-6 space-y-1 shadow-lg">
           {navLinks.map((l) => (
             <Link
               key={l.path}
               to={l.path}
               onClick={() => setIsOpen(false)}
-              className={`block py-3 px-3 text-sm font-medium pill-rounded transition-colors ${
-                isActive(l.path) ? "bg-[#E8EFE8] text-foreground font-semibold" : "text-foreground/80 hover:bg-[#FDFCF8]"
+              className={`block py-3 px-3 text-sm font-medium rounded-full transition-colors ${
+                isActive(l.path) ? "bg-[#FFF0E6] text-[#FF8C42] font-semibold" : "text-gray-600 hover:bg-[#FFF0E6]"
               }`}
             >
               {l.name}
@@ -77,9 +85,9 @@ const Navbar = () => {
           <Link
             to="/appointment"
             onClick={() => setIsOpen(false)}
-            className="block mt-3 bg-[#FFB7B2] text-white text-center py-3 pill-rounded text-sm font-semibold"
+            className="block mt-3 bg-[#FF8C42] text-white text-center py-3 rounded-full text-sm font-bold"
           >
-            Book Now →
+            Book Appointment
           </Link>
         </div>
       </div>

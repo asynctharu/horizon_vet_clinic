@@ -47,30 +47,30 @@ const Appointment = () => {
     }
   };
 
-  const inputCls = "w-full bg-white border border-stone-200 pill-rounded py-3.5 px-5 text-sm focus:outline-none focus:border-[#FFB7B2] focus:ring-4 focus:ring-[#FFB7B2]/15 transition-all";
-  const labelCls = "text-xs font-bold tracking-[0.18em] uppercase text-muted-foreground block mb-2 ml-2";
+  const inputCls = "w-full bg-white border border-stone-200 pill-rounded py-3.5 px-5 text-sm focus:outline-none focus:border-[#FF8C42] focus:ring-4 focus:ring-orange-100 transition-all";
+  const labelCls = "text-xs font-bold tracking-[0.18em] uppercase text-gray-500 block mb-2 ml-2";
 
   if (isSubmitted) {
     return (
-      <main className="bg-background pt-40 pb-24 px-6 md:px-12 lg:px-20 min-h-screen relative overflow-x-hidden">
-        <div className="blob w-[400px] h-[400px] bg-[#FFE4E1] -top-20 -left-20" />
-        <div className="blob w-[300px] h-[300px] bg-[#E6E6FA] bottom-20 -right-10" />
+      <main className="bg-[#FCF7F0] pt-40 pb-24 px-6 md:px-12 lg:px-20 min-h-screen relative overflow-x-hidden">
+        <div className="blob w-[400px] h-[400px] bg-orange-100 -top-20 -left-20" />
+        <div className="blob w-[300px] h-[300px] bg-teal-100 bottom-20 -right-10" />
         <div className="max-w-3xl mx-auto text-center soft-card p-12 md:p-16 relative z-10">
-          <div className="w-20 h-20 mx-auto pill-rounded bg-[#E8EFE8] flex items-center justify-center mb-8">
-            <CheckCircle2 className="w-10 h-10 stroke-[1.5] text-foreground" />
+          <div className="w-20 h-20 mx-auto pill-rounded bg-teal-100 flex items-center justify-center mb-8">
+            <CheckCircle2 className="w-10 h-10 stroke-[1.5] text-[#192a43]" />
           </div>
-          <h1 className="display-font text-3xl md:text-4xl font-bold tracking-tight mb-5 text-foreground">
-            Appointment Request <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">received</span>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-5" style={{ color: "#192a43" }}>
+            Appointment Request <span style={{ color: "#FF8C42" }}>received</span>
           </h1>
-          <p className="text-base text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base text-gray-500 mb-8 max-w-xl mx-auto leading-relaxed">
             Thank you! We'll confirm your appointment via phone within a few hours. If urgent, please call +977-9869369273.
           </p>
-          <div className="inline-block text-xs font-bold tracking-[0.18em] uppercase px-5 py-2.5 pill-rounded bg-[#FFE4E1] text-foreground mb-8">
+          <div className="inline-block text-xs font-bold tracking-[0.18em] uppercase px-5 py-2.5 pill-rounded bg-orange-100 text-[#192a43] mb-8">
             REF #HZ-{Date.now().toString().slice(-6)}
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/" className="btn-primary">Return Home</Link>
-            <button onClick={() => setIsSubmitted(false)} className="btn-secondary">Book Another</button>
+            <Link to="/" className="bg-[#192a43] text-white px-8 py-4 rounded-2xl font-bold hover:shadow-xl smooth-hover">Return Home</Link>
+            <button onClick={() => setIsSubmitted(false)} className="bg-white text-[#192a43] border-2 border-[#FF8C42] px-8 py-4 rounded-2xl font-bold hover:bg-orange-50 smooth-hover">Book Another</button>
           </div>
         </div>
       </main>
@@ -78,7 +78,7 @@ const Appointment = () => {
   }
 
   return (
-    <main className="bg-background relative overflow-x-hidden">
+    <main className="bg-[#FCF7F0] relative overflow-x-hidden">
       <SEO
         title="Book Appointment | Horizon Vet Clinic & Pet Shop Nepalganj"
         description="Schedule an appointment with our expert veterinarians at Horizon Vet Clinic Nepalganj."
@@ -87,19 +87,19 @@ const Appointment = () => {
 
       {/* Hero */}
       <section className="relative pt-40 pb-12 px-6 md:px-12 lg:px-20 text-center">
-        <div className="blob w-[400px] h-[400px] bg-[#FFE4E1] -top-20 -left-10" />
-        <div className="blob w-[300px] h-[300px] bg-[#E6E6FA] top-20 -right-10" style={{ animationDelay: "-3s" }} />
+        <div className="blob w-[400px] h-[400px] bg-orange-100 -top-20 -left-10" />
+        <div className="blob w-[300px] h-[300px] bg-teal-100 top-20 -right-10" style={{ animationDelay: "-3s" }} />
         <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-5">Scheduling System / Nepalgunj</span>
-          <h1 className="display-font text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight mb-6 text-foreground">
-            Book an <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">appointment</span>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500 block mb-5">Scheduling System / Nepalgunj</span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight mb-6" style={{ color: "#192a43" }}>
+            Book an <span style={{ color: "#FF8C42" }}>appointment</span>
           </h1>
-          <p className="text-base text-muted-foreground max-w-xl mx-auto">Fill out the form below to reserve your specialist consultation.</p>
+          <p className="text-base text-gray-500 max-w-xl mx-auto">Fill out the form below to reserve your specialist consultation.</p>
         </div>
       </section>
 
       {/* Form */}
-      <section className="px-4 md:px-6 my-12">
+      <section className="px-4 md:px-6 my-12 animate-fade-up">
         <div className="max-w-4xl mx-auto bg-white card-rounded p-8 md:p-12 lg:p-16 soft-shadow-lg">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid md:grid-cols-2 gap-6">
@@ -152,12 +152,12 @@ const Appointment = () => {
 
             <div>
               <label className={labelCls}>Additional Notes</label>
-              <textarea rows={5} value={formData.notes} onChange={(e) => setFormData({ ...formData, notes: e.target.value })} placeholder="Please describe your pet's current status..." className={`w-full bg-white border border-stone-200 py-4 px-5 text-sm focus:outline-none focus:border-[#FFB7B2] focus:ring-4 focus:ring-[#FFB7B2]/15 transition-all resize-y`} style={{ borderRadius: "1.5rem" }} />
+              <textarea rows={5} value={formData.notes} onChange={(e) => setFormData({ ...formData, notes: e.target.value })} placeholder="Please describe your pet's current status..." className="w-full bg-white border border-stone-200 py-4 px-5 text-sm focus:outline-none focus:border-[#FF8C42] focus:ring-4 focus:ring-orange-100 transition-all resize-y" style={{ borderRadius: "1.5rem" }} />
             </div>
 
             <div className="flex justify-center pt-2">
-              <button type="submit" disabled={isSubmitting} className="btn-primary disabled:opacity-60 px-12 py-5">
-                {isSubmitting ? "Submitting..." : "Confirm Appointment →"}
+              <button type="submit" disabled={isSubmitting} className="bg-[#FF8C42] text-white px-12 py-5 rounded-2xl font-bold text-lg disabled:opacity-60 hover:shadow-xl smooth-hover">
+                {isSubmitting ? "Submitting..." : "Confirm Appointment"}
               </button>
             </div>
           </form>
@@ -165,22 +165,22 @@ const Appointment = () => {
       </section>
 
       {/* Walk in */}
-      <section className="px-4 md:px-6 mb-12">
-        <div className="max-w-7xl mx-auto bg-[#E8EFE8] card-rounded p-12 md:p-16 text-center soft-shadow">
-          <h2 className="display-font text-3xl md:text-4xl font-bold tracking-tight mb-6 text-foreground">
-            Prefer to <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">walk in</span>?
+      <section className="px-4 md:px-6 mb-12 animate-fade-up">
+        <div className="max-w-7xl mx-auto bg-teal-100/50 card-rounded p-12 md:p-16 text-center soft-shadow">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6" style={{ color: "#192a43" }}>
+            Prefer to <span style={{ color: "#FF8C42" }}>walk in</span>?
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
             No appointment needed for general consultations. Just walk in during our working hours.
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white card-rounded p-7">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-2">Clinic Hours</span>
-              <p className="display-font text-lg font-semibold text-foreground">8:00 AM – 8:00 PM<br />7 Days a Week</p>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500 block mb-2">Clinic Hours</span>
+              <p className="text-lg font-semibold" style={{ color: "#192a43" }}>8:00 AM – 8:00 PM<br />7 Days a Week</p>
             </div>
             <div className="bg-white card-rounded p-7">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-2">Address</span>
-              <p className="display-font text-lg font-semibold text-foreground">Surkhet Road, Nepalgunj-2<br />Banke, Nepal</p>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500 block mb-2">Address</span>
+              <p className="text-lg font-semibold" style={{ color: "#192a43" }}>Surkhet Road, Nepalgunj-2<br />Banke, Nepal</p>
             </div>
           </div>
         </div>

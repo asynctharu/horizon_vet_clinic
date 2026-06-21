@@ -1,93 +1,97 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, Twitter, MapPin, Clock, Mail, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="px-4 md:px-6 pb-8 pt-12 bg-background">
-      <div className="max-w-7xl mx-auto bg-[#292524] text-white card-rounded relative overflow-hidden soft-shadow-lg">
-        <div className="blob w-[400px] h-[400px] bg-[#FFB7B2]/30 -top-40 -left-20" />
-        <div className="blob w-[400px] h-[400px] bg-[#E6E6FA]/30 -bottom-40 -right-20" style={{ animationDelay: "-3s" }} />
-
-        <div className="relative z-10 px-8 md:px-14 lg:px-20 py-16 lg:py-20 grid lg:grid-cols-4 gap-12 lg:gap-10">
-          <div className="lg:col-span-1">
-            <div className="flex items-baseline gap-2 mb-6">
-              <span className="display-font text-3xl">Horizon</span>
-              <span className="display-italic text-2xl text-[hsl(var(--gold))]">vet</span>
-            </div>
-            <p className="opacity-70 text-sm leading-relaxed mb-8">
-              Trusted veterinary healthcare in Nepalgunj. Caring for pets, poultry, and farm animals since our inception.
-            </p>
-            <div className="flex gap-3">
-              <a
-                href="https://www.facebook.com/share/1DHYHW3rJu/"
-                aria-label="Facebook"
-                className="w-10 h-10 pill-rounded bg-white/10 hover:bg-[#FFB7B2] flex items-center justify-center transition-colors"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="https://www.instagram.com/horizon_vet_clinic_petshop?igsh=eDF3bnRnOGJubnVy"
-                aria-label="Instagram"
-                className="w-10 h-10 pill-rounded bg-white/10 hover:bg-[#FFB7B2] flex items-center justify-center transition-colors"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-            </div>
+    <footer className="bg-[#FCF7F0] pt-24 pb-12 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+        {/* Brand */}
+        <div>
+          <div className="flex items-center gap-2 mb-6">
+            <img src="/assests/icon.png" alt="Horizon Vet" className="w-8 h-8 rounded-full object-cover" />
+            <span className="text-xl font-bold tracking-tight" style={{ color: "#192a43" }}>
+              Horizon <span style={{ color: "#FF8C42" }}>Vet</span>
+            </span>
           </div>
-
-          <div>
-            <h4 className="text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-white/50">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link to="/" className="opacity-80 hover:text-[#FFB7B2] hover:opacity-100 transition-colors">Home</Link></li>
-              <li><Link to="/about" className="opacity-80 hover:text-[#FFB7B2] hover:opacity-100 transition-colors">About</Link></li>
-              <li><Link to="/treatments" className="opacity-80 hover:text-[#FFB7B2] hover:opacity-100 transition-colors">Services</Link></li>
-              <li><Link to="/doctors" className="opacity-80 hover:text-[#FFB7B2] hover:opacity-100 transition-colors">Doctors</Link></li>
-              <li><Link to="/appointment" className="opacity-80 hover:text-[#FFB7B2] hover:opacity-100 transition-colors">Book Now</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-white/50">Services</h4>
-            <ul className="space-y-3 text-sm opacity-80">
-              <li>Consultation</li>
-              <li>Surgery</li>
-              <li>Orthopedic</li>
-              <li>Poultry Health</li>
-              <li>Farm Visits</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-white/50">Visit Us</h4>
-            <p className="text-sm leading-loose opacity-80">
-              Surkhet Road, Nepalgunj-2<br />
-              Banke, Nepal<br />
-              <a href="tel:+9779869369273" className="hover:text-[#FFB7B2] transition-colors">+977-9869369273</a><br />
-              8:00 AM – 8:00 PM | 7 Days
-            </p>
-          </div>
-        </div>
-
-        <div className="relative z-10 px-8 md:px-14 lg:px-20 pb-10 pt-2 flex flex-col md:flex-row justify-between items-center gap-3 border-t border-white/10">
-          <p className="text-xs text-white/50">
-            © {new Date().getFullYear()} Horizon Vet Clinic & Pet Shop. All rights reserved.
+          <p className="text-gray-500 mb-8 leading-relaxed">
+            Providing expert veterinary care and pet supplies since 1994. Your partner in professional animal health.
           </p>
-          <p className="cursive-font text-lg text-[#FFB7B2]">made with care</p>
-        </div>
-
-        <div className="relative z-10 px-8 md:px-14 lg:px-20 py-3 flex justify-center items-center border-t border-white/5 bg-white/5">
-          <p className="text-[11px] text-white/40 flex items-center gap-1.5">
-            Website Developed by
+          <div className="flex gap-4">
             <a
-              href="https://wa.me/9779765289399"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/60 hover:text-[#25D366] transition-colors inline-flex items-center gap-1"
+              href="https://www.facebook.com/share/1DHYHW3rJu/"
+              aria-label="Facebook"
+              className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#192a43] hover:bg-[#FF8C42] hover:text-white smooth-hover shadow-sm"
             >
-              <MessageCircle className="w-3 h-3" /> Tharu Coders
+              <Facebook className="w-4 h-4" />
             </a>
-          </p>
+            <a
+              href="https://www.instagram.com/horizon_vet_clinic_petshop?igsh=eDF3bnRnOGJubnVy"
+              aria-label="Instagram"
+              className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#192a43] hover:bg-[#FF8C42] hover:text-white smooth-hover shadow-sm"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#192a43] hover:bg-[#FF8C42] hover:text-white smooth-hover shadow-sm"
+            >
+              <Twitter className="w-4 h-4" />
+            </a>
+          </div>
         </div>
+
+        {/* Quick Links */}
+        <div>
+          <h4 className="font-bold text-lg mb-6 text-[#192a43]">Quick Links</h4>
+          <ul className="space-y-4 text-gray-500">
+            <li className="smooth-hover hover:text-[#FF8C42]">
+              <Link to="/treatments">Services</Link>
+            </li>
+            <li className="smooth-hover hover:text-[#FF8C42]">
+              <Link to="/blogs">Blogs</Link>
+            </li>
+            <li className="smooth-hover hover:text-[#FF8C42]">
+              <Link to="/doctors">Our Team</Link>
+            </li>
+            <li className="smooth-hover hover:text-[#FF8C42]">
+              <Link to="/faq">FAQ</Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Location */}
+        <div>
+          <h4 className="font-bold text-lg mb-6 text-[#192a43]">Our Location</h4>
+          <ul className="space-y-4 text-gray-500">
+            <li className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-[#FF8C42] mt-0.5 shrink-0" />
+              Surkhet Road, Nepalganj, Nepal
+            </li>
+            <li className="flex items-start gap-3">
+              <Clock className="w-5 h-5 text-[#FF8C42] mt-0.5 shrink-0" />
+              Mon - Sun: 8:00 AM - 8:00 PM
+            </li>
+            <li className="flex items-start gap-3">
+              <Mail className="w-5 h-5 text-[#FF8C42] mt-0.5 shrink-0" />
+              vetclinichorizon@gmail.com
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div className="max-w-7xl mx-auto pt-12 border-t border-orange-100 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-400">
+        <p>&copy; {new Date().getFullYear()} Horizon Vet Clinic & Pet Shop. All rights reserved.</p>
+        <a
+          href="https://wa.me/9779765289399"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-[#FF8C42] smooth-hover font-medium"
+        >
+          <MessageCircle className="w-4 h-4 text-[#FF8C42]" />
+          Website Developed by Tharu Coders
+        </a>
       </div>
     </footer>
   );

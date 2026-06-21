@@ -1,6 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, User, Share2, Facebook, Twitter, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowLeft, Share2, Facebook, Twitter, Instagram, CalendarCheck } from "lucide-react";
 
 const blogs = [
   {
@@ -14,7 +13,6 @@ const blogs = [
     category: "Pet Care",
     content: `
       <p>Vaccinations are one of the most important preventive measures you can take to protect your beloved pets. Regular immunization helps prevent serious and potentially fatal diseases in dogs and cats.</p>
-      
       <h2>Core Vaccines for Dogs</h2>
       <p>Core vaccines are essential for all dogs regardless of their lifestyle. These include:</p>
       <ul>
@@ -23,7 +21,6 @@ const blogs = [
         <li><strong>Parvovirus:</strong> Prevents a highly contagious and often fatal gastrointestinal disease</li>
         <li><strong>Adenovirus:</strong> Guards against infectious hepatitis and respiratory disease</li>
       </ul>
-      
       <h2>Core Vaccines for Cats</h2>
       <p>Essential vaccines for all cats include:</p>
       <ul>
@@ -32,13 +29,10 @@ const blogs = [
         <li><strong>Feline Calicivirus:</strong> Prevents respiratory infections</li>
         <li><strong>Feline Herpesvirus:</strong> Guards against viral respiratory disease</li>
       </ul>
-      
       <h2>Vaccination Schedule</h2>
       <p>Puppies and kittens typically start their vaccination series at 6-8 weeks of age, with boosters given every 3-4 weeks until they are 16 weeks old. Adult pets need regular boosters, usually annually or every three years depending on the vaccine.</p>
-      
       <h2>Why Timing Matters</h2>
       <p>Following the proper vaccination schedule is crucial. Young animals receive antibodies from their mother's milk, but these fade over time. Vaccines must be given at the right time to provide protection as maternal antibodies wane.</p>
-      
       <h2>Schedule Your Pet's Vaccination</h2>
       <p>Contact Horizon Vet Clinic to ensure your pet is up-to-date on all necessary vaccinations. Our veterinarians will create a personalized vaccination plan based on your pet's age, health status, and lifestyle.</p>
     `,
@@ -54,7 +48,6 @@ const blogs = [
     category: "Surgery",
     content: `
       <p>Spaying and neutering are common surgical procedures that offer numerous health and behavioral benefits for your pets. At Horizon Vet Clinic, we recommend these procedures for pets not intended for breeding.</p>
-      
       <h2>Health Benefits for Female Pets</h2>
       <p>Spaying (ovariohysterectomy) provides significant health advantages:</p>
       <ul>
@@ -63,7 +56,6 @@ const blogs = [
         <li>Prevents unwanted pregnancies and complications</li>
         <li>Eliminates heat cycles and associated behaviors</li>
       </ul>
-      
       <h2>Health Benefits for Male Pets</h2>
       <p>Neutering (castration) offers these benefits:</p>
       <ul>
@@ -72,13 +64,10 @@ const blogs = [
         <li>Decreases roaming behavior and risk of injuries</li>
         <li>Reduces marking and territorial behaviors</li>
       </ul>
-      
       <h2>Behavioral Improvements</h2>
       <p>Both procedures can help reduce unwanted behaviors such as aggression, mounting, and the urge to roam. Neutered males are often calmer and more focused on their families.</p>
-      
       <h2>What to Expect</h2>
       <p>These are routine surgeries performed under general anesthesia. Most pets go home the same day. Recovery typically takes 10-14 days, during which you should keep your pet calm and prevent licking of the incision site.</p>
-      
       <h2>The Right Time</h2>
       <p>The ideal age for spaying or neutering depends on your pet's species, breed, and size. Generally, we recommend the procedure at 6-9 months of age. Contact us for personalized advice for your pet.</p>
     `,
@@ -94,7 +83,6 @@ const blogs = [
     category: "Poultry",
     content: `
       <p>Maintaining flock health is essential for successful poultry farming. Prevention is always better than cure, and implementing proper biosecurity measures can save you significant losses.</p>
-      
       <h2>Essential Biosecurity Measures</h2>
       <p>Biosecurity is your first line of defense against disease:</p>
       <ul>
@@ -104,7 +92,6 @@ const blogs = [
         <li>Separate age groups (all-in, all-out system)</li>
         <li>Control wild bird and rodent access</li>
       </ul>
-      
       <h2>Vaccination Programs</h2>
       <p>Work with a veterinarian to develop an appropriate vaccination schedule. Common vaccines include:</p>
       <ul>
@@ -114,13 +101,10 @@ const blogs = [
         <li>Marek's Disease (for layers)</li>
         <li>Fowl Pox</li>
       </ul>
-      
       <h2>Nutrition and Water Quality</h2>
       <p>Proper nutrition is fundamental to maintaining immune health. Ensure birds have access to balanced feed appropriate for their age and production stage. Clean, fresh water should always be available.</p>
-      
       <h2>Signs of Disease to Watch For</h2>
       <p>Early detection is crucial. Watch for decreased feed/water intake, drop in egg production, respiratory signs, abnormal droppings, or sudden deaths. Contact a veterinarian immediately if you notice these signs.</p>
-      
       <h2>Regular Health Monitoring</h2>
       <p>Schedule regular veterinary visits for flock health assessments. We offer farm visits and can help develop customized health management plans for your operation.</p>
     `,
@@ -136,20 +120,16 @@ const blogs = [
     category: "Nutrition",
     content: `
       <p>Proper nutrition is the foundation of your pet's health. Understanding what to feed your pet and how to read food labels can help you make the best choices for their wellbeing.</p>
-      
       <h2>Understanding Pet Food Labels</h2>
       <p>Look for foods that meet AAFCO (Association of American Feed Control Officials) standards. The ingredient list shows components in order of weight - quality protein should be among the first ingredients.</p>
-      
       <h2>Protein Requirements</h2>
       <p>Dogs and cats need high-quality animal protein. Dogs can thrive on about 18-25% protein, while cats require higher levels (26-30% or more) as obligate carnivores.</p>
-      
       <h2>Age-Appropriate Nutrition</h2>
       <ul>
         <li><strong>Puppies/Kittens:</strong> Need higher calories and nutrients for growth</li>
         <li><strong>Adults:</strong> Require balanced maintenance diets</li>
         <li><strong>Seniors:</strong> May need adjusted protein and calorie levels</li>
       </ul>
-      
       <h2>Common Nutritional Mistakes</h2>
       <p>Avoid these common errors:</p>
       <ul>
@@ -158,10 +138,8 @@ const blogs = [
         <li>Giving foods toxic to pets (chocolate, grapes, onions, etc.)</li>
         <li>Frequent diet changes without transition periods</li>
       </ul>
-      
       <h2>Special Dietary Needs</h2>
       <p>Some pets require prescription diets for conditions like kidney disease, food allergies, or weight management. Consult with our veterinarians if your pet has specific health concerns.</p>
-      
       <h2>Get Personalized Advice</h2>
       <p>Every pet is unique. Visit Horizon Vet Clinic for a nutritional consultation tailored to your pet's specific needs, age, and health status.</p>
     `,
@@ -177,7 +155,6 @@ const blogs = [
     category: "Health",
     content: `
       <p>Orthopedic conditions are common in pets, especially as they age. Understanding these issues can help you recognize problems early and seek appropriate treatment.</p>
-      
       <h2>Common Orthopedic Conditions</h2>
       <p>The most frequently seen orthopedic problems include:</p>
       <ul>
@@ -187,7 +164,6 @@ const blogs = [
         <li><strong>Fractures:</strong> Broken bones from trauma</li>
         <li><strong>Luxating Patella:</strong> Kneecap displacement, common in small breeds</li>
       </ul>
-      
       <h2>Signs of Orthopedic Problems</h2>
       <p>Watch for these warning signs:</p>
       <ul>
@@ -198,7 +174,6 @@ const blogs = [
         <li>Crying out when touched</li>
         <li>Changes in gait or posture</li>
       </ul>
-      
       <h2>Treatment Options</h2>
       <p>Treatment depends on the condition and may include:</p>
       <ul>
@@ -209,7 +184,6 @@ const blogs = [
         <li>Surgical intervention when needed</li>
         <li>Joint supplements</li>
       </ul>
-      
       <h2>Prevention Tips</h2>
       <p>Maintain a healthy weight, provide appropriate exercise, and use joint supplements for at-risk breeds. Regular check-ups help catch problems early.</p>
     `,
@@ -225,7 +199,6 @@ const blogs = [
     category: "Farm",
     content: `
       <p>Effective health management is crucial for profitable livestock farming. A proactive approach to animal health can prevent losses and improve productivity.</p>
-      
       <h2>Preventive Health Programs</h2>
       <p>Establish a comprehensive health program that includes:</p>
       <ul>
@@ -235,7 +208,6 @@ const blogs = [
         <li>Reproductive health monitoring</li>
         <li>Nutritional assessments</li>
       </ul>
-      
       <h2>Common Livestock Diseases</h2>
       <p>Be aware of prevalent diseases in your area:</p>
       <ul>
@@ -245,7 +217,6 @@ const blogs = [
         <li><strong>Parasitic diseases:</strong> Internal and external parasites</li>
         <li><strong>Metabolic disorders:</strong> Milk fever, ketosis in dairy cattle</li>
       </ul>
-      
       <h2>Biosecurity on Farms</h2>
       <p>Implement strict biosecurity measures:</p>
       <ul>
@@ -254,10 +225,8 @@ const blogs = [
         <li>Maintain clean water and feed sources</li>
         <li>Properly dispose of dead animals and waste</li>
       </ul>
-      
       <h2>Record Keeping</h2>
       <p>Maintain detailed records of treatments, vaccinations, breeding, and health events. Good records help identify patterns and make informed management decisions.</p>
-      
       <h2>Working with Your Veterinarian</h2>
       <p>Regular veterinary visits are essential. We offer farm health consultations, emergency services, and can develop customized health management plans for your operation.</p>
     `,
@@ -285,31 +254,31 @@ const BlogDetail = () => {
 
   if (!blog) {
     return (
-      <main className="bg-background pt-32 pb-24 px-6 text-center min-h-screen">
-        <h1 className="display-font text-4xl font-bold uppercase mb-8">Article Not Found</h1>
-        <Link to="/blogs" className="btn-primary">View All Articles</Link>
+      <main className="bg-[#FCF7F0] pt-32 pb-24 px-6 text-center min-h-screen">
+        <h1 className="text-4xl font-bold uppercase mb-8" style={{ color: "#192a43" }}>Article Not Found</h1>
+        <Link to="/blogs" className="bg-[#192a43] text-white px-8 py-4 rounded-2xl font-bold inline-block">View All Articles</Link>
       </main>
     );
   }
 
   return (
-    <main className="bg-background relative overflow-x-hidden">
+    <main className="bg-[#FCF7F0] relative overflow-x-hidden">
       {/* Hero */}
       <section className="relative pt-40 pb-12 px-6 md:px-12 lg:px-20">
-        <div className="blob w-[400px] h-[400px] bg-[#FFE4E1] -top-20 -left-10" />
+        <div className="blob w-[400px] h-[400px] bg-orange-100 -top-20 -left-10" />
         <div className="max-w-4xl mx-auto relative z-10">
-          <Link to="/blogs" className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-[#FFB7B2] mb-10 transition-colors">
+          <Link to="/blogs" className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-[#FF8C42] mb-10 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Journal
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-8">
-            <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#FFB7B2] bg-[#FFE4E1] px-3 py-1.5 pill-rounded">{blog.category}</span>
-            <span className="text-xs text-muted-foreground">{blog.date}</span>
-            <span className="text-xs text-muted-foreground">• {blog.readTime}</span>
+            <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#FF8C42] bg-orange-100 px-3 py-1.5 pill-rounded">{blog.category}</span>
+            <span className="text-xs text-gray-500">{blog.date}</span>
+            <span className="text-xs text-gray-500">• {blog.readTime}</span>
           </div>
-          <h1 className="display-font text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-foreground">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6" style={{ color: "#192a43" }}>
             {blog.title}
           </h1>
-          <p className="text-sm text-muted-foreground">By <span className="font-semibold text-foreground">{blog.author}</span></p>
+          <p className="text-sm text-gray-500">By <span className="font-semibold" style={{ color: "#192a43" }}>{blog.author}</span></p>
         </div>
       </section>
 
@@ -324,20 +293,20 @@ const BlogDetail = () => {
       <section className="py-16 px-6 md:px-12 lg:px-20">
         <div className="max-w-3xl mx-auto">
           <article
-            className="prose prose-lg max-w-none text-foreground prose-headings:font-bold prose-headings:tracking-tight prose-h2:display-font prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-10 prose-h2:mb-5 prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-5 prose-ul:text-muted-foreground prose-li:mb-2 prose-strong:text-foreground prose-a:text-[#FFB7B2]"
+            className="prose prose-lg max-w-none text-foreground prose-headings:font-bold prose-headings:tracking-tight prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-10 prose-h2:mb-5 prose-p:text-gray-500 prose-p:leading-relaxed prose-p:mb-5 prose-ul:text-gray-500 prose-li:mb-2 prose-strong:text-[#192a43] prose-a:text-[#FF8C42]"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
 
           {/* Share */}
           <div className="mt-14 pt-8 border-t border-stone-200">
             <div className="flex flex-wrap items-center gap-5">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground inline-flex items-center gap-2">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500 inline-flex items-center gap-2">
                 <Share2 className="w-4 h-4" /> Share
               </span>
               <div className="flex gap-3">
-                <button onClick={() => handleShare("facebook")} aria-label="Facebook" className="w-10 h-10 pill-rounded bg-[#FDFCF8] border border-stone-200 flex items-center justify-center hover:bg-[#FFB7B2] hover:text-white hover:border-[#FFB7B2] transition-colors"><Facebook className="w-4 h-4" /></button>
-                <button onClick={() => handleShare("twitter")} aria-label="Twitter" className="w-10 h-10 pill-rounded bg-[#FDFCF8] border border-stone-200 flex items-center justify-center hover:bg-[#FFB7B2] hover:text-white hover:border-[#FFB7B2] transition-colors"><Twitter className="w-4 h-4" /></button>
-                <button onClick={() => handleShare("instagram")} aria-label="Instagram" className="w-10 h-10 pill-rounded bg-[#FDFCF8] border border-stone-200 flex items-center justify-center hover:bg-[#FFB7B2] hover:text-white hover:border-[#FFB7B2] transition-colors"><Instagram className="w-4 h-4" /></button>
+                <button onClick={() => handleShare("facebook")} aria-label="Facebook" className="w-10 h-10 pill-rounded bg-white border border-stone-200 flex items-center justify-center hover:bg-[#FF8C42] hover:text-white hover:border-[#FF8C42] transition-colors"><Facebook className="w-4 h-4" /></button>
+                <button onClick={() => handleShare("twitter")} aria-label="Twitter" className="w-10 h-10 pill-rounded bg-white border border-stone-200 flex items-center justify-center hover:bg-[#FF8C42] hover:text-white hover:border-[#FF8C42] transition-colors"><Twitter className="w-4 h-4" /></button>
+                <button onClick={() => handleShare("instagram")} aria-label="Instagram" className="w-10 h-10 pill-rounded bg-white border border-stone-200 flex items-center justify-center hover:bg-[#FF8C42] hover:text-white hover:border-[#FF8C42] transition-colors"><Instagram className="w-4 h-4" /></button>
               </div>
             </div>
           </div>
@@ -346,14 +315,16 @@ const BlogDetail = () => {
 
       {/* CTA */}
       <section className="px-4 md:px-6 mb-12">
-        <div className="max-w-7xl mx-auto bg-[#292524] text-white card-rounded py-20 px-6 text-center soft-shadow-lg relative overflow-hidden">
-          <div className="blob w-[400px] h-[400px] bg-[#FFB7B2]/25 -top-40 -left-20" />
+        <div className="max-w-7xl mx-auto bg-[#192a43] text-white card-rounded py-20 px-6 text-center soft-shadow-lg relative overflow-hidden">
+          <div className="blob w-[400px] h-[400px] bg-[#FF8C42]/25 -top-40 -left-20" />
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h3 className="display-font text-3xl md:text-5xl font-bold tracking-tight mb-5">
-              Questions about your <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">pet</span>?
+            <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-5">
+              Questions about your <span style={{ color: "#FF8C42" }}>pet</span>?
             </h3>
             <p className="text-base md:text-lg opacity-70 mb-8 max-w-xl mx-auto">Schedule a consultation with our expert veterinarians today.</p>
-            <Link to="/appointment" className="btn-primary inline-block">Book Appointment →</Link>
+            <Link to="/appointment" className="bg-[#FF8C42] text-white px-8 py-4 rounded-2xl font-bold text-lg inline-flex items-center gap-2 hover:shadow-xl smooth-hover">
+              <CalendarCheck className="w-5 h-5" /> Book Appointment
+            </Link>
           </div>
         </div>
       </section>

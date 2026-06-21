@@ -1,325 +1,383 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import SEO from "@/components/SEO";
 import {
   Stethoscope,
   Scissors,
-  Syringe,
-  Bone,
-  Bird,
-  Tractor,
-  ShoppingBag,
-  ArrowUpRight,
-  MapPin,
+  ShoppingBasket,
+  CalendarCheck,
+  CheckCircle,
+  PhoneCall,
+  ArrowRight,
 } from "lucide-react";
-import SEO from "@/components/SEO";
-
-const clinicImages = [
-  "/assests/clinic serviice photo/Clinic Service photo1.jpg",
-  "/assests/clinic serviice photo/Clinic Service photo2.jpg",
-  "/assests/clinic serviice photo/Clinic Service photo3.jpg",
-];
-
-const legacyStats = [
-  { roman: "II", label: "Expert Specialists" },
-  { roman: "VII", label: "Days a Week" },
-  { roman: "XIIh", label: "Daily Service" },
-  { roman: "VII+", label: "Care Services" },
-];
-
-const services = [
-  { icon: Syringe, title: "Vaccinations", desc: "Protective shots tailored for your animal's age and species." },
-  { icon: Stethoscope, title: "Wellness Exams", desc: "Thorough checkups that catch concerns before they grow." },
-  { icon: Scissors, title: "Surgery", desc: "Advanced surgical care with full pre and post-op support." },
-  { icon: Bone, title: "Orthopedics", desc: "Specialist treatment for bone, joint and mobility issues." },
-  { icon: Bird, title: "Poultry Care", desc: "Dedicated programs for backyard and commercial flocks." },
-  { icon: Tractor, title: "Farm Visits", desc: "On-site consultation for livestock, dairy and large animals." },
-  { icon: ShoppingBag, title: "Pet Boutique", desc: "Curated food, supplements and accessories in-clinic." },
-  { icon: Stethoscope, title: "Laboratory", desc: "In-house diagnostics for fast, accurate treatment decisions." },
-];
-
-const featuredDoctors = [
-  {
-    id: "dr-shiva-prasad-bhusal",
-    name: "Dr. Shiva Prasad Bhusal",
-    title: "Veterinary Surgery Specialist",
-    image: "/assests/doctors photo/Dr. Shiva Prasad Bhusal.jpg",
-    credentials: "NVC No. 1197 · B.V.Sc & A.H., M.V.Sc.",
-    bio: "A highly qualified surgery specialist with proven experience in orthopedic and soft-tissue procedures across Nepal.",
-  },
-  {
-    id: "dr-ashish-tharu",
-    name: "Dr. Ashish Tharu",
-    title: "Veterinary Medicine Specialist",
-    image: "/assests/doctors photo/Dr. Ashish Tharu.jpg",
-    credentials: "NVC No. 2025 · B.V.Sc. & A.H.",
-    bio: "Dedicated practitioner with a strong foundation in modern small-animal medicine, diagnostics and preventive care.",
-  },
-];
-
-const essentials = [
-  { name: "Vitamin & Mineral Mix", category: "Premium Nutrition", price: "Rs. 550", image: "/assests/clinic photos/pet-supplies.jpg" },
-  { name: "Calcium-P Supplement", category: "Daily Support", price: "Rs. 450", image: "/assests/clinic photos/pet-shop-counter.jpg" },
-  { name: "Pet Comfort Apparel", category: "Lifestyle", price: "Rs. 950", image: "/assests/clinic photos/treatment-with-patient.jpg" },
-  { name: "Herbal Liver Tonic", category: "Wellness Tonic", price: "Rs. 480", image: "/assests/clinic photos/staff-at-work.jpg" },
-];
 
 const Home = () => {
-  const [imgIdx, setImgIdx] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => setImgIdx((i) => (i + 1) % clinicImages.length), 4500);
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <main className="bg-[hsl(var(--cream))] relative overflow-x-hidden">
+    <div className="min-h-screen relative">
       <SEO
-        title="Horizon Vet Clinic & Pet Shop | Nepalganj - Trusted Veterinary Care"
-        description="Horizon Vet Clinic & Pet Shop in Nepalganj provides compassionate veterinary care, advanced pet treatments, vaccinations, surgeries, and personalized services."
+        title="Horizon Vet Clinic | Nepalganj - Where Every Pet Feels at Home"
+        description="Horizon Vet Clinic & Pet Shop in Nepalganj provides expert veterinary care, pet grooming, and pet supplies. Book an appointment today."
         canonical="/"
       />
 
-      {/* ───────────────── HERO ───────────────── */}
-      <section className="pt-32 md:pt-36 pb-20 px-6 md:px-12 lg:px-16">
-        <div className="max-w-[1240px] mx-auto grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* Left: editorial headline */}
-          <div className="lg:col-span-6 lg:pt-10 animate-fade-up">
-            <p className="editorial-eyebrow mb-8">Continuing a 30-year practice of care</p>
-            <h1 className="display-font text-[hsl(var(--ink))] leading-[1.02] tracking-tight text-[2.75rem] sm:text-6xl lg:text-[5.25rem] mb-8">
-              The Pinnacle
-              <br />
-              of <span className="display-italic">Veterinary</span>
-              <br />
-              Care
-            </h1>
-            <p className="body-sans text-muted-foreground text-base md:text-[1.05rem] leading-relaxed max-w-md mb-10">
-              Welcome to Horizon, Nepalgunj's premier animal healthcare destination. Rooted in three decades of compassionate
-              expertise, we deliver bespoke medical solutions for your cherished companions.
-            </p>
-            <div className="flex flex-wrap items-center gap-6">
-              <Link
-                to="/appointment"
-                className="inline-flex items-center gap-3 bg-[hsl(var(--ink))] text-[hsl(var(--cream))] px-7 py-4 text-[11px] tracking-[0.22em] uppercase font-semibold rounded-sm hover:bg-[hsl(var(--ink))]/90 transition-colors"
-              >
-                Book Consultation <ArrowUpRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/treatments"
-                className="text-[11px] tracking-[0.22em] uppercase font-semibold text-[hsl(var(--gold))] border-b border-[hsl(var(--gold))]/40 pb-1 hover:border-[hsl(var(--gold))]"
-              >
-                Explore Services
-              </Link>
-            </div>
-          </div>
+      {/* ── HERO ── */}
+      <header className="relative overflow-hidden pt-12 pb-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center animate-fade-up">
+        <div className="relative z-10">
+            <span className="inline-block px-4 py-1.5 bg-orange-100 text-[#FF8C42] rounded-full text-sm font-bold mb-6">
+            Nepalganj's #1 Pet Care Center
+          </span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6" style={{ color: "#192a43" }}>
+            Where Every Pet <span style={{ color: "#FF8C42" }}>Feels at Home</span>
+          </h1>
+          <p className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed">
+            From surgical expertise to professional grooming, we treat your furry and feathered friends like our own
+            family. 30 years of compassionate care.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              to="/appointment"
+              className="flex items-center gap-2 bg-[#192a43] text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-xl smooth-hover"
+            >
+              <CalendarCheck className="w-5 h-5" />
+              Find a Slot
+            </Link>
 
-          {/* Right: framed photo card */}
-          <div className="lg:col-span-6 animate-fade-up delay-200">
-            <div className="relative">
-              <div className="relative w-full aspect-[4/5] overflow-hidden rounded-sm">
-                {clinicImages.map((src, i) => (
-                  <img
-                    key={src}
-                    src={src}
-                    alt="Compassionate care at Horizon Vet Clinic"
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      i === imgIdx ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                ))}
-                <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--ink))]/70 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-[hsl(var(--cream))]">
-                  <p className="editorial-eyebrow mb-2 flex items-center gap-2" style={{ color: "hsl(var(--gold))" }}>
-                    <MapPin className="w-3 h-3" /> Surkhet Road, Nepalgunj
-                  </p>
-                  <p className="display-font text-2xl md:text-3xl">Open 7 Days a Week</p>
-                </div>
-              </div>
+          </div>
+          <div className="mt-12 flex items-center gap-4">
+            <div className="flex -space-x-4">
+              <img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=100&h=100"
+                className="w-12 h-12 rounded-full border-4 border-white object-cover"
+                alt="Happy pet parent"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=100&h=100"
+                className="w-12 h-12 rounded-full border-4 border-white object-cover"
+                alt="Happy pet parent"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&q=80&w=100&h=100"
+                className="w-12 h-12 rounded-full border-4 border-white object-cover"
+                alt="Happy pet parent"
+              />
             </div>
+            <p className="text-sm font-medium text-gray-500">
+              <span className="text-[#192a43] font-bold">4.9/5 Rating</span> from 2,000+ Happy Pet Parents
+            </p>
           </div>
         </div>
-      </section>
 
-      {/* ───────────────── ROMAN STATS BAR ───────────────── */}
-      <section className="border-y border-[hsl(var(--ink))]/10 bg-[hsl(var(--bone))]/40">
-        <div className="max-w-[1240px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-[hsl(var(--ink))]/10">
-          {legacyStats.map((s) => (
-            <div key={s.label} className="text-center py-12 md:py-16 px-4">
-              <div className="display-font text-[hsl(var(--ink))] text-4xl md:text-5xl mb-3">{s.roman}</div>
-              <div className="editorial-eyebrow">{s.label}</div>
+        {/* Right: blob-shaped image grid */}
+        <div className="relative">
+          <div className="grid grid-cols-2 gap-4 relative z-10">
+            <div className="space-y-4">
+              <img
+                src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=600&h=800"
+                className="w-full aspect-[3/4] object-cover pet-blob-alt shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.03]"
+                alt="Happy dog"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600&h=400"
+                className="w-full aspect-square object-cover pet-blob shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.03]"
+                alt="Cute cat"
+              />
+            </div>
+            <div className="pt-12 space-y-4">
+              <img
+                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=600&h=400"
+                className="w-full aspect-square object-cover pet-blob shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.03]"
+                alt="Playful puppy"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=600&h=800"
+                className="w-full aspect-[3/4] object-cover pet-blob-alt shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.03]"
+                alt="Fluffy rabbit"
+              />
+            </div>
+          </div>
+          <div className="absolute -top-10 -right-10 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-50 -z-0" />
+          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-teal-100 rounded-full blur-3xl opacity-50 -z-0" />
+        </div>
+      </header>
+
+      {/* ── SERVICES ── */}
+      <section className="bg-white py-24 px-6">
+        <div className="max-w-7xl mx-auto text-center mb-16 animate-fade-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#192a43" }}>
+            Professional Care For <span style={{ color: "#0097A7" }}>Every Life Stage</span>
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            We provide a full spectrum of veterinary services designed to keep your pets happy, healthy, and thriving
+            for years to come.
+          </p>
+        </div>
+
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              icon: Stethoscope,
+              title: "Vet Consultations",
+              desc: "Routine check-ups, vaccinations, and comprehensive diagnostic evaluations.",
+              img: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&q=80&w=400&h=250",
+              accent: "#FF8C42",
+            },
+            {
+              icon: Scissors,
+              title: "Pet Grooming",
+              desc: "Professional styling, medicated baths, and gentle handling for all breeds.",
+              img: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=400&h=250",
+              accent: "#0097A7",
+            },
+            {
+              icon: ShoppingBasket,
+              title: "Pet Shop",
+              desc: "Premium food, toys, and essential accessories for your beloved pets.",
+              img: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=400&h=250",
+              accent: "#192a43",
+            },
+          ].map((s, i) => (
+            <div
+              key={s.title}
+              className={`p-8 rounded-3xl bg-[#FCF7F0] hover:scale-[1.02] smooth-hover group border-b-4 border-transparent hover:border-[var(--accent)] animate-fade-up ${["delay-100", "delay-200", "delay-300"][i]}`}
+              style={{ "--accent": s.accent } as React.CSSProperties}
+            >
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                <s.icon className="w-7 h-7" style={{ color: s.accent }} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4" style={{ color: "#192a43" }}>{s.title}</h3>
+              <p className="text-gray-500 mb-6">{s.desc}</p>
+              <img
+                src={s.img}
+                alt={s.title}
+                className="w-full h-48 object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-500"
+              />
             </div>
           ))}
         </div>
       </section>
 
-      {/* ───────────────── LEGACY ───────────────── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-16">
-        <div className="max-w-[1240px] mx-auto grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5">
-            <p className="editorial-eyebrow mb-6">Our Legacy</p>
-            <h2 className="display-font text-[hsl(var(--ink))] text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] tracking-tight">
-              Three Decades of
-              <br />
-              <span className="display-italic">Compassionate</span> Care
-            </h2>
-          </div>
-          <div className="lg:col-span-6 lg:col-start-7">
-            <div className="space-y-6 body-sans text-muted-foreground text-base md:text-[1.05rem] leading-[1.85] max-w-xl">
-              <p>
-                Horizon Vet Clinic was established with a singular mission: to bring genuinely modern veterinary care to the
-                people of Nepalgunj and the surrounding Banke district. Our chief surgeon, Dr. Shiva Prasad Bhusal, and our lead
-                medicine specialist, Dr. Ashish Tharu, anchor a practice rooted in honesty and craft.
-              </p>
-              <p>
-                We have built a clinic that families return to, generation after generation — from emergency surgery to gentle
-                routine wellness, every visit is treated with the same level of attention.
+      {/* ── MEET OUR TEAM ── */}
+      <section className="py-24 px-6 bg-[#FCF7F0]">
+        <div className="max-w-7xl mx-auto animate-fade-up">
+          <div className="flex items-end justify-between mb-16">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#192a43" }}>
+                Meet Our <span style={{ color: "#FF8C42" }}>Veterinarians</span>
+              </h2>
+              <p className="text-gray-500 max-w-xl">
+                NVC-registered specialists with decades of combined experience in animal care.
               </p>
             </div>
             <Link
-              to="/about"
-              className="inline-block mt-10 text-[11px] tracking-[0.22em] uppercase font-semibold text-[hsl(var(--gold))] border-b border-[hsl(var(--gold))]/40 pb-1"
+              to="/doctors"
+              className="hidden md:flex items-center gap-2 font-bold text-[#FF8C42] hover:underline uppercase text-sm tracking-widest"
             >
-              Discover Our Story
+              View All <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                name: "Dr. Shiva Prasad Bhusal",
+                specialty: "Veterinary Surgery Specialist",
+                image: "/assests/doctors photo/Dr. Shiva Prasad Bhusal.jpg",
+                desc: "A highly qualified Veterinary Surgery Specialist with advanced M.V.Sc. training. Performs hundreds of successful surgeries annually on pets and livestock.",
+                tags: ["Surgery", "Orthopedics", "Emergency"],
+              },
+              {
+                name: "Dr. Ashish Tharu",
+                specialty: "Veterinary Medicine Specialist",
+                image: "/assests/doctors photo/Dr. Ashish Tharu.jpg",
+                desc: "A dedicated veterinary professional with expertise in medicine, diagnostics, and preventive care. Known for his calm, approachable manner with both pets and owners.",
+                tags: ["Medicine", "Vaccination", "Poultry"],
+              },
+            ].map((doc, i) => (
+              <div
+                key={doc.name}
+                className={`bg-white rounded-[2.5rem] p-8 flex flex-col md:flex-row gap-8 soft-shadow hover:shadow-xl smooth-hover ${["animate-fade-up delay-100", "animate-fade-up delay-200"][i]}`}
+              >
+                <div className="shrink-0">
+                  <div className="w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-[2rem]">
+                    <img
+                      src={doc.image}
+                      alt={doc.name}
+                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col justify-between">
+                  <div>
+                    <p className="text-xs font-bold tracking-[0.18em] uppercase text-[#FF8C42] mb-1">{doc.specialty}</p>
+                    <h3 className="text-2xl font-bold mb-3" style={{ color: "#192a43" }}>{doc.name}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed mb-4">{doc.desc}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {doc.tags.map((t) => (
+                      <span key={t} className="text-xs font-medium px-3 py-1.5 bg-[#FCF7F0] border border-stone-200 rounded-full">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12 md:hidden">
+            <Link
+              to="/doctors"
+              className="inline-flex items-center gap-2 font-bold text-[#FF8C42] hover:underline uppercase text-sm tracking-widest"
+            >
+              View All Doctors <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ───────────────── SERVICES ───────────────── */}
-      <section className="pb-28 md:pb-36 px-6 md:px-12 lg:px-16">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="editorial-eyebrow mb-5">Comprehensive Care</p>
-            <h2 className="display-font text-[hsl(var(--ink))] text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05]">
-              Bespoke Veterinary <span className="display-italic">Services</span>
+      {/* ── DEDICATED TO HEALTH ── */}
+      <section className="py-24 px-6 overflow-hidden bg-[#192a43] text-white">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 animate-fade-up">
+          <div className="flex-1">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+              Dedicated to Their <span style={{ color: "#FF8C42" }}>Happiness & Health</span>
             </h2>
-            <div className="mx-auto mt-6 h-px w-12 bg-[hsl(var(--gold))]" />
-          </div>
-
-          <div className="bg-white border border-[hsl(var(--ink))]/8 rounded-sm">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 divide-x divide-y md:divide-y-0 divide-[hsl(var(--ink))]/8">
-              {services.map((s) => (
-                <div key={s.title} className="p-7 lg:p-8 group hover:bg-[hsl(var(--bone))]/40 transition-colors">
-                  <s.icon className="w-6 h-6 text-[hsl(var(--gold))] mb-5 stroke-[1.4]" />
-                  <h3 className="display-font text-lg text-[hsl(var(--ink))] mb-2">{s.title}</h3>
-                  <p className="body-sans text-xs leading-relaxed text-muted-foreground">{s.desc}</p>
+            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+              At Horizon Vet, we don't just treat symptoms; we care for the whole pet. Our facility is equipped with
+              state-of-the-art diagnostic tools, but our real strength lies in the gentle touch of our staff.
+            </p>
+            <div className="grid grid-cols-2 gap-8 max-w-lg">
+              {[
+                { icon: CheckCircle, title: "24/7 ICU", desc: "Constant monitoring for critical cases." },
+                { icon: CheckCircle, title: "Advanced Surgery", desc: "Modern operating theater with expert surgeons." },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-4">
+                  <item.icon className="w-6 h-6 text-[#FF8C42] shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-lg mb-1">{item.title}</h4>
+                    <p className="text-sm text-gray-400">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="mt-10 text-center">
             <Link
-              to="/treatments"
-              className="text-[11px] tracking-[0.22em] uppercase font-semibold text-[hsl(var(--ink))] border-b border-[hsl(var(--ink))]/30 pb-1 hover:border-[hsl(var(--gold))] hover:text-[hsl(var(--gold))] transition-colors"
+              to="/blogs"
+              className="mt-12 inline-block bg-white text-[#192a43] px-10 py-4 rounded-2xl font-bold text-lg hover:bg-orange-50 smooth-hover"
             >
-              View All Services
+              Meet Our Patients
             </Link>
           </div>
-        </div>
-      </section>
 
-      {/* ───────────────── SPECIALISTS ───────────────── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-16 bg-[hsl(var(--bone))]/40 border-y border-[hsl(var(--ink))]/8">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="editorial-eyebrow mb-5">Expert Medical Team</p>
-            <h2 className="display-font text-[hsl(var(--ink))] text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05]">
-              The <span className="display-italic">Specialists</span>
-            </h2>
-            <div className="mx-auto mt-6 h-px w-12 bg-[hsl(var(--gold))]" />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {featuredDoctors.map((d) => (
-              <Link
-                key={d.id}
-                to={`/doctors/${d.id}`}
-                className="group bg-white p-6 md:p-8 rounded-sm border border-[hsl(var(--ink))]/8 hover:border-[hsl(var(--gold))]/50 transition-colors flex gap-6"
-              >
-                <div className="w-32 md:w-40 flex-shrink-0 overflow-hidden rounded-sm">
-                  <img
-                    src={d.image}
-                    alt={d.name}
-                    className="w-full h-full object-cover aspect-[4/5] grayscale group-hover:grayscale-0 transition-all duration-700"
-                  />
-                </div>
-                <div className="flex-1 min-w-0 flex flex-col justify-center">
-                  <p className="editorial-eyebrow mb-2">{d.credentials}</p>
-                  <h3 className="display-font text-xl md:text-2xl text-[hsl(var(--ink))] mb-1 leading-tight">{d.name}</h3>
-                  <p className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground mb-4">{d.title}</p>
-                  <p className="body-sans text-sm leading-relaxed text-muted-foreground">{d.bio}</p>
-                </div>
-              </Link>
-            ))}
+          <div className="flex-1 relative">
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=400&h=400",
+                "https://images.unsplash.com/photo-1591768793355-74d7ca7fb9cd?auto=format&fit=crop&q=80&w=400&h=400",
+                "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&q=80&w=400&h=400",
+                "https://images.unsplash.com/photo-1444212477490-ca407925329e?auto=format&fit=crop&q=80&w=400&h=400",
+              ].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt="Pet patient"
+                  className={`w-full aspect-square object-cover rounded-[3rem] grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105 ${
+                    i % 2 === 0 ? "rotate-3" : "-rotate-3"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ───────────────── CURATED ESSENTIALS ───────────────── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-16">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-            <div>
-              <p className="editorial-eyebrow mb-4">The Boutique</p>
-              <h2 className="display-font text-[hsl(var(--ink))] text-4xl md:text-5xl leading-[1.05]">
-                Curated <span className="display-italic">Essentials</span>
+      {/* ── HAPPY TAILS GALLERY ── */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto animate-fade-up">
+          <div className="flex items-end justify-between mb-16">
+            <div className="max-w-xl">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#192a43" }}>
+                Happy Tails <span style={{ color: "#FF8C42" }}>Gallery</span>
               </h2>
+              <p className="text-gray-500">A glimpse into the daily lives of the amazing pets that visit our clinic.</p>
             </div>
             <Link
-              to="/treatments"
-              className="text-[11px] tracking-[0.22em] uppercase font-semibold text-[hsl(var(--gold))] border-b border-[hsl(var(--gold))]/40 pb-1"
+              to="/blogs"
+              className="hidden md:flex items-center gap-2 font-bold text-[#FF8C42] hover:underline uppercase text-sm tracking-widest"
             >
-              Discover the Collection
+              View All Photos <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {essentials.map((p) => (
-              <div key={p.name} className="group">
-                <div className="aspect-[4/5] overflow-hidden bg-[hsl(var(--bone))] rounded-sm mb-4">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <p className="editorial-eyebrow mb-1.5">{p.category}</p>
-                <h3 className="display-font text-base md:text-lg text-[hsl(var(--ink))] mb-1">{p.name}</h3>
-                <p className="text-sm text-[hsl(var(--gold))]">{p.price}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=400&h=400",
+              "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=400&h=400",
+              "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=400&h=400",
+              "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400&h=400",
+              "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&q=80&w=400&h=400",
+            ].map((src, i) => (
+              <div key={i} className="aspect-square overflow-hidden rounded-3xl relative">
+                <img
+                  src={src}
+                  alt={`Pet gallery ${i + 1}`}
+                  className="w-full h-full object-cover hover:scale-110 smooth-hover transition-transform duration-700"
+                />
+                {i === 4 && (
+                  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-4 text-center">
+                    <span className="text-white font-bold text-2xl">+450</span>
+                    <span className="text-white/80 text-xs uppercase">Happy Moments</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ───────────────── FINAL EDITORIAL CTA ───────────────── */}
-      <section className="px-4 md:px-6 pb-16">
-        <div className="max-w-[1240px] mx-auto bg-[hsl(var(--ink))] text-[hsl(var(--cream))] rounded-sm py-24 md:py-32 px-8 text-center">
-          <p className="editorial-eyebrow mb-6" style={{ color: "hsl(var(--gold))" }}>Reserve Your Visit</p>
-          <h2 className="display-font text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] mb-8 max-w-2xl mx-auto">
-            Their wellbeing, <span className="display-italic">our priority</span>
+      {/* ── EMERGENCY BAR ── */}
+      <section className="bg-[#FF8C42] py-16 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-6">
+            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center animate-pulse-slow">
+              <PhoneCall className="w-8 h-8 text-white" />
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-white">Pet Emergency?</h3>
+              <p className="text-orange-100 text-lg font-medium">We are open 7 days a week for urgent care.</p>
+            </div>
+          </div>
+          <a
+            href="tel:+9779869369273"
+            className="bg-white text-[#FF8C42] px-10 py-4 rounded-2xl font-bold text-xl shadow-xl hover:scale-105 smooth-hover"
+          >
+            Call Now: +977-9869369273
+          </a>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="px-4 md:px-6 py-20 bg-[#FCF7F0]">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "#192a43" }}>
+            Ready to Give Your Pet the <span style={{ color: "#FF8C42" }}>Best Care</span>?
           </h2>
-          <p className="body-sans text-base md:text-lg leading-relaxed opacity-70 max-w-xl mx-auto mb-10">
-            Available seven days a week with expert specialists ready to care for every member of your family — feathered,
-            furred or four-hooved.
+          <p className="text-gray-500 text-lg mb-10 max-w-2xl mx-auto">
+            Schedule a consultation with our expert veterinarians today. We're here 7 days a week.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/appointment"
-              className="inline-flex items-center gap-3 bg-[hsl(var(--cream))] text-[hsl(var(--ink))] px-7 py-4 text-[11px] tracking-[0.22em] uppercase font-semibold rounded-sm hover:bg-white transition-colors"
+              className="bg-[#192a43] text-white px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-xl smooth-hover inline-flex items-center gap-2"
             >
-              Book Consultation <ArrowUpRight className="w-4 h-4" />
+              <CalendarCheck className="w-5 h-5" />
+              Book Appointment
             </Link>
             <a
               href="tel:+9779869369273"
-              className="text-[11px] tracking-[0.22em] uppercase font-semibold text-[hsl(var(--cream))]/80 border-b border-[hsl(var(--cream))]/30 pb-1 hover:border-[hsl(var(--gold))] hover:text-[hsl(var(--gold))] transition-colors"
+              className="bg-white text-[#192a43] border-2 border-[#FF8C42] px-10 py-4 rounded-2xl font-bold text-lg hover:bg-orange-50 smooth-hover inline-flex items-center gap-2"
             >
+              <PhoneCall className="w-5 h-5 text-[#FF8C42]" />
               Call +977-9869369273
             </a>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

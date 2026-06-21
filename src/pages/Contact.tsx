@@ -36,17 +36,17 @@ const Contact = () => {
     }
   };
 
-  const inputCls = "w-full bg-white border border-stone-200 pill-rounded py-3.5 px-5 text-sm focus:outline-none focus:border-[#FFB7B2] focus:ring-4 focus:ring-[#FFB7B2]/15 placeholder:text-muted-foreground/60 placeholder:italic transition-all";
-  const textareaCls = "w-full bg-white border border-stone-200 py-4 px-5 text-sm focus:outline-none focus:border-[#FFB7B2] focus:ring-4 focus:ring-[#FFB7B2]/15 placeholder:text-muted-foreground/60 placeholder:italic transition-all resize-none";
+  const inputCls = "w-full bg-white border border-stone-200 pill-rounded py-3.5 px-5 text-sm focus:outline-none focus:border-[#FF8C42] focus:ring-4 focus:ring-orange-100 placeholder:text-gray-400 placeholder:italic transition-all";
+  const textareaCls = "w-full bg-white border border-stone-200 py-4 px-5 text-sm focus:outline-none focus:border-[#FF8C42] focus:ring-4 focus:ring-orange-100 placeholder:text-gray-400 placeholder:italic transition-all resize-none";
 
   const tiles = [
-    { icon: MapPin, label: "Location", value: "Surkhet Road\nNepalgunj-2, Banke", tint: "bg-[#E8EFE8]" },
-    { icon: Phone, label: "Phone", value: "+977-9869369273", tint: "bg-[#FFE4E1]" },
-    { icon: Clock, label: "Hours", value: "08:00 — 20:00\n7 Days a Week", tint: "bg-[#EFEDF4]" },
+    { icon: MapPin, label: "Location", value: "Surkhet Road\nNepalgunj-2, Banke", tint: "bg-teal-100" },
+    { icon: Phone, label: "Phone", value: "+977-9869369273", tint: "bg-orange-100" },
+    { icon: Clock, label: "Hours", value: "08:00 — 20:00\n7 Days a Week", tint: "bg-[#FCF7F0]" },
   ];
 
   return (
-    <main className="bg-background relative overflow-x-hidden">
+    <main className="bg-[#FCF7F0] relative overflow-x-hidden">
       <SEO
         title="Contact Us | Horizon Vet Clinic & Pet Shop Nepalganj"
         description="Contact Horizon Vet Clinic & Pet Shop in Nepalganj. Surkhet Road, Nepalgunj-2, Banke. Call +977-9869369273."
@@ -55,40 +55,40 @@ const Contact = () => {
 
       {/* Hero */}
       <section className="relative pt-40 pb-16 px-6 md:px-12 lg:px-20 text-center">
-        <div className="blob w-[400px] h-[400px] bg-[#FFE4E1] -top-20 -right-10" />
-        <div className="blob w-[300px] h-[300px] bg-[#E6E6FA] top-1/3 -left-10" style={{ animationDelay: "-3s" }} />
+        <div className="blob w-[400px] h-[400px] bg-orange-100 -top-20 -right-10" />
+        <div className="blob w-[300px] h-[300px] bg-teal-100 top-1/3 -left-10" style={{ animationDelay: "-3s" }} />
         <div className="max-w-4xl mx-auto relative z-10">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-5">Nepalgunj, Banke</span>
-          <h1 className="display-font text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.02] tracking-tight mb-8 text-foreground">
-            Get In <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">touch</span>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500 block mb-5">Nepalgunj, Banke</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.02] tracking-tight mb-8" style={{ color: "#192a43" }}>
+            Get In <span style={{ color: "#FF8C42" }}>touch</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
             Have a question or need to schedule a priority consultation? Our specialists are available 7 days a week.
           </p>
         </div>
       </section>
 
       {/* Contact tiles */}
-      <section className="py-12 px-6 md:px-12 lg:px-20">
+      <section className="py-12 px-6 md:px-12 lg:px-20 animate-fade-up">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-          {tiles.map((c) => (
-            <div key={c.label} className="soft-card text-center">
+          {tiles.map((c, i) => (
+            <div key={c.label} className={`soft-card text-center ${["animate-fade-up delay-100", "animate-fade-up delay-200", "animate-fade-up delay-300"][i]}`}>
               <div className={`w-14 h-14 mx-auto pill-rounded flex items-center justify-center ${c.tint} mb-5`}>
-                <c.icon className="w-6 h-6 stroke-[1.5] text-foreground" />
+                <c.icon className="w-6 h-6 stroke-[1.5] text-[#192a43]" />
               </div>
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-muted-foreground block mb-3">{c.label}</span>
-              <p className="display-font text-lg md:text-xl font-semibold text-foreground whitespace-pre-line">{c.value}</p>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-500 block mb-3">{c.label}</span>
+              <p className="text-lg md:text-xl font-semibold whitespace-pre-line" style={{ color: "#192a43" }}>{c.value}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Form on lavender card */}
-      <section className="px-4 md:px-6 my-12">
-        <div className="max-w-7xl mx-auto bg-[#EFEDF4] card-rounded py-20 px-8 md:px-14 lg:px-20 soft-shadow">
+      {/* Form */}
+      <section className="px-4 md:px-6 my-12 animate-fade-up">
+        <div className="max-w-7xl mx-auto bg-teal-100/50 card-rounded py-20 px-8 md:px-14 lg:px-20 soft-shadow">
           <div className="max-w-3xl mx-auto">
-            <h2 className="display-font text-4xl md:text-5xl font-bold tracking-tight mb-10 text-center text-foreground">
-              Send us a <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">message</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-10 text-center" style={{ color: "#192a43" }}>
+              Send us a <span style={{ color: "#FF8C42" }}>message</span>
             </h2>
             <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-5">
               <input type="text" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Full name *" className={inputCls} />
@@ -99,8 +99,8 @@ const Contact = () => {
                 <textarea required rows={5} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="How can we help? *" className={textareaCls} style={{ borderRadius: "1.5rem" }} />
               </div>
               <div className="md:col-span-2 flex justify-center pt-2">
-                <button type="submit" disabled={isSubmitting} className="btn-primary disabled:opacity-60">
-                  {isSubmitting ? "Sending..." : "Send Message →"}
+                <button type="submit" disabled={isSubmitting} className="bg-[#FF8C42] text-white px-10 py-4 rounded-2xl font-bold text-lg disabled:opacity-60 hover:shadow-xl smooth-hover">
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>
@@ -111,8 +111,8 @@ const Contact = () => {
       {/* Map */}
       <section className="py-12 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="display-font text-4xl md:text-5xl font-bold tracking-tight mb-10 text-foreground">
-            Visit <span className="cursive-font text-[#FFB7B2] font-normal text-[1.1em]">us</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-10" style={{ color: "#192a43" }}>
+            Visit <span style={{ color: "#FF8C42" }}>us</span>
           </h2>
           <div className="card-rounded overflow-hidden soft-shadow w-full h-[500px] bg-white">
             <iframe

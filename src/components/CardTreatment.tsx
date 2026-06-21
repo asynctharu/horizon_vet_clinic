@@ -8,7 +8,7 @@ interface CardTreatmentProps {
   slug: string;
 }
 
-const tintCycle = ["bg-[#E8EFE8]", "bg-[#EFEDF4]", "bg-[#FFE4E1]", "bg-[#FDFCF8] border border-stone-100"];
+const tintCycle = ["bg-teal-100", "bg-orange-100", "bg-[#FCF7F0]", "bg-white border border-stone-100"];
 
 const CardTreatment = ({ title, description, icon: Icon, slug }: CardTreatmentProps) => {
   const tint = tintCycle[(title.length) % tintCycle.length];
@@ -23,7 +23,7 @@ const CardTreatment = ({ title, description, icon: Icon, slug }: CardTreatmentPr
       <div className="mt-8">
         <h3 className="display-font text-xl md:text-2xl font-bold mb-3 tracking-tight text-foreground">{title}</h3>
         <p className="text-sm leading-relaxed text-muted-foreground mb-5">{description}</p>
-        <span className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-[#FFB7B2] transition-colors">
+        <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#192a43] group-hover:text-[#FF8C42] transition-colors">
           Learn More <span aria-hidden>→</span>
         </span>
       </div>
