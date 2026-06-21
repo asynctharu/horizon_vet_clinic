@@ -13,8 +13,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Outfit", "system-ui", "sans-serif"],
-        serif: ["Outfit", "system-ui", "sans-serif"],
-        display: ["Outfit", "system-ui", "sans-serif"],
+        serif: ["Fraunces", "Georgia", "serif"],
+        display: ["Fraunces", "Georgia", "serif"],
         cursive: ["Reenie Beanie", "cursive"],
         mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
@@ -29,6 +29,10 @@ export default {
         lavender: "hsl(var(--lavender))",
         blush: "hsl(var(--blush))",
         charcoal: "hsl(var(--charcoal))",
+        ink: "hsl(var(--ink))",
+        gold: "hsl(var(--gold))",
+        cream: "hsl(var(--cream))",
+        bone: "hsl(var(--bone))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
