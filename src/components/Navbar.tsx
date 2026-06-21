@@ -20,18 +20,18 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl">
       <div className="bg-white/75 backdrop-blur-xl border border-white/60 soft-shadow pill-rounded px-5 md:px-7 py-3 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 pr-2">
-          <span className="display-font text-xl md:text-2xl font-bold tracking-tight text-foreground">Horizon</span>
-          <span className="cursive-font text-2xl text-[#FFB7B2] leading-none -mt-1">vet</span>
+        <Link to="/" className="flex items-baseline gap-1.5 pr-2">
+          <span className="display-font text-2xl md:text-[1.6rem] tracking-tight text-[hsl(var(--ink))]">Horizon</span>
+          <span className="display-italic text-lg md:text-xl text-[hsl(var(--gold))] leading-none">vet</span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-7 text-sm font-medium text-foreground/80">
+        <div className="hidden lg:flex items-center gap-8 text-[11px] font-semibold tracking-[0.18em] uppercase text-foreground/70">
           {navLinks.map((l) => (
             <Link
               key={l.path}
               to={l.path}
-              className={`transition-colors hover:text-[#FFB7B2] ${
-                isActive(l.path) ? "text-foreground font-semibold" : ""
+              className={`transition-colors hover:text-[hsl(var(--ink))] ${
+                isActive(l.path) ? "text-[hsl(var(--ink))]" : ""
               }`}
             >
               {l.name}

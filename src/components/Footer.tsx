@@ -10,9 +10,9 @@ const Footer = () => {
 
         <div className="relative z-10 px-8 md:px-14 lg:px-20 py-16 lg:py-20 grid lg:grid-cols-4 gap-12 lg:gap-10">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="display-font text-3xl font-bold">Horizon</span>
-              <span className="cursive-font text-3xl text-[#FFB7B2] -mt-2">vet</span>
+            <div className="flex items-baseline gap-2 mb-6">
+              <span className="display-font text-3xl">Horizon</span>
+              <span className="display-italic text-2xl text-[hsl(var(--gold))]">vet</span>
             </div>
             <p className="opacity-70 text-sm leading-relaxed mb-8">
               Trusted veterinary healthcare in Nepalgunj. Caring for pets, poultry, and farm animals since our inception.
