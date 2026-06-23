@@ -264,50 +264,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── HAPPY TAILS GALLERY ── */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto animate-fade-up">
-          <div className="flex items-end justify-between mb-16">
-            <div className="max-w-xl">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#192a43" }}>
-                Happy Tails <span style={{ color: "#FF8C42" }}>Gallery</span>
-              </h2>
-              <p className="text-gray-500">A glimpse into the daily lives of the amazing pets that visit our clinic.</p>
-            </div>
-            <Link
-              to="/blogs"
-              className="hidden md:flex items-center gap-2 font-bold text-[#FF8C42] hover:underline uppercase text-sm tracking-widest"
-            >
-              View All Photos <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=400&h=400",
-              "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=400&h=400",
-              "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=400&h=400",
-              "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400&h=400",
-              "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&q=80&w=400&h=400",
-            ].map((src, i) => (
-              <div key={i} className="aspect-square overflow-hidden rounded-3xl relative">
-                <img
-                  src={src}
-                  alt={`Pet gallery ${i + 1}`}
-                  className="w-full h-full object-cover hover:scale-110 smooth-hover transition-transform duration-700"
-                />
-                {i === 4 && (
-                  <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-4 text-center">
-                    <span className="text-white font-bold text-2xl">+450</span>
-                    <span className="text-white/80 text-xs uppercase">Happy Moments</span>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── EMERGENCY BAR ── */}
       <section className="bg-[#FF8C42] py-16 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
