@@ -42,61 +42,40 @@ const Home = () => {
             </Link>
 
           </div>
-          <div className="mt-12 flex items-center gap-4">
-            <div className="flex -space-x-4">
-              <img
-                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=100&h=100"
-                className="w-12 h-12 rounded-full border-4 border-white object-cover"
-                alt="Happy pet parent"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=100&h=100"
-                className="w-12 h-12 rounded-full border-4 border-white object-cover"
-                alt="Happy pet parent"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&q=80&w=100&h=100"
-                className="w-12 h-12 rounded-full border-4 border-white object-cover"
-                alt="Happy pet parent"
-              />
-            </div>
-            <p className="text-sm font-medium text-gray-500">
-              <span className="text-[#192a43] font-bold">4.9/5 Rating</span> from 2,000+ Happy Pet Parents
-            </p>
-          </div>
         </div>
 
-        {/* Right: blob-shaped image grid */}
+        {/* Right: clinic photo grid */}
         <div className="relative">
           <div className="grid grid-cols-2 gap-4 relative z-10">
             <div className="space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=600&h=800"
-                className="w-full aspect-[3/4] object-cover pet-blob-alt shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.03]"
-                alt="Happy dog"
+                src="/assests/clinic photos/clinic-exterior.jpg"
+                className="w-full aspect-[3/4] object-cover pet-blob-alt shadow-2xl hover:scale-[1.03] transition-all duration-700"
+                alt="Horizon Vet clinic exterior"
               />
               <img
-                src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=600&h=400"
-                className="w-full aspect-square object-cover pet-blob shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.03]"
-                alt="Cute cat"
+                src="/assests/clinic photos/pet-shop-counter.jpg"
+                className="w-full aspect-square object-cover pet-blob shadow-2xl hover:scale-[1.03] transition-all duration-700"
+                alt="Pet shop counter"
               />
             </div>
             <div className="pt-12 space-y-4">
               <img
-                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=600&h=400"
-                className="w-full aspect-square object-cover pet-blob shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.03]"
-                alt="Playful puppy"
+                src="/assests/clinic photos/treatment-with-patient.jpg"
+                className="w-full aspect-square object-cover pet-blob shadow-2xl hover:scale-[1.03] transition-all duration-700"
+                alt="Treatment with patient"
               />
               <img
-                src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=600&h=800"
-                className="w-full aspect-[3/4] object-cover pet-blob-alt shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.03]"
-                alt="Fluffy rabbit"
+                src="/assests/clinic photos/xray-diagnosis.jpg"
+                className="w-full aspect-[3/4] object-cover pet-blob-alt shadow-2xl hover:scale-[1.03] transition-all duration-700"
+                alt="X-ray diagnosis"
               />
             </div>
           </div>
           <div className="absolute -top-10 -right-10 w-64 h-64 bg-orange-100 rounded-full blur-3xl opacity-50 -z-0" />
           <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-teal-100 rounded-full blur-3xl opacity-50 -z-0" />
         </div>
+
       </header>
 
       {/* ── SERVICES ── */}
