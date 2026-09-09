@@ -9,8 +9,8 @@ const Footer = () => {
         <div>
           <div className="flex items-center gap-2 mb-6">
             <img src="/assests/icon.png" alt="Horizon Vet" className="w-8 h-8 rounded-full object-cover" />
-            <span className="text-xl font-bold tracking-tight" style={{ color: "#192a43" }}>
-              Horizon <span style={{ color: "#FF8C42" }}>Vet</span>
+            <span className="text-xl font-bold tracking-tight text-white">
+              Horizon <span className="text-orange-100">Vet</span>
             </span>
           </div>
           <p className="text-orange-50 mb-8 leading-relaxed">
